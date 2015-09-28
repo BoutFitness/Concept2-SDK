@@ -1,6 +1,6 @@
 # Concept2-SDK
 
-[![CI Status](http://img.shields.io/travis/jessecurry/Concept2-SDK.svg?style=flat)](https://travis-ci.org/jessecurry/Concept2-SDK)
+[![CI Status](http://img.shields.io/travis/BoutFitness/Concept2-SDK.svg?style=flat)](https://travis-ci.org/BoutFitness/Concept2-SDK)
 [![Version](https://img.shields.io/cocoapods/v/Concept2-SDK.svg?style=flat)](http://cocoapods.org/pods/Concept2-SDK)
 [![License](https://img.shields.io/cocoapods/l/Concept2-SDK.svg?style=flat)](http://cocoapods.org/pods/Concept2-SDK)
 [![Platform](https://img.shields.io/cocoapods/p/Concept2-SDK.svg?style=flat)](http://cocoapods.org/pods/Concept2-SDK)
