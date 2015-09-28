@@ -1,0 +1,25 @@
+{
+  "name": "Concept2-SDK",
+  "version": "0.1.0",
+  "summary": "A short description of Concept2-SDK.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/Concept2-SDK",
+  "license": "MIT",
+  "authors": {
+    "jessecurry": "jesse@jessecurry.net"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/Concept2-SDK.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "Concept2-SDK": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
