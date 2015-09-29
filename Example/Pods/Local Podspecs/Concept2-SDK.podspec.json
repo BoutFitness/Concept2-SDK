@@ -1,17 +1,18 @@
 {
   "name": "Concept2-SDK",
   "version": "0.1.0",
-  "summary": "A short description of Concept2-SDK.",
+  "summary": "Library for connecting to the Concept2 PM5 via Bluetooth.",
   "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/Concept2-SDK",
+  "homepage": "https://github.com/BoutFitness/Concept2-SDK",
   "license": "MIT",
   "authors": {
     "jessecurry": "jesse@jessecurry.net"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/Concept2-SDK.git",
+    "git": "https://github.com/BoutFitness/Concept2-SDK.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/boutfitness",
   "platforms": {
     "ios": "8.0"
   },
@@ -21,5 +22,7 @@
     "Concept2-SDK": [
       "Pod/Assets/*.png"
     ]
-  }
+  },
+  "module_name": "Concept2_SDK",
+  "frameworks": "CoreBluetooth"
 }

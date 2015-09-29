@@ -7,6 +7,4 @@ end
 
 target 'Concept2-SDK_Tests', :exclusive => true do
   pod "Concept2-SDK", :path => "../"
-
-  
 end

@@ -34,6 +34,7 @@ Pod::Spec.new do |s|
     'Concept2-SDK' => ['Pod/Assets/*.png']
   }
 
+  s.module_name = 'Concept2_SDK'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'CoreBluetooth'
   # s.dependency 'AFNetworking', '~> 2.3'

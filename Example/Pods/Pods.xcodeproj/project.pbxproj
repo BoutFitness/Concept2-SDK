@@ -8,38 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		02368EE0778869070F95BE7A9CEA977D /* Pods-Concept2-SDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2394312BC67031846C382805B8CEAAD6 /* Pods-Concept2-SDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		307A797318B845CF26B40C35DAD3DE84 /* Concept2-SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FDA63D4D352DC7D665ADC3A796A7A85 /* Concept2-SDK.bundle */; };
-		328F46BAE3FDF78960D17EF4B6B8EF62 /* Concept2-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9C61839DA29D2511D5A42545B8C13C0 /* Concept2-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B5619EE20E1C9FFB71C2A81FBFEA41D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD47F7E54C6C9940C845BC8380DB13F1 /* Foundation.framework */; };
+		0B0E1B7F1E9B8A2B586963C07E52F8BA /* Concept2-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEF9F991D5D5C2B44718FDD3294A94C9 /* Concept2-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BC4F3BCC931CE307BD56333ED8378C5 /* CSAFECommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB575EBF029376D2BDBF84AADC9C8D /* CSAFECommand.swift */; };
+		3B5619EE20E1C9FFB71C2A81FBFEA41D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E902C59EE3E79EAEF3D2DE086E31C /* Foundation.framework */; };
 		46BDB8B38F68BEEF5A8A8810FDBEC460 /* Pods-Concept2-SDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CCBD8F9A075AC278C0C5609EB228A0 /* Pods-Concept2-SDK_Tests-dummy.m */; };
 		4B1AEA790D207B1F8280A1896B099AA6 /* Pods-Concept2-SDK_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8B92673755C834A2D7DECF23272B84 /* Pods-Concept2-SDK_Example-dummy.m */; };
-		5CCA7E2031077BC62AFA8C893F279049 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B495B05260C4D55C3A7D6BA592AD7C2 /* ReplaceMe.swift */; };
-		6E009DE75F9891DEF9B42A81386F3C64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD47F7E54C6C9940C845BC8380DB13F1 /* Foundation.framework */; };
+		712F93466E49B626707D4707ABCFC5C7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5B76364743E2A2B03019ADFCF16769 /* CoreBluetooth.framework */; };
+		7CF93443E468400485773C0E19BF7A08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E902C59EE3E79EAEF3D2DE086E31C /* Foundation.framework */; };
+		80C02D6710A7B67ED2799D82BAC4A13B /* Concept2-SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B51E5DF6F552D174CF4258A42FE6748 /* Concept2-SDK.bundle */; };
+		8E3BC99C51BBDC60FFD64048F33C435A /* PerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5439C45E36E89076D1E3D29870218F /* PerformanceMonitor.swift */; };
 		9AB3821D078722E690527082E15C6571 /* Pods-Concept2-SDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE893BF5075AF08D999BE70F6E91CCF5 /* Pods-Concept2-SDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9EF01E896BFC04CEDBEB272AF2A8A57C /* Concept2-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05764D1764994D436214861EB266CC /* Concept2-SDK-dummy.m */; };
-		F8FC7BDDBA04036B66B62F1976C95BB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD47F7E54C6C9940C845BC8380DB13F1 /* Foundation.framework */; };
+		A1F282CEF380D259C4DDB0E8FE207413 /* Concept2-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3DFD240E6E017CAB56AEA600672025 /* Concept2-SDK-dummy.m */; };
+		F8FC7BDDBA04036B66B62F1976C95BB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E902C59EE3E79EAEF3D2DE086E31C /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		354D57401BC5205E55B56095CF200877 /* PBXContainerItemProxy */ = {
+		79B4393A24DC86474A6524F1E4F664F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FB17892BE34B2C8DD0627B36D8B28BA3;
+			remoteGlobalIDString = A7DB0C41718E398F0AA3860D440B6374;
 			remoteInfo = "Concept2-SDK";
 		};
-		C49BFD41548BDCA352112BE8FB409CE2 /* PBXContainerItemProxy */ = {
+		8061727BD85CDD19A30354AE0648F831 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FB17892BE34B2C8DD0627B36D8B28BA3;
+			remoteGlobalIDString = A7DB0C41718E398F0AA3860D440B6374;
 			remoteInfo = "Concept2-SDK";
 		};
-		C5FB566133879C708DAB54968E59B9BA /* PBXContainerItemProxy */ = {
+		9F842FDD8A76FB0C2AAE5C24DF2FC76C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 56F0E0D7A5B497CF8583208EEDB2B356;
+			remoteGlobalIDString = 018EED485F8E69809DCB86BF85883EC2;
 			remoteInfo = "Concept2-SDK-Concept2-SDK";
 		};
 /* End PBXContainerItemProxy section */
@@ -49,36 +51,38 @@
 		08A0858582BA6301C16A73AB8D3C044B /* Concept2-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Concept2-SDK-prefix.pch"; sourceTree = "<group>"; };
 		0FE127A325E0EE0F1C3FCD643AE59249 /* Concept2-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Concept2-SDK.modulemap"; sourceTree = "<group>"; };
 		11851395CD3D8F63A358AF8FD6696041 /* Pods-Concept2-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Concept2-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		14578D6A40E9501F0DE5008456128155 /* Concept2-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Concept2-SDK-Private.xcconfig"; sourceTree = "<group>"; };
 		179798C3B1ED1D3EB1931591894A14ED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B51E5DF6F552D174CF4258A42FE6748 /* Concept2-SDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Concept2-SDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2394312BC67031846C382805B8CEAAD6 /* Pods-Concept2-SDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Concept2-SDK_Example-umbrella.h"; sourceTree = "<group>"; };
 		2AE63696596DF019763ECEB42840AE2D /* Pods_Concept2_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Concept2_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CCBD8F9A075AC278C0C5609EB228A0 /* Pods-Concept2-SDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Concept2-SDK_Tests-dummy.m"; sourceTree = "<group>"; };
-		3FDA63D4D352DC7D665ADC3A796A7A85 /* Concept2-SDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Concept2-SDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B39CA2E7499F2E12B2C755EB0B6776 /* Pods_Concept2_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Concept2_SDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5624EADD71461EF74081AE3E113462A0 /* Pods-Concept2-SDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Concept2-SDK_Example.modulemap"; sourceTree = "<group>"; };
 		5AFEFE8979704782EE738516C4EF41E9 /* Concept2-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Concept2-SDK.xcconfig"; sourceTree = "<group>"; };
 		5BAE40612ED57C43814CFF5655B1925F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64117202CF02148ACE5C3F1EDA8C7309 /* Pods-Concept2-SDK_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Concept2-SDK_Tests-resources.sh"; sourceTree = "<group>"; };
-		72DA9E6A8E568C3A0D636A955EBBFD09 /* Concept2_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Concept2_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7441FE6F75BDF2751A777BD9BEE3086A /* Concept2-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Concept2-SDK-Private.xcconfig"; sourceTree = "<group>"; };
-		7B495B05260C4D55C3A7D6BA592AD7C2 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
+		81EB575EBF029376D2BDBF84AADC9C8D /* CSAFECommand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CSAFECommand.swift; sourceTree = "<group>"; };
 		82D12029D894670A5801FA0C1272A3A7 /* Pods-Concept2-SDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Concept2-SDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		986542E0C72B9DC8805C452375E7F548 /* Pods-Concept2-SDK_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Concept2-SDK_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		9C9E902C59EE3E79EAEF3D2DE086E31C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9DA0BA06C948F001C036805F5BF9FA3E /* Pods-Concept2-SDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Concept2-SDK_Example-frameworks.sh"; sourceTree = "<group>"; };
 		A56CED319B9CB90A3543CBA21AC887D6 /* Pods-Concept2-SDK_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Concept2-SDK_Example-resources.sh"; sourceTree = "<group>"; };
 		A9C98236D39B1429441C8493FBD9199F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B26B9C8A111B8C0D58EBD6B0F0FA80D9 /* Concept2_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Concept2_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BE2961F3B49BACB045C623743A0488B7 /* Pods-Concept2-SDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Concept2-SDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C9FE332BA0991CFBEA8E4D2FFAA450E8 /* Pods-Concept2-SDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Concept2-SDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CC6F1EC59ED03E16FBA181CFCFE6E5B4 /* Pods-Concept2-SDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Concept2-SDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CD47F7E54C6C9940C845BC8380DB13F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CF5B76364743E2A2B03019ADFCF16769 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
 		CF8B92673755C834A2D7DECF23272B84 /* Pods-Concept2-SDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Concept2-SDK_Example-dummy.m"; sourceTree = "<group>"; };
-		DA05764D1764994D436214861EB266CC /* Concept2-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Concept2-SDK-dummy.m"; sourceTree = "<group>"; };
+		DB5439C45E36E89076D1E3D29870218F /* PerformanceMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceMonitor.swift; sourceTree = "<group>"; };
 		DC81B87A1329B5951F38F3E9FEC90F95 /* Pods-Concept2-SDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Concept2-SDK_Tests.modulemap"; sourceTree = "<group>"; };
 		E0934B91EDC6D75C0820CC2E5E89139D /* Pods-Concept2-SDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Concept2-SDK_Example.release.xcconfig"; sourceTree = "<group>"; };
-		E9C61839DA29D2511D5A42545B8C13C0 /* Concept2-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Concept2-SDK-umbrella.h"; sourceTree = "<group>"; };
+		EE3DFD240E6E017CAB56AEA600672025 /* Concept2-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Concept2-SDK-dummy.m"; sourceTree = "<group>"; };
 		F4FD3AC14844ED80CB0144B3B02B551D /* Pods-Concept2-SDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Concept2-SDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FE893BF5075AF08D999BE70F6E91CCF5 /* Pods-Concept2-SDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Concept2-SDK_Tests-umbrella.h"; sourceTree = "<group>"; };
+		FEF9F991D5D5C2B44718FDD3294A94C9 /* Concept2-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Concept2-SDK-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,18 +94,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3CBCFFE6E5A8A67D40BC0D5BCBAA6EFA /* Frameworks */ = {
+		4460A63287A0C3E03DA0FEC2B4329A35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE80ED477F09B17C0D94C0EFE2AE697E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E009DE75F9891DEF9B42A81386F3C64 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,37 +109,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDBDB1198E31A47196A01C2360474852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				712F93466E49B626707D4707ABCFC5C7 /* CoreBluetooth.framework in Frameworks */,
+				7CF93443E468400485773C0E19BF7A08 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD47F7E54C6C9940C845BC8380DB13F1 /* Foundation.framework */,
+				4C80BA738D6CDA6C25E2CBED501855B1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C80BA738D6CDA6C25E2CBED501855B1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CF5B76364743E2A2B03019ADFCF16769 /* CoreBluetooth.framework */,
+				9C9E902C59EE3E79EAEF3D2DE086E31C /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5DF709DB138B9BB591455167A9DA1817 /* Classes */ = {
+		6BF5B7415FC8751B45B40084C049A5F2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7B495B05260C4D55C3A7D6BA592AD7C2 /* ReplaceMe.swift */,
+				81EB575EBF029376D2BDBF84AADC9C8D /* CSAFECommand.swift */,
+				DB5439C45E36E89076D1E3D29870218F /* PerformanceMonitor.swift */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		652907467950E4FB1E068A00DB15FDBD /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				5DF709DB138B9BB591455167A9DA1817 /* Classes */,
-			);
-			path = Pod;
 			sourceTree = "<group>";
 		};
 		6E0DEB14369B8A797E70F6796C70321C /* Concept2-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				652907467950E4FB1E068A00DB15FDBD /* Pod */,
+				B40031A2D45433F98671044777145C3F /* Pod */,
 				7354F9C1711831067D2380972B45BE30 /* Support Files */,
 			);
 			name = "Concept2-SDK";
@@ -155,10 +162,10 @@
 			children = (
 				0FE127A325E0EE0F1C3FCD643AE59249 /* Concept2-SDK.modulemap */,
 				5AFEFE8979704782EE738516C4EF41E9 /* Concept2-SDK.xcconfig */,
-				7441FE6F75BDF2751A777BD9BEE3086A /* Concept2-SDK-Private.xcconfig */,
-				DA05764D1764994D436214861EB266CC /* Concept2-SDK-dummy.m */,
+				14578D6A40E9501F0DE5008456128155 /* Concept2-SDK-Private.xcconfig */,
+				EE3DFD240E6E017CAB56AEA600672025 /* Concept2-SDK-dummy.m */,
 				08A0858582BA6301C16A73AB8D3C044B /* Concept2-SDK-prefix.pch */,
-				E9C61839DA29D2511D5A42545B8C13C0 /* Concept2-SDK-umbrella.h */,
+				FEF9F991D5D5C2B44718FDD3294A94C9 /* Concept2-SDK-umbrella.h */,
 				5BAE40612ED57C43814CFF5655B1925F /* Info.plist */,
 			);
 			name = "Support Files";
@@ -170,10 +177,18 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BE39ED00D189D7D3207F92F2943AC760 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				B536CDDDA53A70ABCBB110C0673F7178 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		B40031A2D45433F98671044777145C3F /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				6BF5B7415FC8751B45B40084C049A5F2 /* Classes */,
+			);
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		B536CDDDA53A70ABCBB110C0673F7178 /* Targets Support Files */ = {
@@ -183,14 +198,6 @@
 				DB3606342846584A040A491E17EE6F32 /* Pods-Concept2-SDK_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BD893D3C31CC03C215334387C884B334 /* Pods-Concept2-SDK_Example */ = {
@@ -222,8 +229,8 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3FDA63D4D352DC7D665ADC3A796A7A85 /* Concept2-SDK.bundle */,
-				72DA9E6A8E568C3A0D636A955EBBFD09 /* Concept2_SDK.framework */,
+				1B51E5DF6F552D174CF4258A42FE6748 /* Concept2-SDK.bundle */,
+				B26B9C8A111B8C0D58EBD6B0F0FA80D9 /* Concept2_SDK.framework */,
 				2AE63696596DF019763ECEB42840AE2D /* Pods_Concept2_SDK_Example.framework */,
 				42B39CA2E7499F2E12B2C755EB0B6776 /* Pods_Concept2_SDK_Tests.framework */,
 			);
@@ -259,11 +266,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0A420CE0BAE94B64E64B8468D8684E0B /* Headers */ = {
+		3C722364CA6036CFEB02957372560569 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				328F46BAE3FDF78960D17EF4B6B8EF62 /* Concept2-SDK-umbrella.h in Headers */,
+				0B0E1B7F1E9B8A2B586963C07E52F8BA /* Concept2-SDK-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +285,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		018EED485F8E69809DCB86BF85883EC2 /* Concept2-SDK-Concept2-SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09E5A8E9EA19B64269B7842C0D9DC847 /* Build configuration list for PBXNativeTarget "Concept2-SDK-Concept2-SDK" */;
+			buildPhases = (
+				F22601A5A4F887F6AE3CA1F191B56B2F /* Sources */,
+				4460A63287A0C3E03DA0FEC2B4329A35 /* Frameworks */,
+				BE608297037C520AFD435B1EE08CAEBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Concept2-SDK-Concept2-SDK";
+			productName = "Concept2-SDK-Concept2-SDK";
+			productReference = 1B51E5DF6F552D174CF4258A42FE6748 /* Concept2-SDK.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		1AB93075A86ED52F33062A863994ABAE /* Pods-Concept2-SDK_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A72D0E42B556A2151E6C2D4F2554A1CE /* Build configuration list for PBXNativeTarget "Pods-Concept2-SDK_Example" */;
@@ -289,47 +313,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				68DE7D15B50A1C696B50C4F09408FD90 /* PBXTargetDependency */,
+				5AD825850C52E54366CB1CE0365489D0 /* PBXTargetDependency */,
 			);
 			name = "Pods-Concept2-SDK_Example";
 			productName = "Pods-Concept2-SDK_Example";
 			productReference = 2AE63696596DF019763ECEB42840AE2D /* Pods_Concept2_SDK_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		56F0E0D7A5B497CF8583208EEDB2B356 /* Concept2-SDK-Concept2-SDK */ = {
+		A7DB0C41718E398F0AA3860D440B6374 /* Concept2-SDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94D3CD65AA4607AA15944D1D9F32DA6E /* Build configuration list for PBXNativeTarget "Concept2-SDK-Concept2-SDK" */;
+			buildConfigurationList = 0F7844F7D45913BBF317D1150CAB9B1D /* Build configuration list for PBXNativeTarget "Concept2-SDK" */;
 			buildPhases = (
-				C9A16824C8DA51B9B927080E8C6CB8FB /* Sources */,
-				3CBCFFE6E5A8A67D40BC0D5BCBAA6EFA /* Frameworks */,
-				AE6C291D44EAED536E4C49973E4B5A47 /* Resources */,
+				D2541AD867AF453C9884EF21EC6F4E7B /* Sources */,
+				CDBDB1198E31A47196A01C2360474852 /* Frameworks */,
+				0437F19BF5705E509375045FE3C39B68 /* Resources */,
+				3C722364CA6036CFEB02957372560569 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Concept2-SDK-Concept2-SDK";
-			productName = "Concept2-SDK-Concept2-SDK";
-			productReference = 3FDA63D4D352DC7D665ADC3A796A7A85 /* Concept2-SDK.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		FB17892BE34B2C8DD0627B36D8B28BA3 /* Concept2-SDK */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 105F8247FAB23CC3145CBEC72F32AF00 /* Build configuration list for PBXNativeTarget "Concept2-SDK" */;
-			buildPhases = (
-				7FE0CD7011CC9CF2B9D0ED393E651B23 /* Sources */,
-				BE80ED477F09B17C0D94C0EFE2AE697E /* Frameworks */,
-				1E572E7F7586BCCD5AD099D74BAF51F6 /* Resources */,
-				0A420CE0BAE94B64E64B8468D8684E0B /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DD52ACD8AA65C05D3F42E837162AF0D2 /* PBXTargetDependency */,
+				5A54D3EEC157C6FCC32C9FAB1805CAED /* PBXTargetDependency */,
 			);
 			name = "Concept2-SDK";
 			productName = "Concept2-SDK";
-			productReference = 72DA9E6A8E568C3A0D636A955EBBFD09 /* Concept2_SDK.framework */;
+			productReference = B26B9C8A111B8C0D58EBD6B0F0FA80D9 /* Concept2_SDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FE8C5BADA7AD4849BA85F3FDF7ADE5E2 /* Pods-Concept2-SDK_Tests */ = {
@@ -343,7 +350,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				147D1AD3BB099A3DFF520BCF9177C9E4 /* PBXTargetDependency */,
+				FFD341239C99FF92A60D619DA22BC78A /* PBXTargetDependency */,
 			);
 			name = "Pods-Concept2-SDK_Tests";
 			productName = "Pods-Concept2-SDK_Tests";
@@ -371,8 +378,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FB17892BE34B2C8DD0627B36D8B28BA3 /* Concept2-SDK */,
-				56F0E0D7A5B497CF8583208EEDB2B356 /* Concept2-SDK-Concept2-SDK */,
+				A7DB0C41718E398F0AA3860D440B6374 /* Concept2-SDK */,
+				018EED485F8E69809DCB86BF85883EC2 /* Concept2-SDK-Concept2-SDK */,
 				1AB93075A86ED52F33062A863994ABAE /* Pods-Concept2-SDK_Example */,
 				FE8C5BADA7AD4849BA85F3FDF7ADE5E2 /* Pods-Concept2-SDK_Tests */,
 			);
@@ -380,15 +387,15 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1E572E7F7586BCCD5AD099D74BAF51F6 /* Resources */ = {
+		0437F19BF5705E509375045FE3C39B68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				307A797318B845CF26B40C35DAD3DE84 /* Concept2-SDK.bundle in Resources */,
+				80C02D6710A7B67ED2799D82BAC4A13B /* Concept2-SDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE6C291D44EAED536E4C49973E4B5A47 /* Resources */ = {
+		BE608297037C520AFD435B1EE08CAEBA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -406,15 +413,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FE0CD7011CC9CF2B9D0ED393E651B23 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9EF01E896BFC04CEDBEB272AF2A8A57C /* Concept2-SDK-dummy.m in Sources */,
-				5CCA7E2031077BC62AFA8C893F279049 /* ReplaceMe.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C2ED03B503E6CF0FD2DE38A2867C276E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,7 +421,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9A16824C8DA51B9B927080E8C6CB8FB /* Sources */ = {
+		D2541AD867AF453C9884EF21EC6F4E7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BC4F3BCC931CE307BD56333ED8378C5 /* CSAFECommand.swift in Sources */,
+				A1F282CEF380D259C4DDB0E8FE207413 /* Concept2-SDK-dummy.m in Sources */,
+				8E3BC99C51BBDC60FFD64048F33C435A /* PerformanceMonitor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F22601A5A4F887F6AE3CA1F191B56B2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -433,23 +441,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		147D1AD3BB099A3DFF520BCF9177C9E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Concept2-SDK";
-			target = FB17892BE34B2C8DD0627B36D8B28BA3 /* Concept2-SDK */;
-			targetProxy = 354D57401BC5205E55B56095CF200877 /* PBXContainerItemProxy */;
-		};
-		68DE7D15B50A1C696B50C4F09408FD90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Concept2-SDK";
-			target = FB17892BE34B2C8DD0627B36D8B28BA3 /* Concept2-SDK */;
-			targetProxy = C49BFD41548BDCA352112BE8FB409CE2 /* PBXContainerItemProxy */;
-		};
-		DD52ACD8AA65C05D3F42E837162AF0D2 /* PBXTargetDependency */ = {
+		5A54D3EEC157C6FCC32C9FAB1805CAED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Concept2-SDK-Concept2-SDK";
-			target = 56F0E0D7A5B497CF8583208EEDB2B356 /* Concept2-SDK-Concept2-SDK */;
-			targetProxy = C5FB566133879C708DAB54968E59B9BA /* PBXContainerItemProxy */;
+			target = 018EED485F8E69809DCB86BF85883EC2 /* Concept2-SDK-Concept2-SDK */;
+			targetProxy = 9F842FDD8A76FB0C2AAE5C24DF2FC76C /* PBXContainerItemProxy */;
+		};
+		5AD825850C52E54366CB1CE0365489D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Concept2-SDK";
+			target = A7DB0C41718E398F0AA3860D440B6374 /* Concept2-SDK */;
+			targetProxy = 8061727BD85CDD19A30354AE0648F831 /* PBXContainerItemProxy */;
+		};
+		FFD341239C99FF92A60D619DA22BC78A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Concept2-SDK";
+			target = A7DB0C41718E398F0AA3860D440B6374 /* Concept2-SDK */;
+			targetProxy = 79B4393A24DC86474A6524F1E4F664F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -483,18 +491,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		03F9846EF4627C99D05ACB9C116EBE18 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7441FE6F75BDF2751A777BD9BEE3086A /* Concept2-SDK-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = "Concept2-SDK";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
 		};
 		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -560,9 +556,9 @@
 			};
 			name = Debug;
 		};
-		236DE1104FD010D8D7B893E9B137A6D7 /* Debug */ = {
+		1CA6998EA72F9463975438FAA20BB882 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7441FE6F75BDF2751A777BD9BEE3086A /* Concept2-SDK-Private.xcconfig */;
+			baseConfigurationReference = 14578D6A40E9501F0DE5008456128155 /* Concept2-SDK-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0.1.0;
@@ -587,6 +583,57 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		313B8E4BFA6B37485F57A13BD1EC2970 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14578D6A40E9501F0DE5008456128155 /* Concept2-SDK-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "Concept2-SDK";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		35CF113D060E0F70BD5416A2E19F4AE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14578D6A40E9501F0DE5008456128155 /* Concept2-SDK-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "Concept2-SDK";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		516AB800075DEE591E350007BEA94657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14578D6A40E9501F0DE5008456128155 /* Concept2-SDK-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Concept2-SDK/Concept2-SDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Concept2-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Concept2-SDK/Concept2-SDK.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Concept2_SDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -624,45 +671,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		63B28517D1C777DCDAB3C7317D5A69FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7441FE6F75BDF2751A777BD9BEE3086A /* Concept2-SDK-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Concept2-SDK/Concept2-SDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Concept2-SDK/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Concept2-SDK/Concept2-SDK.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Concept2_SDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		91636A5B2B6FA398803412B27263D0FF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7441FE6F75BDF2751A777BD9BEE3086A /* Concept2-SDK-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = "Concept2-SDK";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -727,11 +735,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		105F8247FAB23CC3145CBEC72F32AF00 /* Build configuration list for PBXNativeTarget "Concept2-SDK" */ = {
+		09E5A8E9EA19B64269B7842C0D9DC847 /* Build configuration list for PBXNativeTarget "Concept2-SDK-Concept2-SDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				236DE1104FD010D8D7B893E9B137A6D7 /* Debug */,
-				63B28517D1C777DCDAB3C7317D5A69FC /* Release */,
+				313B8E4BFA6B37485F57A13BD1EC2970 /* Debug */,
+				35CF113D060E0F70BD5416A2E19F4AE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F7844F7D45913BBF317D1150CAB9B1D /* Build configuration list for PBXNativeTarget "Concept2-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CA6998EA72F9463975438FAA20BB882 /* Debug */,
+				516AB800075DEE591E350007BEA94657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -750,15 +767,6 @@
 			buildConfigurations = (
 				552D02D5BA751AC2E8790D2811D496CA /* Debug */,
 				10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		94D3CD65AA4607AA15944D1D9F32DA6E /* Build configuration list for PBXNativeTarget "Concept2-SDK-Concept2-SDK" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				91636A5B2B6FA398803412B27263D0FF /* Debug */,
-				03F9846EF4627C99D05ACB9C116EBE18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
