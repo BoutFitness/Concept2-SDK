@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
+                        Library for connecting to the Concept2 PM5 via Bluetooth. The goal of this
+                        library is to provide complete coverage of the bluetooth functionality.
                        DESC
 
   s.homepage         = "https://github.com/BoutFitness/Concept2-SDK"
