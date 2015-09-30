@@ -21,6 +21,8 @@
 		8E3BC99C51BBDC60FFD64048F33C435A /* PerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5439C45E36E89076D1E3D29870218F /* PerformanceMonitor.swift */; };
 		9AB3821D078722E690527082E15C6571 /* Pods-Concept2-SDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE893BF5075AF08D999BE70F6E91CCF5 /* Pods-Concept2-SDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1F282CEF380D259C4DDB0E8FE207413 /* Concept2-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3DFD240E6E017CAB56AEA600672025 /* Concept2-SDK-dummy.m */; };
+		B0D2440D1BBC490F00ACFA7F /* PerformanceMonitorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2440C1BBC490F00ACFA7F /* PerformanceMonitorStore.swift */; settings = {ASSET_TAGS = (); }; };
+		B0D244101BBC4A9400ACFA7F /* CentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2440F1BBC4A9400ACFA7F /* CentralManagerDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		F8FC7BDDBA04036B66B62F1976C95BB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E902C59EE3E79EAEF3D2DE086E31C /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		9DA0BA06C948F001C036805F5BF9FA3E /* Pods-Concept2-SDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Concept2-SDK_Example-frameworks.sh"; sourceTree = "<group>"; };
 		A56CED319B9CB90A3543CBA21AC887D6 /* Pods-Concept2-SDK_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Concept2-SDK_Example-resources.sh"; sourceTree = "<group>"; };
 		A9C98236D39B1429441C8493FBD9199F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0D2440C1BBC490F00ACFA7F /* PerformanceMonitorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceMonitorStore.swift; sourceTree = "<group>"; };
+		B0D2440F1BBC4A9400ACFA7F /* CentralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentralManagerDelegate.swift; sourceTree = "<group>"; };
 		B26B9C8A111B8C0D58EBD6B0F0FA80D9 /* Concept2_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Concept2_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BE2961F3B49BACB045C623743A0488B7 /* Pods-Concept2-SDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Concept2-SDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -145,10 +149,11 @@
 		6BF5B7415FC8751B45B40084C049A5F2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				81EB575EBF029376D2BDBF84AADC9C8D /* CSAFECommand.swift */,
-				DB5439C45E36E89076D1E3D29870218F /* PerformanceMonitor.swift */,
 				131DDFE01BBB6F270082F865 /* BluetoothScanner.swift */,
+				DB5439C45E36E89076D1E3D29870218F /* PerformanceMonitor.swift */,
+				81EB575EBF029376D2BDBF84AADC9C8D /* CSAFECommand.swift */,
 				131DDFE21BBB70C40082F865 /* Services.swift */,
+				B0D2440E1BBC4A7500ACFA7F /* Internal */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -187,6 +192,15 @@
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				B536CDDDA53A70ABCBB110C0673F7178 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		B0D2440E1BBC4A7500ACFA7F /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				B0D2440C1BBC490F00ACFA7F /* PerformanceMonitorStore.swift */,
+				B0D2440F1BBC4A9400ACFA7F /* CentralManagerDelegate.swift */,
+			);
+			name = Internal;
 			sourceTree = "<group>";
 		};
 		B40031A2D45433F98671044777145C3F /* Pod */ = {
@@ -432,11 +446,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D244101BBC4A9400ACFA7F /* CentralManagerDelegate.swift in Sources */,
 				131DDFE31BBB70C40082F865 /* Services.swift in Sources */,
 				1BC4F3BCC931CE307BD56333ED8378C5 /* CSAFECommand.swift in Sources */,
 				131DDFE11BBB6F270082F865 /* BluetoothScanner.swift in Sources */,
 				A1F282CEF380D259C4DDB0E8FE207413 /* Concept2-SDK-dummy.m in Sources */,
 				8E3BC99C51BBDC60FFD64048F33C435A /* PerformanceMonitor.swift in Sources */,
+				B0D2440D1BBC490F00ACFA7F /* PerformanceMonitorStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

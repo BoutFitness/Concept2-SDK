@@ -18,7 +18,7 @@ class ViewController: UIViewController {
   
   @IBAction func scanAction(sender:AnyObject?)
   {
-    pm.scanForConnection()
+    pm.scanForPerformanceMonitors()
   }
   
 }
