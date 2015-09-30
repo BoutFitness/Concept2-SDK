@@ -10,10 +10,12 @@ import CoreBluetooth
 
 public final class BluetoothScanner: NSObject
 {
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-  
-  var centralManager:CBCentralManager
-  let centralManagerDelegate = CentralManagerDelegate()
+  private var centralManager:CBCentralManager
+  private let centralManagerDelegate = CentralManagerDelegate()
+  private let centralManagerQueue = dispatch_queue_create(
+    "com.boutfitness.concept2.bluetooth.central",
+    DISPATCH_QUEUE_CONCURRENT
+  )
   
   @available(iOS 9.0, *)
   var isScanningForPerformanceMonitors:Bool {
@@ -23,7 +25,9 @@ public final class BluetoothScanner: NSObject
   }
   
   override public init() {
-    centralManager = CBCentralManager(delegate: centralManagerDelegate, queue: nil)
+    centralManager = CBCentralManager(delegate: centralManagerDelegate,
+      queue: centralManagerQueue)
+    
     super.init()
   }
   
