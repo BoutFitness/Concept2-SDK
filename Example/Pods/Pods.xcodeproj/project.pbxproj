@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		02368EE0778869070F95BE7A9CEA977D /* Pods-Concept2-SDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2394312BC67031846C382805B8CEAAD6 /* Pods-Concept2-SDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B0E1B7F1E9B8A2B586963C07E52F8BA /* Concept2-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEF9F991D5D5C2B44718FDD3294A94C9 /* Concept2-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		131DDFE11BBB6F270082F865 /* BluetoothScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DDFE01BBB6F270082F865 /* BluetoothScanner.swift */; settings = {ASSET_TAGS = (); }; };
+		131DDFE31BBB70C40082F865 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131DDFE21BBB70C40082F865 /* Services.swift */; settings = {ASSET_TAGS = (); }; };
 		1BC4F3BCC931CE307BD56333ED8378C5 /* CSAFECommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EB575EBF029376D2BDBF84AADC9C8D /* CSAFECommand.swift */; };
 		3B5619EE20E1C9FFB71C2A81FBFEA41D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E902C59EE3E79EAEF3D2DE086E31C /* Foundation.framework */; };
 		46BDB8B38F68BEEF5A8A8810FDBEC460 /* Pods-Concept2-SDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CCBD8F9A075AC278C0C5609EB228A0 /* Pods-Concept2-SDK_Tests-dummy.m */; };
@@ -51,6 +53,8 @@
 		08A0858582BA6301C16A73AB8D3C044B /* Concept2-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Concept2-SDK-prefix.pch"; sourceTree = "<group>"; };
 		0FE127A325E0EE0F1C3FCD643AE59249 /* Concept2-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Concept2-SDK.modulemap"; sourceTree = "<group>"; };
 		11851395CD3D8F63A358AF8FD6696041 /* Pods-Concept2-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Concept2-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		131DDFE01BBB6F270082F865 /* BluetoothScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothScanner.swift; sourceTree = "<group>"; };
+		131DDFE21BBB70C40082F865 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		14578D6A40E9501F0DE5008456128155 /* Concept2-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Concept2-SDK-Private.xcconfig"; sourceTree = "<group>"; };
 		179798C3B1ED1D3EB1931591894A14ED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B51E5DF6F552D174CF4258A42FE6748 /* Concept2-SDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Concept2-SDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +147,8 @@
 			children = (
 				81EB575EBF029376D2BDBF84AADC9C8D /* CSAFECommand.swift */,
 				DB5439C45E36E89076D1E3D29870218F /* PerformanceMonitor.swift */,
+				131DDFE01BBB6F270082F865 /* BluetoothScanner.swift */,
+				131DDFE21BBB70C40082F865 /* Services.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Bout Fitness, LLC";
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -425,7 +432,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				131DDFE31BBB70C40082F865 /* Services.swift in Sources */,
 				1BC4F3BCC931CE307BD56333ED8378C5 /* CSAFECommand.swift in Sources */,
+				131DDFE11BBB6F270082F865 /* BluetoothScanner.swift in Sources */,
 				A1F282CEF380D259C4DDB0E8FE207413 /* Concept2-SDK-dummy.m in Sources */,
 				8E3BC99C51BBDC60FFD64048F33C435A /* PerformanceMonitor.swift in Sources */,
 			);

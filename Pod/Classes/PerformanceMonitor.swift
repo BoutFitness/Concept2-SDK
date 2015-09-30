@@ -9,49 +9,103 @@
 import CoreBluetooth
 
 
-public class PerformanceMonitor: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
+public class PerformanceMonitor: NSObject, CBPeripheralDelegate
 {
+  var peripheral:CBPeripheral {
+    didSet {
+      peripheral.delegate = self
+      peripheral.discoverServices([
+        Service.DeviceInformation.UUID,
+        Service.Control.UUID,
+        Service.Rowing.UUID])
+    }
+  }
+  
+  init(withPeripheral peripheral:CBPeripheral) {
+    self.peripheral = peripheral
+    super.init()
+  }
+  
   //////////////////////////////////////////////////////////////////////////////////////////////////
-  // Service UUIDs
-  let BLEBaseServiceUUID = CBUUID(string: "CE060000-43E5-11E4-916C-0800200C9A66")
-  let BLEInformationServiceUUID = CBUUID(string: "CE060010-43E5-11E4-916C-0800200C9A66")
-  
-  public func scanForConnection()
-  {
-    let centralManager = CBCentralManager(delegate: self, queue: dispatch_get_main_queue())
-    centralManager.scanForPeripheralsWithServices([BLEBaseServiceUUID, BLEInformationServiceUUID],
-      options: [CBCentralManagerScanOptionAllowDuplicatesKey: false])
+  // MARK: - CBPeripheralDelegate -
+  // MARK: Services
+  public func peripheral(peripheral: CBPeripheral,
+    didDiscoverServices
+    error: NSError?) {
+    print("[PerformanceMonitor]didDiscoverServices")
   }
   
-  // MARK: CBCentralManagerDelegate
-  public func centralManagerDidUpdateState(central: CBCentralManager)
-  {
-    if central.state == .PoweredOn
-    {
-      central.scanForPeripheralsWithServices([BLEBaseServiceUUID, BLEInformationServiceUUID],
-        options: nil)
-    }
-    else
-    {
-      print("Local device Bluetooth not available")
-    }
+  public func peripheral(peripheral: CBPeripheral,
+    didDiscoverIncludedServicesForService
+    service: CBService,
+    error: NSError?) {
+    print("[PerformanceMonitor]didDiscoverIncludedServicesForService")
   }
   
-  public func centralManager(central: CBCentralManager, didDiscoverPeripheral
-    peripheral: CBPeripheral,
-    advertisementData: [String : AnyObject],
-    RSSI: NSNumber)
-  {
-    central.stopScan()
-    central.connectPeripheral(peripheral, options: nil)
+  public func peripheral(peripheral: CBPeripheral,
+    didModifyServices
+    invalidatedServices: [CBService]) {
+    print("[PerformanceMonitor]didModifyServices")
   }
   
-  public func centralManager(central: CBCentralManager, didConnectPeripheral
-    peripheral: CBPeripheral)
-  {
-    peripheral.delegate = self
-    peripheral.discoverServices(nil)
+  // MARK: Characteristics
+  public func peripheral(peripheral: CBPeripheral,
+    didDiscoverCharacteristicsForService
+    service: CBService,
+    error: NSError?) {
+    print("[PerformanceMonitor]didDiscoverCharacteristicsForService")
   }
   
-  // MARK: CBPeripheralDelegate
+  public func peripheral(peripheral: CBPeripheral,
+    didDiscoverDescriptorsForCharacteristic
+    characteristic: CBCharacteristic,
+    error: NSError?) {
+    print("[PerformanceMonitor]didDiscoverDescriptorsForCharacteristic")
+  }
+  
+  public func peripheral(peripheral: CBPeripheral,
+    didUpdateValueForCharacteristic
+    characteristic: CBCharacteristic,
+    error: NSError?) {
+    print("[PerformanceMonitor]didUpdateValueForCharacteristic")
+  }
+  
+  public func peripheral(peripheral: CBPeripheral,
+    didUpdateValueForDescriptor
+    descriptor: CBDescriptor,
+    error: NSError?) {
+    print("[PerformanceMonitor]didUpdateValueForDescriptor")
+  }
+  
+  public func peripheral(peripheral: CBPeripheral,
+    didWriteValueForCharacteristic
+    characteristic: CBCharacteristic,
+    error: NSError?) {
+    print("[PerformanceMonitor]didWriteValueForCharacteristic")
+  }
+  
+  public func peripheral(peripheral: CBPeripheral,
+    didWriteValueForDescriptor
+    descriptor: CBDescriptor,
+    error: NSError?) {
+    print("[PerformanceMonitor]didWriteValueForDescriptor")
+  }
+  
+  public func peripheral(peripheral: CBPeripheral,
+    didUpdateNotificationStateForCharacteristic
+    characteristic: CBCharacteristic,
+    error: NSError?) {
+    print("[PerformanceMonitor]didUpdateNotificationStateForCharacteristic")
+  }
+  
+  // MARK: Signal Strength
+  public func peripheralDidUpdateRSSI(peripheral: CBPeripheral,
+    error: NSError?) {
+    print("[PerformanceMonitor]didUpdateRSSI")
+  }
+  
+  // MARK: Name
+  public func peripheralDidUpdateName(peripheral: CBPeripheral) {
+    print("[PerformanceMonitor]didUpdateName")
+  }
 }

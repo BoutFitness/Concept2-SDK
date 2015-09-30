@@ -10,7 +10,7 @@ import UIKit
 import Concept2_SDK
 
 class ViewController: UIViewController {
-  let pm = Concept2_SDK.PerformanceMonitor()
+  let pm = Concept2_SDK.BluetoothScanner()
   
   override func viewDidLoad() {
     super.viewDidLoad()
