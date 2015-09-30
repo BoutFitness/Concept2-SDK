@@ -9,7 +9,7 @@
 import CoreBluetooth
 
 
-public class PerformanceMonitor: NSObject, CBPeripheralDelegate
+public final class PerformanceMonitor: NSObject, CBPeripheralDelegate
 {
   var peripheral:CBPeripheral {
     didSet {

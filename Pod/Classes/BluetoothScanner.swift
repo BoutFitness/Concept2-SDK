@@ -8,7 +8,7 @@
 
 import CoreBluetooth
 
-public class BluetoothScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
+public final class BluetoothScanner: NSObject
 {
   //////////////////////////////////////////////////////////////////////////////////////////////////
   
@@ -23,33 +23,37 @@ public class BluetoothScanner: NSObject, CBCentralManagerDelegate, CBPeripheralD
       centralManager = CBCentralManager(delegate: self, queue: dispatch_get_main_queue())
     }
   }
-  
-  // MARK: CBCentralManagerDelegate
+}
+
+// MARK: CBCentralManagerDelegate
+
+extension BluetoothScanner: CBCentralManagerDelegate
+{
   public func centralManagerDidUpdateState(central: CBCentralManager)
   {
     switch central.state {
     case .Unknown:
-      print("Bluetooth unknown")
+      print("[BluetoothScanner]state: unknown")
       break
     case .Resetting:
-      print("Bluetooth resetting")
+      print("[BluetoothScanner]state: resetting")
       break
     case .Unsupported:
-      print("Local device Bluetooth not available")
+      print("[BluetoothScanner]state: not available")
       break
     case .Unauthorized:
-      print("Local device Bluetooth not authorized")
+      print("[BluetoothScanner]state: not authorized")
       break
     case .PoweredOff:
-      print("Bluetooth powered off")
+      print("[BluetoothScanner]state: powered off")
       break
     case .PoweredOn:
-      print("Bluetooth powered on")
+      print("[BluetoothScanner]state: powered on")
       central.scanForPeripheralsWithServices([Service.DeviceDiscovery.UUID], options: nil)
       break
     }
   }
-  
+
   public func centralManager(central: CBCentralManager,
     didDiscoverPeripheral
     peripheral: CBPeripheral,
@@ -64,7 +68,7 @@ public class BluetoothScanner: NSObject, CBCentralManagerDelegate, CBPeripheralD
       central.connectPeripheral(peripheral, options: nil)
     }
   }
-  
+
   public func centralManager(central: CBCentralManager,
     didConnectPeripheral
     peripheral: CBPeripheral)
@@ -74,18 +78,18 @@ public class BluetoothScanner: NSObject, CBCentralManagerDelegate, CBPeripheralD
     
     performanceMonitors = [pm]
   }
-  
+
   public func centralManager(central: CBCentralManager,
     didFailToConnectPeripheral
     peripheral: CBPeripheral,
     error: NSError?) {
-    print("[BluetoothScanner]didFailToConnectPeripheral")
+      print("[BluetoothScanner]didFailToConnectPeripheral")
   }
-  
+
   public func centralManager(central: CBCentralManager,
     didDisconnectPeripheral
     peripheral: CBPeripheral,
     error: NSError?) {
-    print("[BluetoothScanner]didDisconnectPeripheral")
+      print("[BluetoothScanner]didDisconnectPeripheral")
   }
 }
