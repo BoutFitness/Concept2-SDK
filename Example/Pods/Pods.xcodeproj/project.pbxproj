@@ -23,6 +23,7 @@
 		A1F282CEF380D259C4DDB0E8FE207413 /* Concept2-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3DFD240E6E017CAB56AEA600672025 /* Concept2-SDK-dummy.m */; };
 		B0D2440D1BBC490F00ACFA7F /* PerformanceMonitorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2440C1BBC490F00ACFA7F /* PerformanceMonitorStore.swift */; settings = {ASSET_TAGS = (); }; };
 		B0D244101BBC4A9400ACFA7F /* CentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2440F1BBC4A9400ACFA7F /* CentralManagerDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		B0D244121BBC5D8B00ACFA7F /* PeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D244111BBC5D8B00ACFA7F /* PeripheralDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		F8FC7BDDBA04036B66B62F1976C95BB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E902C59EE3E79EAEF3D2DE086E31C /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		A9C98236D39B1429441C8493FBD9199F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0D2440C1BBC490F00ACFA7F /* PerformanceMonitorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceMonitorStore.swift; sourceTree = "<group>"; };
 		B0D2440F1BBC4A9400ACFA7F /* CentralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentralManagerDelegate.swift; sourceTree = "<group>"; };
+		B0D244111BBC5D8B00ACFA7F /* PeripheralDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralDelegate.swift; sourceTree = "<group>"; };
 		B26B9C8A111B8C0D58EBD6B0F0FA80D9 /* Concept2_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Concept2_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BE2961F3B49BACB045C623743A0488B7 /* Pods-Concept2-SDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Concept2-SDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				B0D2440C1BBC490F00ACFA7F /* PerformanceMonitorStore.swift */,
 				B0D2440F1BBC4A9400ACFA7F /* CentralManagerDelegate.swift */,
+				B0D244111BBC5D8B00ACFA7F /* PeripheralDelegate.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			files = (
 				B0D244101BBC4A9400ACFA7F /* CentralManagerDelegate.swift in Sources */,
 				131DDFE31BBB70C40082F865 /* Services.swift in Sources */,
+				B0D244121BBC5D8B00ACFA7F /* PeripheralDelegate.swift in Sources */,
 				1BC4F3BCC931CE307BD56333ED8378C5 /* CSAFECommand.swift in Sources */,
 				131DDFE11BBB6F270082F865 /* BluetoothScanner.swift in Sources */,
 				A1F282CEF380D259C4DDB0E8FE207413 /* Concept2-SDK-dummy.m in Sources */,

@@ -8,7 +8,7 @@
 
 import CoreBluetooth
 
-public final class BluetoothScanner: NSObject
+public final class BluetoothScanner
 {
   private var centralManager:CBCentralManager
   private let centralManagerDelegate = CentralManagerDelegate()
@@ -24,11 +24,10 @@ public final class BluetoothScanner: NSObject
     }
   }
   
-  override public init() {
+  // MARK: Initialization
+  public init() {
     centralManager = CBCentralManager(delegate: centralManagerDelegate,
       queue: centralManagerQueue)
-    
-    super.init()
   }
   
   public func scanForPerformanceMonitors() {
