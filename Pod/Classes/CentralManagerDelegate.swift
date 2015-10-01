@@ -10,6 +10,7 @@ import Foundation
 import CoreBluetooth
 
 class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
+  
   func centralManagerDidUpdateState(central: CBCentralManager)
   {
     switch central.state {
@@ -41,13 +42,8 @@ class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     advertisementData: [String : AnyObject],
     RSSI: NSNumber)
   {
-    print("[BluetoothScanner]didDiscoverPeripheral")
-    central.stopScan()
-    
-    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-    dispatch_after(delayTime, dispatch_get_main_queue()) { () -> Void in
-      central.connectPeripheral(peripheral, options: nil)
-    }
+    print("[BluetoothScanner]didDiscoverPeripheral \(peripheral)")
+    PeripheralStore.sharedInstance.addPeripheral(peripheral)
   }
   
   func centralManager(central: CBCentralManager,

@@ -8,6 +8,10 @@
 
 import CoreBluetooth
 
+public protocol BluetoothScannerDelegate {
+  func didLoadPeripherals(bluetoothScanner:BluetoothScanner, peripherals:Array<CBPeripheral>)
+}
+
 public final class BluetoothScanner
 {
   private var centralManager:CBCentralManager
@@ -24,10 +28,24 @@ public final class BluetoothScanner
     }
   }
   
+  public var delegate:BluetoothScannerDelegate
+  
   // MARK: Initialization
-  public init() {
+  public init(withDelegate delegate:BluetoothScannerDelegate) {
     centralManager = CBCentralManager(delegate: centralManagerDelegate,
       queue: centralManagerQueue)
+    self.delegate = delegate
+    
+    NSNotificationCenter.defaultCenter().addObserverForName(
+      PeripheralStoreDidAddItemNotification,
+      object: PeripheralStore.sharedInstance,
+      queue: nil) { (notification) -> Void in
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+          delegate.didLoadPeripherals(self,
+            peripherals: Array(PeripheralStore.sharedInstance.peripherals))
+        })
+
+    }
   }
   
   public func scanForPerformanceMonitors() {

@@ -6,7 +6,6 @@
 //  Copyright © 2015 Bout Fitness, LLC. All rights reserved.
 //
 
-import Foundation
 import CoreBluetooth
 
 class PeripheralDelegate: NSObject, CBPeripheralDelegate {
