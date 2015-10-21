@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+
+use_frameworks!
+
+target 'Example-iOS_Example', :exclusive => true do
+  pod "Concept2-SDK", :path => "../"
+end
+
+target 'Example-iOS_Tests', :exclusive => true do
+  pod "Concept2-SDK", :path => "../"
+end

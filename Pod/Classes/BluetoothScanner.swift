@@ -21,12 +21,14 @@ public final class BluetoothScanner
     DISPATCH_QUEUE_CONCURRENT
   )
   
+  #if os(iOS)
   @available(iOS 9.0, *)
   var isScanningForPerformanceMonitors:Bool {
     get {
       return centralManager.isScanning
     }
   }
+  #endif
   
   public var delegate:BluetoothScannerDelegate
   

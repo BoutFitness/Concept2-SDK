@@ -1,0 +1,14 @@
+PODS:
+  - Concept2-SDK (0.1.0)
+
+DEPENDENCIES:
+  - Concept2-SDK (from `../`)
+
+EXTERNAL SOURCES:
+  Concept2-SDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Concept2-SDK: 15ef43c6fdf1d5304790f601d872d0f8f01e567a
+
+COCOAPODS: 0.39.0
