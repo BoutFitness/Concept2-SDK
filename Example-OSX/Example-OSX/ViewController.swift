@@ -19,13 +19,17 @@ class ViewController: NSViewController {
     super.viewDidLoad()
 
     pm = Concept2_SDK.BluetoothScanner(withDelegate: self)
-    pm?.scanForPerformanceMonitors()
   }
-
+  
   override var representedObject: AnyObject? {
     didSet {
     // Update the view, if already loaded.
     }
+  }
+  
+  @IBAction
+  func scanDevicesAction(sender:AnyObject?) {
+    pm?.scanForPerformanceMonitors()
   }
 }
 
