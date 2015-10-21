@@ -1,4 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, 9.0
+
 use_frameworks!
 
 target 'Concept2-SDK_Example', :exclusive => true do

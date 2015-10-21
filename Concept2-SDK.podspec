@@ -1,43 +1,28 @@
-#
-# Be sure to run `pod lib lint Concept2-SDK.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = "Concept2-SDK"
-  s.version          = "0.1.0"
-  s.summary          = "Library for connecting to the Concept2 PM5 via Bluetooth."
+  s.name              = "Concept2-SDK"
+  s.version           = "0.1.0"
+  s.summary           = "Library for connecting to the Concept2 PM5 via Bluetooth."
+  s.description       = <<-DESC
+                         Library for connecting to the Concept2 PM5 via Bluetooth. The goal of this
+                         library is to provide complete coverage of the bluetooth functionality.
+                        DESC
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description      = <<-DESC
-                        Library for connecting to the Concept2 PM5 via Bluetooth. The goal of this
-                        library is to provide complete coverage of the bluetooth functionality.
-                       DESC
-
-  s.homepage         = "https://github.com/BoutFitness/Concept2-SDK"
+  s.homepage          = "https://github.com/BoutFitness/Concept2-SDK"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
-  s.author           = { "jessecurry" => "jesse@jessecurry.net" }
-  s.source           = { :git => "https://github.com/BoutFitness/Concept2-SDK.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/boutfitness'
+  s.license           = 'MIT'
+  s.author            = { "jessecurry" => "jesse@jessecurry.net" }
+  s.source            = { :git => "https://github.com/BoutFitness/Concept2-SDK.git", :tag => s.version.to_s }
+  s.social_media_url  = 'https://twitter.com/boutfitness'
 
-  s.platform     = :ios, '8.0'
-  s.requires_arc = true
+  s.platforms         = { :ios => '9.0', :osx => '10.10' }
+  s.requires_arc      = true
 
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'Concept2-SDK' => ['Pod/Assets/*.png']
-  }
+  s.source_files      = 'Pod/Classes/**/*'
+  # s.resource_bundles = {
+  #   'Concept2-SDK' => ['Pod/Assets/*.png']
+  # }
 
-  s.module_name = 'Concept2_SDK'
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'CoreBluetooth'
+  s.module_name       = 'Concept2_SDK'
+  s.frameworks        = 'CoreBluetooth'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
