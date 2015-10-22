@@ -4,7 +4,7 @@
 
 language: objective-c
 osx_image: xcode7
-podfile: Example/Podfile
+podfile: Example-iOS/Podfile
 env:
   global:
   - LC_CTYPE=en_US.UTF-8
@@ -14,7 +14,7 @@ env:
   - DESTINATION="OS=9.0,name=iPhone 6 Plus" SDK=iphonesimulator9.0 POD_LINT="YES"
 before_install:
 - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
-- pod install --project-directory=Example
+- pod install --project-directory=Example-iOS
 install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
