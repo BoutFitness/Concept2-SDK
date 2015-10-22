@@ -8,7 +8,7 @@
 
 import CoreBluetooth
 
-class PeripheralDelegate: NSObject, CBPeripheralDelegate {
+final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
   // MARK: Services
   func peripheral(peripheral: CBPeripheral,
     didDiscoverServices

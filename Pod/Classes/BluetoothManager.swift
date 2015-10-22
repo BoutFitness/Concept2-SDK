@@ -1,5 +1,5 @@
 //
-//  BluetoothScanner.swift
+//  BluetoothManager.swift
 //  Pods
 //
 //  Created by Jesse Curry on 9/29/15.
@@ -8,11 +8,11 @@
 
 import CoreBluetooth
 
-public protocol BluetoothScannerDelegate {
-  func didLoadPeripherals(bluetoothScanner:BluetoothScanner, peripherals:Array<CBPeripheral>)
+public protocol BluetoothManagerDelegate {
+  func didLoadPeripherals(bluetoothScanner:BluetoothManager, peripherals:Array<CBPeripheral>)
 }
 
-public final class BluetoothScanner
+public final class BluetoothManager
 {
   private var centralManager:CBCentralManager
   private let centralManagerDelegate = CentralManagerDelegate()
@@ -23,17 +23,15 @@ public final class BluetoothScanner
   
   #if os(iOS)
   @available(iOS 9.0, *)
-  var isScanningForPerformanceMonitors:Bool {
-    get {
-      return centralManager.isScanning
-    }
-  }
+  var isScanningForPerformanceMonitors:Bool { get { return centralManager.isScanning } }
   #endif
   
-  public var delegate:BluetoothScannerDelegate
+  var isReady:Bool { get { return centralManager.state == .PoweredOn } }
+  
+  public var delegate:BluetoothManagerDelegate
   
   // MARK: Initialization
-  public init(withDelegate delegate:BluetoothScannerDelegate) {
+  public init(withDelegate delegate:BluetoothManagerDelegate) {
     centralManager = CBCentralManager(delegate: centralManagerDelegate,
       queue: centralManagerQueue)
     self.delegate = delegate
@@ -50,12 +48,20 @@ public final class BluetoothScanner
     }
   }
   
-  public func scanForPerformanceMonitors() {
+  public func scanForPeripherals() {
     centralManager.scanForPeripheralsWithServices([Service.DeviceDiscovery.UUID],
       options: nil)
   }
   
-  public func stopScanningForPerformanceMonitors() {
+  public func stopScanningForPeripherals() {
     centralManager.stopScan()
+  }
+  
+  public func connectPeripheral(peripheral:CBPeripheral) {
+    centralManager.connectPeripheral(peripheral, options: nil)
+  }
+  
+  public func disconnectPeripheral(peripheral:CBPeripheral) {
+    centralManager.cancelPeripheralConnection(peripheral)
   }
 }

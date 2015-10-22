@@ -6,6 +6,9 @@
 //  Copyright © 2015 Bout Fitness, LLC. All rights reserved.
 //
 
+let PerformanceMonitorStoreDidAddItemNotification = "PerformanceMonitorStoreDidAddItemNotification"
+let PerformanceMonitorStoreDidRemoveItemNotification = "PerformanceMonitorStoreDidRemoveItemNotification"
+
 final class PerformanceMonitorStore {
   // Singleton
   static let sharedInstance = PerformanceMonitorStore()
@@ -15,9 +18,18 @@ final class PerformanceMonitorStore {
 
   func addPerformanceMonitor(performanceMonitor:PerformanceMonitor) {
     performanceMonitors.insert(performanceMonitor)
+    performanceMonitor.discoverServices()
+    
+    NSNotificationCenter.defaultCenter().postNotificationName(
+      PerformanceMonitorStoreDidAddItemNotification,
+      object: self)
   }
   
   func removePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
     performanceMonitors.remove(performanceMonitor)
+    
+    NSNotificationCenter.defaultCenter().postNotificationName(
+      PerformanceMonitorStoreDidRemoveItemNotification,
+      object: self)
   }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import CoreBluetooth
 
-class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
+final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
   
   func centralManagerDidUpdateState(central: CBCentralManager)
   {
@@ -31,7 +31,6 @@ class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
       break
     case .PoweredOn:
       print("[BluetoothScanner]state: powered on")
-      central.scanForPeripheralsWithServices([Service.DeviceDiscovery.UUID], options: nil)
       break
     }
   }
@@ -68,5 +67,8 @@ class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     peripheral: CBPeripheral,
     error: NSError?) {
       print("[BluetoothScanner]didDisconnectPeripheral")
+      PerformanceMonitorStore.sharedInstance.removePerformanceMonitor(
+        PerformanceMonitor(withPeripheral: peripheral)
+      )
   }
 }

@@ -18,7 +18,7 @@
 		978094F825959D0A030ACA025DCBA8F3 /* Pods-Example-iOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71FAB55845ECAD94E14E6BE394721121 /* Pods-Example-iOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB7ED300D7BC3A01D66FD757E431B5F2 /* Pods-Example-iOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 06BC1E60100957F3116CD297029B2FB8 /* Pods-Example-iOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA99115C05CD41463C5542231537687D /* PeripheralStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782CB9561ACBC0819F8CF2A5A6B1EFCB /* PeripheralStore.swift */; };
-		D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC548ACE033179B3B930101C1BE52300 /* BluetoothScanner.swift */; };
+		D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC548ACE033179B3B930101C1BE52300 /* BluetoothManager.swift */; };
 		DB43EECB6379B75DCFFA21F3730695AD /* Pods-Example-iOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34514411D0AF73ACB0446D85C6154B76 /* Pods-Example-iOS_Example-dummy.m */; };
 		DC3DFECB6B306C04F1216ACB277CEFF1 /* PerformanceMonitorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACA2DC3590AF058434FFB442DA02FD /* PerformanceMonitorStore.swift */; };
 		E27F505B2C2864CDD5556876173DD744 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D9C1FD2495DA5334F594F1F7BAB545 /* Foundation.framework */; };
@@ -82,7 +82,7 @@
 		E66B2EC5E68B1D7D76EB9C314DC17DD9 /* Concept2-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Concept2-SDK.xcconfig"; sourceTree = "<group>"; };
 		F0C65237E0E9D0F4DB3A0D5DE9F9E95D /* PeripheralDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PeripheralDelegate.swift; sourceTree = "<group>"; };
 		F7A98C7149846D762B0FDF802C1E0DEB /* Pods-Example-iOS_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-iOS_Example-resources.sh"; sourceTree = "<group>"; };
-		FC548ACE033179B3B930101C1BE52300 /* BluetoothScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BluetoothScanner.swift; sourceTree = "<group>"; };
+		FC548ACE033179B3B930101C1BE52300 /* BluetoothManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		FC7A89662DE2721781B86C030F872BC3 /* Concept2_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Concept2_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF28950EC14DA4572C1286192D5CC7ED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,7 +234,7 @@
 		B1EC70EF34202011D900794B70B5FBC4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FC548ACE033179B3B930101C1BE52300 /* BluetoothScanner.swift */,
+				FC548ACE033179B3B930101C1BE52300 /* BluetoothManager.swift */,
 				990680554B3DC5F9E8092368159BF60F /* CentralManagerDelegate.swift */,
 				A104A5FA0FFC1C5BF300C477485DEDCE /* CSAFECommand.swift */,
 				2E4B08FEBDEC885092DAAC4BDDA15550 /* PerformanceMonitor.swift */,
@@ -386,7 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothScanner.swift in Sources */,
+				D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothManager.swift in Sources */,
 				7E3FE6A6724410B345C4447A239FC45F /* CentralManagerDelegate.swift in Sources */,
 				69151A31BA34C510F408551FA8F8C0C0 /* Concept2-SDK-dummy.m in Sources */,
 				4051A62D1EE9763CC82D5F6EA74C443C /* CSAFECommand.swift in Sources */,

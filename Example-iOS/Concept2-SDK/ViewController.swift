@@ -14,7 +14,7 @@ class ViewController: UIViewController {
   @IBOutlet
   var tableView:UITableView!
   
-  var pm:BluetoothScanner?
+  var scanner:BluetoothManager?
   var peripherals = Array<CBPeripheral>()
   
   override func viewDidLoad() {
@@ -25,15 +25,15 @@ class ViewController: UIViewController {
   
   @IBAction func scanAction(sender:AnyObject?)
   {
-    pm = Concept2_SDK.BluetoothScanner(withDelegate: self)
-    pm?.scanForPerformanceMonitors()
+    scanner = Concept2_SDK.BluetoothManager(withDelegate: self)
+    scanner?.scanForPeripherals()
   }
   
 }
 
-// MARK: BluetoothScannerDelegate
-extension ViewController: BluetoothScannerDelegate {
-  func didLoadPeripherals(bluetoothScanner: BluetoothScanner, peripherals: Array<CBPeripheral>) {
+// MARK: BluetoothManagerDelegate
+extension ViewController: BluetoothManagerDelegate {
+  func didLoadPeripherals(bluetoothScanner: BluetoothManager, peripherals: Array<CBPeripheral>) {
     self.peripherals = peripherals
     tableView.reloadData()
   }
@@ -60,5 +60,12 @@ extension ViewController: UITableViewDataSource {
 }
 
 // MARK: UITableViewDelegate
-
+extension ViewController: UITableViewDelegate {
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    
+    let peripheral:CBPeripheral = peripherals[indexPath.row]
+    scanner?.connectPeripheral(peripheral)
+  }
+}
 
