@@ -9,30 +9,37 @@
 import Foundation
 import CoreBluetooth
 
+let BluetoothManagerDidUpdateStateNotification = "BluetoothManagerDidUpdateStateNotification"
+
 final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
-  
+  weak var bluetoothManager:BluetoothManager?
+    
   func centralManagerDidUpdateState(central: CBCentralManager)
   {
     switch central.state {
     case .Unknown:
-      print("[BluetoothScanner]state: unknown")
+      print("[BluetoothManager]state: unknown")
       break
     case .Resetting:
-      print("[BluetoothScanner]state: resetting")
+      print("[BluetoothManager]state: resetting")
       break
     case .Unsupported:
-      print("[BluetoothScanner]state: not available")
+      print("[BluetoothManager]state: not available")
       break
     case .Unauthorized:
-      print("[BluetoothScanner]state: not authorized")
+      print("[BluetoothManager]state: not authorized")
       break
     case .PoweredOff:
-      print("[BluetoothScanner]state: powered off")
+      print("[BluetoothManager]state: powered off")
       break
     case .PoweredOn:
-      print("[BluetoothScanner]state: powered on")
+      print("[BluetoothManager]state: powered on")
       break
     }
+    
+    NSNotificationCenter.defaultCenter().postNotificationName(
+      BluetoothManagerDidUpdateStateNotification,
+      object: bluetoothManager)
   }
   
   func centralManager(central: CBCentralManager,
@@ -41,34 +48,34 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     advertisementData: [String : AnyObject],
     RSSI: NSNumber)
   {
-    print("[BluetoothScanner]didDiscoverPeripheral \(peripheral)")
-    PeripheralStore.sharedInstance.addPeripheral(peripheral)
-  }
-  
-  func centralManager(central: CBCentralManager,
-    didConnectPeripheral
-    peripheral: CBPeripheral)
-  {
-    print("[BluetoothScanner]didConnectPeripheral")
+    print("[BluetoothManager]didDiscoverPeripheral \(peripheral)")
     PerformanceMonitorStore.sharedInstance.addPerformanceMonitor(
       PerformanceMonitor(withPeripheral: peripheral)
     )
   }
   
   func centralManager(central: CBCentralManager,
+    didConnectPeripheral
+    peripheral: CBPeripheral)
+  {
+    print("[BluetoothManager]didConnectPeripheral")
+    peripheral.discoverServices([
+      Service.DeviceInformation.UUID,
+      Service.Control.UUID,
+      Service.Rowing.UUID])
+  }
+  
+  func centralManager(central: CBCentralManager,
     didFailToConnectPeripheral
     peripheral: CBPeripheral,
     error: NSError?) {
-      print("[BluetoothScanner]didFailToConnectPeripheral")
+      print("[BluetoothManager]didFailToConnectPeripheral")
   }
   
   func centralManager(central: CBCentralManager,
     didDisconnectPeripheral
     peripheral: CBPeripheral,
     error: NSError?) {
-      print("[BluetoothScanner]didDisconnectPeripheral")
-      PerformanceMonitorStore.sharedInstance.removePerformanceMonitor(
-        PerformanceMonitor(withPeripheral: peripheral)
-      )
+      print("[BluetoothManager]didDisconnectPeripheral")
   }
 }

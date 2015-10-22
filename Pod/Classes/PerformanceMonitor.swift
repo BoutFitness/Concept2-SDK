@@ -13,17 +13,13 @@ public final class PerformanceMonitor
   var peripheral:CBPeripheral
   let peripheralDelegate = PeripheralDelegate()
   
+  public var peripheralName:String { get { return peripheral.name ?? "Unknown" } }
+  public var peripheralIdentifier:String { get { return peripheral.identifier.UUIDString } }
+  
   // MARK: Initialization
   init(withPeripheral peripheral:CBPeripheral) {
     peripheral.delegate = peripheralDelegate
     self.peripheral = peripheral
-  }
-  
-  func discoverServices() {
-    peripheral.discoverServices([
-      Service.DeviceInformation.UUID,
-      Service.Control.UUID,
-      Service.Rowing.UUID])
   }
 }
 

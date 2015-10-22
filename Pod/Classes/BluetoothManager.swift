@@ -9,7 +9,8 @@
 import CoreBluetooth
 
 public protocol BluetoothManagerDelegate {
-  func didLoadPeripherals(bluetoothScanner:BluetoothManager, peripherals:Array<CBPeripheral>)
+  func didLoadPerformanceMonitors(bluetoothManager:BluetoothManager,
+    performanceMonitors:Array<PerformanceMonitor>)
 }
 
 public final class BluetoothManager
@@ -32,36 +33,40 @@ public final class BluetoothManager
   
   // MARK: Initialization
   public init(withDelegate delegate:BluetoothManagerDelegate) {
+    // Initialize 
     centralManager = CBCentralManager(delegate: centralManagerDelegate,
       queue: centralManagerQueue)
     self.delegate = delegate
     
+    //
+    centralManagerDelegate.bluetoothManager = self
+    
+    //
     NSNotificationCenter.defaultCenter().addObserverForName(
-      PeripheralStoreDidAddItemNotification,
-      object: PeripheralStore.sharedInstance,
+      PerformanceMonitorStoreDidAddItemNotification,
+      object: PerformanceMonitorStore.sharedInstance,
       queue: nil) { (notification) -> Void in
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-          delegate.didLoadPeripherals(self,
-            peripherals: Array(PeripheralStore.sharedInstance.peripherals))
+          delegate.didLoadPerformanceMonitors(self,
+            performanceMonitors: Array(PerformanceMonitorStore.sharedInstance.performanceMonitors))
         })
-
     }
   }
   
-  public func scanForPeripherals() {
+  public func scanForPerformanceMonitors() {
     centralManager.scanForPeripheralsWithServices([Service.DeviceDiscovery.UUID],
       options: nil)
   }
   
-  public func stopScanningForPeripherals() {
+  public func stopScanningForPerformanceMonitors() {
     centralManager.stopScan()
   }
   
-  public func connectPeripheral(peripheral:CBPeripheral) {
-    centralManager.connectPeripheral(peripheral, options: nil)
+  public func connectPerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+    centralManager.connectPeripheral(performanceMonitor.peripheral, options: nil)
   }
   
-  public func disconnectPeripheral(peripheral:CBPeripheral) {
-    centralManager.cancelPeripheralConnection(peripheral)
+  public func disconnectPerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+    centralManager.cancelPeripheralConnection(performanceMonitor.peripheral)
   }
 }

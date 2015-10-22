@@ -17,7 +17,6 @@
 		96A828BCFCD1C4F61257A4409370A4F7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F8AD25F8BF82C8B570FDF5E1925FAA /* CoreBluetooth.framework */; };
 		978094F825959D0A030ACA025DCBA8F3 /* Pods-Example-iOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71FAB55845ECAD94E14E6BE394721121 /* Pods-Example-iOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB7ED300D7BC3A01D66FD757E431B5F2 /* Pods-Example-iOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 06BC1E60100957F3116CD297029B2FB8 /* Pods-Example-iOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA99115C05CD41463C5542231537687D /* PeripheralStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782CB9561ACBC0819F8CF2A5A6B1EFCB /* PeripheralStore.swift */; };
 		D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC548ACE033179B3B930101C1BE52300 /* BluetoothManager.swift */; };
 		DB43EECB6379B75DCFFA21F3730695AD /* Pods-Example-iOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34514411D0AF73ACB0446D85C6154B76 /* Pods-Example-iOS_Example-dummy.m */; };
 		DC3DFECB6B306C04F1216ACB277CEFF1 /* PerformanceMonitorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACA2DC3590AF058434FFB442DA02FD /* PerformanceMonitorStore.swift */; };
@@ -62,7 +61,6 @@
 		67740DBE44F970380CA98252BE6E69A8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68F8AD25F8BF82C8B570FDF5E1925FAA /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
 		71FAB55845ECAD94E14E6BE394721121 /* Pods-Example-iOS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-iOS_Tests-umbrella.h"; sourceTree = "<group>"; };
-		782CB9561ACBC0819F8CF2A5A6B1EFCB /* PeripheralStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PeripheralStore.swift; sourceTree = "<group>"; };
 		8BDB4B710F563CB168233CFE986C8AFA /* Pods-Example-iOS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-iOS_Tests-dummy.m"; sourceTree = "<group>"; };
 		9095907CCC512BF619D890C14E8DE105 /* Concept2-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Concept2-SDK-umbrella.h"; sourceTree = "<group>"; };
 		943EB7A33B7D1041F83B01ECA3B260A1 /* Pods-Example-iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example-iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 				2E4B08FEBDEC885092DAAC4BDDA15550 /* PerformanceMonitor.swift */,
 				BBACA2DC3590AF058434FFB442DA02FD /* PerformanceMonitorStore.swift */,
 				F0C65237E0E9D0F4DB3A0D5DE9F9E95D /* PeripheralDelegate.swift */,
-				782CB9561ACBC0819F8CF2A5A6B1EFCB /* PeripheralStore.swift */,
 				260F42C87B39DA34173064FC358EC797 /* Services.swift */,
 			);
 			path = Classes;
@@ -393,7 +390,6 @@
 				E3C768FB0446F6A8D44EC7AEE682C2EE /* PerformanceMonitor.swift in Sources */,
 				DC3DFECB6B306C04F1216ACB277CEFF1 /* PerformanceMonitorStore.swift in Sources */,
 				ED4E671C56CD360AE40E7B80E6029C8B /* PeripheralDelegate.swift in Sources */,
-				CA99115C05CD41463C5542231537687D /* PeripheralStore.swift in Sources */,
 				287C53CD7D501AF752246EE1CBCB3B86 /* Services.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

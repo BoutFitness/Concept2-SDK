@@ -18,7 +18,6 @@ final class PerformanceMonitorStore {
 
   func addPerformanceMonitor(performanceMonitor:PerformanceMonitor) {
     performanceMonitors.insert(performanceMonitor)
-    performanceMonitor.discoverServices()
     
     NSNotificationCenter.defaultCenter().postNotificationName(
       PerformanceMonitorStoreDidAddItemNotification,

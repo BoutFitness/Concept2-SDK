@@ -24,12 +24,13 @@ class BluetoothManagerTests: XCTestCase {
   }
   
   func testScanning() {
-    scanner.scanForPeripherals()
+    scanner.scanForPerformanceMonitors()
   }
 }
 
 class BluetoothManagerTestDelegate: BluetoothManagerDelegate {
-  func didLoadPeripherals(bluetoothScanner:BluetoothManager, peripherals:Array<CBPeripheral>) {
+  func didLoadPerformanceMonitors(bluetoothManager: BluetoothManager,
+    performanceMonitors: Array<PerformanceMonitor>) {
     
   }
 }
