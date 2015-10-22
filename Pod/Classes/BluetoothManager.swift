@@ -8,6 +8,8 @@
 
 import CoreBluetooth
 
+public let BluetoothManagerDidUpdateStateNotification = "BluetoothManagerDidUpdateStateNotification"
+
 public protocol BluetoothManagerDelegate {
   func didLoadPerformanceMonitors(bluetoothManager:BluetoothManager,
     performanceMonitors:Array<PerformanceMonitor>)
@@ -27,7 +29,7 @@ public final class BluetoothManager
   var isScanningForPerformanceMonitors:Bool { get { return centralManager.isScanning } }
   #endif
   
-  var isReady:Bool { get { return centralManager.state == .PoweredOn } }
+  public var isReady:Bool { get { return centralManager.state == .PoweredOn } }
   
   public var delegate:BluetoothManagerDelegate
   

@@ -11,23 +11,39 @@ import Concept2_SDK
 import CoreBluetooth
 
 class ViewController: UIViewController {
-  @IBOutlet
-  var tableView:UITableView!
+  @IBOutlet var scanButton:UIButton!
+  @IBOutlet var tableView:UITableView!
   
+  //
   var manager:BluetoothManager?
   var performanceMonitors = Array<PerformanceMonitor>()
   
+  // MARK: UIViewController lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     manager = Concept2_SDK.BluetoothManager(withDelegate: self)
+    NSNotificationCenter.defaultCenter().addObserverForName(
+      BluetoothManagerDidUpdateStateNotification,
+      object: manager,
+      queue: nil) { (notification) -> Void in
+        self.managerStateDidUpdate()
+    }
+    
+    managerStateDidUpdate()
     tableView.reloadData()
   }
   
-  @IBAction func scanAction(sender:AnyObject?)
+  @IBAction
+  func scanAction(sender:AnyObject?)
   {
     manager?.scanForPerformanceMonitors()
   }
   
+  //
+  func managerStateDidUpdate() {
+    scanButton.enabled = manager?.isReady ?? false
+  }
 }
 
 // MARK: BluetoothManagerDelegate

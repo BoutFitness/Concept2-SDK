@@ -9,8 +9,6 @@
 import Foundation
 import CoreBluetooth
 
-let BluetoothManagerDidUpdateStateNotification = "BluetoothManagerDidUpdateStateNotification"
-
 final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
   weak var bluetoothManager:BluetoothManager?
     
