@@ -55,6 +55,7 @@ class ViewController: UIViewController {
   }
   
   func performanceMonitorStateDidUpdate(performanceMonitor:PerformanceMonitor) {
+    print("PerformanceMonitorStateDidUpdate: \(performanceMonitor.peripheralName)")
     if performanceMonitor.isConnected {
       performanceMonitor.enableDeviceInformationService()
       performanceMonitor.enableControlService()

@@ -56,6 +56,11 @@ public final class PerformanceMonitor
       peripheral.discoverServices([ServiceDefinition.Control.UUID])
       controlServiceEnabled = true
     }
+    
+    // TODO: remove test code
+    peripheral.services?.forEach({ (service:CBService) -> () in
+      peripheral.discoverCharacteristics(nil, forService: service)
+    })
   }
   
   // MARK: Rowing

@@ -57,6 +57,9 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     peripheral: CBPeripheral)
   {
     print("[BluetoothManager]didConnectPeripheral")
+    NSNotificationCenter.defaultCenter().postNotificationName(
+      PerformanceMonitorDidUpdateStateNotification,
+      object: PerformanceMonitorStore.sharedInstance.performanceMonitorWithPeripheral(peripheral))
   }
   
   func centralManager(central: CBCentralManager,

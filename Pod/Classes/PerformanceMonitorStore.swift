@@ -6,6 +6,8 @@
 //  Copyright © 2015 Bout Fitness, LLC. All rights reserved.
 //
 
+import CoreBluetooth
+
 let PerformanceMonitorStoreDidAddItemNotification = "PerformanceMonitorStoreDidAddItemNotification"
 let PerformanceMonitorStoreDidRemoveItemNotification = "PerformanceMonitorStoreDidRemoveItemNotification"
 
@@ -22,6 +24,18 @@ final class PerformanceMonitorStore {
     NSNotificationCenter.defaultCenter().postNotificationName(
       PerformanceMonitorStoreDidAddItemNotification,
       object: self)
+  }
+  
+  func performanceMonitorWithPeripheral(peripheral:CBPeripheral) -> PerformanceMonitor? {
+    var pm:PerformanceMonitor?
+    
+    performanceMonitors.forEach { (performanceMonitor:PerformanceMonitor) -> () in
+      if performanceMonitor.peripheral == peripheral {
+        pm = performanceMonitor
+      }
+    }
+    
+    return pm
   }
   
   func removePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
