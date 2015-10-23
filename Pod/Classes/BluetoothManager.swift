@@ -18,7 +18,11 @@ public protocol BluetoothManagerDelegate {
 public final class BluetoothManager
 {
   private var centralManager:CBCentralManager
-  private let centralManagerDelegate = CentralManagerDelegate()
+  private var centralManagerDelegate:CentralManagerDelegate {
+    didSet {
+      centralManagerDelegate.bluetoothManager = self
+    }
+  }
   private let centralManagerQueue = dispatch_queue_create(
     "com.boutfitness.concept2.bluetooth.central",
     DISPATCH_QUEUE_CONCURRENT
@@ -35,13 +39,10 @@ public final class BluetoothManager
   
   // MARK: Initialization
   public init(withDelegate delegate:BluetoothManagerDelegate) {
-    // Initialize 
+    self.delegate = delegate
+    centralManagerDelegate = CentralManagerDelegate()
     centralManager = CBCentralManager(delegate: centralManagerDelegate,
       queue: centralManagerQueue)
-    self.delegate = delegate
-    
-    //
-    centralManagerDelegate.bluetoothManager = self
     
     //
     NSNotificationCenter.defaultCenter().addObserverForName(
@@ -56,7 +57,7 @@ public final class BluetoothManager
   }
   
   public func scanForPerformanceMonitors() {
-    centralManager.scanForPeripheralsWithServices([Service.DeviceDiscovery.UUID],
+    centralManager.scanForPeripheralsWithServices([ServiceDefinition.DeviceDiscovery.UUID],
       options: nil)
   }
   

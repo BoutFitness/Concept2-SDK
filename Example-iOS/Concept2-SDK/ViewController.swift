@@ -30,6 +30,15 @@ class ViewController: UIViewController {
         self.managerStateDidUpdate()
     }
     
+    NSNotificationCenter.defaultCenter().addObserverForName(
+      PerformanceMonitorDidUpdateStateNotification,
+      object:  nil,
+      queue: nil) { (notification) -> Void in
+        if let pm = notification.object as? PerformanceMonitor {
+          self.performanceMonitorStateDidUpdate(pm)
+        }
+    }
+    
     managerStateDidUpdate()
     tableView.reloadData()
   }
@@ -43,6 +52,14 @@ class ViewController: UIViewController {
   //
   func managerStateDidUpdate() {
     scanButton.enabled = manager?.isReady ?? false
+  }
+  
+  func performanceMonitorStateDidUpdate(performanceMonitor:PerformanceMonitor) {
+    if performanceMonitor.isConnected {
+      performanceMonitor.enableDeviceInformationService()
+      performanceMonitor.enableControlService()
+      performanceMonitor.enableRowingService()
+    }
   }
 }
 
@@ -79,6 +96,10 @@ extension ViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
     
+    // We've found a PM to connect to, stop scanning to save power
+    manager?.stopScanningForPerformanceMonitors()
+    
+    // Attempt to connect to the PM
     let pm:PerformanceMonitor = performanceMonitors[indexPath.row]
     manager?.connectPerformanceMonitor(pm)
   }

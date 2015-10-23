@@ -9,11 +9,17 @@
 import CoreBluetooth
 
 final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
+  weak var performanceMonitor:PerformanceMonitor?
+  
   // MARK: Services
   func peripheral(peripheral: CBPeripheral,
     didDiscoverServices
     error: NSError?) {
-      print("[PerformanceMonitor]didDiscoverServices")
+      print("[PerformanceMonitor]didDiscoverServices:")
+      peripheral.services?.forEach({ (service:CBService) -> () in
+        print("\t* \(service.description)")
+        peripheral.discoverCharacteristics(nil, forService: service)
+      })
   }
   
   func peripheral(peripheral: CBPeripheral,
@@ -35,6 +41,9 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
     service: CBService,
     error: NSError?) {
       print("[PerformanceMonitor]didDiscoverCharacteristicsForService")
+      service.characteristics?.forEach({ (characteristic:CBCharacteristic) -> () in
+        peripheral.setNotifyValue(true, forCharacteristic: characteristic)
+      })
   }
   
   func peripheral(peripheral: CBPeripheral,
@@ -48,7 +57,7 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
     didUpdateValueForCharacteristic
     characteristic: CBCharacteristic,
     error: NSError?) {
-      print("[PerformanceMonitor]didUpdateValueForCharacteristic")
+      print("[PerformanceMonitor]didUpdateValueForCharacteristic: \(characteristic)")
   }
   
   func peripheral(peripheral: CBPeripheral,

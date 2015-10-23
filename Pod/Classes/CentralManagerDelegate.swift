@@ -57,10 +57,6 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     peripheral: CBPeripheral)
   {
     print("[BluetoothManager]didConnectPeripheral")
-    peripheral.discoverServices([
-      Service.DeviceInformation.UUID,
-      Service.Control.UUID,
-      Service.Rowing.UUID])
   }
   
   func centralManager(central: CBCentralManager,
