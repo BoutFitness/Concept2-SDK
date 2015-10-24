@@ -30,8 +30,8 @@ public final class PerformanceMonitor
   }
   
   // MARK: -
-  public func updateNotificationState() {
-    print("[PerformanceMonitor]updateNotificationState()")
+  func updatePeripheralObservers() {
+    print("[PerformanceMonitor]updatePeripheralObservers")
     
     peripheral.services?.forEach({ (service:CBService) -> () in
       print("Requesting notifications for \(service.description)")

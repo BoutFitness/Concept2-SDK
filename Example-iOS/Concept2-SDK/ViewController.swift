@@ -63,7 +63,6 @@ class ViewController: UIViewController {
       performanceMonitor.enableControlService()
       performanceMonitor.enableRowingService()
     }
-    performanceMonitor.updateNotificationState()
   }
 }
 
