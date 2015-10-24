@@ -11,7 +11,8 @@ import CoreBluetooth
 
 final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
   weak var bluetoothManager:BluetoothManager?
-    
+  
+  // MARK: Central Manager Status
   func centralManagerDidUpdateState(central: CBCentralManager)
   {
     switch central.state {
@@ -40,6 +41,7 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
       object: bluetoothManager)
   }
   
+  // MARK: Peripheral Discovery
   func centralManager(central: CBCentralManager,
     didDiscoverPeripheral
     peripheral: CBPeripheral,
@@ -52,19 +54,13 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     )
   }
   
+  // MARK: Peripheral Connections
   func centralManager(central: CBCentralManager,
     didConnectPeripheral
     peripheral: CBPeripheral)
   {
     print("[BluetoothManager]didConnectPeripheral")
-    let performanceMonitorStore = PerformanceMonitorStore.sharedInstance
-    
-    if let pm = performanceMonitorStore.performanceMonitorWithPeripheral(peripheral) {
-      pm.updatePeripheralObservers()
-      NSNotificationCenter.defaultCenter().postNotificationName(
-        PerformanceMonitorDidUpdateStateNotification,
-        object: pm)
-    }
+    postPerformanceMonitorNotificationForPeripheral(peripheral)
   }
   
   func centralManager(central: CBCentralManager,
@@ -72,6 +68,7 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     peripheral: CBPeripheral,
     error: NSError?) {
       print("[BluetoothManager]didFailToConnectPeripheral")
+      postPerformanceMonitorNotificationForPeripheral(peripheral)
   }
   
   func centralManager(central: CBCentralManager,
@@ -79,5 +76,17 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     peripheral: CBPeripheral,
     error: NSError?) {
       print("[BluetoothManager]didDisconnectPeripheral")
+      postPerformanceMonitorNotificationForPeripheral(peripheral)
+  }
+  
+  // MARK: -
+  private func postPerformanceMonitorNotificationForPeripheral(peripheral:CBPeripheral) {
+    let performanceMonitorStore = PerformanceMonitorStore.sharedInstance
+    if let pm = performanceMonitorStore.performanceMonitorWithPeripheral(peripheral) {
+      pm.updatePeripheralObservers()
+      NSNotificationCenter.defaultCenter().postNotificationName(
+        PerformanceMonitorDidUpdateStateNotification,
+        object: pm)
+    }
   }
 }

@@ -27,7 +27,9 @@ class ViewController: UIViewController {
       BluetoothManagerDidUpdateStateNotification,
       object: manager,
       queue: nil) { (notification) -> Void in
-        self.managerStateDidUpdate()
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+          self.managerStateDidUpdate()
+        })
     }
     
     NSNotificationCenter.defaultCenter().addObserverForName(
@@ -35,12 +37,18 @@ class ViewController: UIViewController {
       object:  nil,
       queue: nil) { (notification) -> Void in
         if let pm = notification.object as? PerformanceMonitor {
-          self.performanceMonitorStateDidUpdate(pm)
+          dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.performanceMonitorStateDidUpdate(pm)
+          })
         }
     }
     
-    managerStateDidUpdate()
     tableView.reloadData()
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    managerStateDidUpdate()
   }
   
   @IBAction
@@ -56,6 +64,11 @@ class ViewController: UIViewController {
   
   func performanceMonitorStateDidUpdate(performanceMonitor:PerformanceMonitor) {
     print("PerformanceMonitorStateDidUpdate: \(performanceMonitor.peripheralName)")
+    
+    if let index = performanceMonitors.indexOf(performanceMonitor) {
+      tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)],
+        withRowAnimation: .Automatic)
+    }
     
     if performanceMonitor.isConnected {
       print("\tConnected - Enabling services")
@@ -86,6 +99,7 @@ extension ViewController: UITableViewDataSource {
       
       cell.textLabel?.text = pm.peripheralName
       cell.detailTextLabel?.text = pm.peripheralIdentifier
+      cell.accessoryType = pm.isConnected ? .Checkmark : .None
       
       return cell
     } else {
