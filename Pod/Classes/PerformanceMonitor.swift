@@ -35,44 +35,45 @@ public final class PerformanceMonitor
     
     peripheral.services?.forEach({ (service:CBService) -> () in
       print("Requesting notifications for \(service.description)")
-      peripheral.discoverCharacteristics(nil, forService: service)
       
-      service.characteristics?.forEach({ (characteristic:CBCharacteristic) -> () in
-        print("\t* \(characteristic)")
-        peripheral.setNotifyValue(true, forCharacteristic: characteristic)
-      })
+      if let svc = Service(rawValue: service.UUID.UUIDString) {
+        peripheral.discoverCharacteristics(svc.characteristicUUIDs,
+          forService:  service)
+        
+        service.characteristics?.forEach({ (characteristic:CBCharacteristic) -> () in
+          print("\t* \(characteristic)")
+          peripheral.setNotifyValue(true, forCharacteristic: characteristic)
+        })
+      }
     })
   }
   
   // MARK: Device Information
-  private let deviceInformationService = DeviceInformationService()
   private var deviceInformationServiceEnabled = false
   public func enableDeviceInformationService() {
     if !deviceInformationServiceEnabled {
       print("[PerformanceMonitor]enabling device information service")
-      peripheral.discoverServices([ServiceDefinition.DeviceInformation.UUID])
+      peripheral.discoverServices([Service.DeviceInformation.UUID])
       deviceInformationServiceEnabled = true
     }
   }
   
   // MARK: Control
-  private let controlService = ControlService()
   private var controlServiceEnabled = false
   public func enableControlService() {
     if !controlServiceEnabled {
       print("[PerformanceMonitor]enabling control service")
-      peripheral.discoverServices([ServiceDefinition.Control.UUID])
+      peripheral.discoverServices([Service.Control.UUID])
       controlServiceEnabled = true
     }
   }
   
   // MARK: Rowing
-  private let rowingService = RowingService()
   private var rowingServiceEnabled = false
   public func enableRowingService() {
     if !rowingServiceEnabled {
       print("[PerformanceMonitor]enabling rowing service")
-      peripheral.discoverServices([ServiceDefinition.Rowing.UUID])
+      peripheral.discoverServices([Service.Rowing.UUID])
       rowingServiceEnabled = true
     }
   }

@@ -18,7 +18,11 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
       print("[PerformanceMonitor]didDiscoverServices:")
       peripheral.services?.forEach({ (service:CBService) -> () in
         print("\t* \(service.description)")
-        peripheral.discoverCharacteristics(nil, forService: service)
+
+        if let svc = Service(rawValue: service.UUID.UUIDString) {
+          peripheral.discoverCharacteristics(svc.characteristicUUIDs,
+            forService:  service)
+        }
       })
   }
   
@@ -58,6 +62,11 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
     characteristic: CBCharacteristic,
     error: NSError?) {
       print("[PerformanceMonitor]didUpdateValueForCharacteristic: \(characteristic)")
+      if let svc = Service(rawValue: characteristic.service.UUID.UUIDString) {
+        if let c = svc.characteristic(string: characteristic.UUID.UUIDString) {
+          c.parse(data: characteristic.value)
+        }
+      }
   }
   
   func peripheral(peripheral: CBPeripheral,

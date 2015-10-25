@@ -34,5 +34,16 @@ final class RowingGeneralStatus: CharacteristicModel {
   
   init(fromData data: NSData) {
     assert(data.length == DataLength, "Unexpected data length!")
+    
+    var dataArray = [UInt8](count: DataLength, repeatedValue: 0)
+    data.getBytes(&dataArray, length: DataLength)
+    
+    let lo = UInt32(dataArray[0])
+    let mid = UInt32(dataArray[1])
+    let high = UInt32(dataArray[2])
+    
+    let elapsedTime = ((lo) | (mid << 8) | (high << 16))
+    
+    print("[RowingGeneralStatus]elapse time: \(elapsedTime)")
   }
 }

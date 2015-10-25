@@ -57,7 +57,7 @@ public final class BluetoothManager
   }
   
   public func scanForPerformanceMonitors() {
-    centralManager.scanForPeripheralsWithServices([ServiceDefinition.DeviceDiscovery.UUID],
+    centralManager.scanForPeripheralsWithServices([Service.DeviceDiscovery.UUID],
       options: nil)
   }
   

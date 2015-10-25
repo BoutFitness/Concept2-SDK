@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13D7C8801BD9CC0C00705BF5 /* DeviceInformationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C87F1BD9CC0C00705BF5 /* DeviceInformationService.swift */; };
-		13D7C8821BD9CC2E00705BF5 /* ControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8811BD9CC2E00705BF5 /* ControlService.swift */; };
-		13D7C8841BD9CC4800705BF5 /* RowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8831BD9CC4800705BF5 /* RowingService.swift */; };
-		13D7C8861BD9D07D00705BF5 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8851BD9D07D00705BF5 /* ServiceProtocol.swift */; };
 		13D7C88C1BDC1CEB00705BF5 /* RowingGeneralStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */; };
 		13D7C88E1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C88D1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift */; };
 		13D7C8911BDC20A500705BF5 /* WorkoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8901BDC20A500705BF5 /* WorkoutType.swift */; };
 		13D7C8931BDC238D00705BF5 /* IntervalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8921BDC238D00705BF5 /* IntervalType.swift */; };
-		287C53CD7D501AF752246EE1CBCB3B86 /* ServiceDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F42C87B39DA34173064FC358EC797 /* ServiceDefinitions.swift */; };
+		13D7C8951BDC253100705BF5 /* WorkoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8941BDC253100705BF5 /* WorkoutState.swift */; };
+		13D7C8971BDC261700705BF5 /* RowingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8961BDC261700705BF5 /* RowingState.swift */; };
+		13D7C89B1BDC6F4400705BF5 /* RowingCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8981BDC6F4400705BF5 /* RowingCharacteristic.swift */; };
+		13D7C89C1BDC6F4400705BF5 /* ControlCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8991BDC6F4400705BF5 /* ControlCharacteristic.swift */; };
+		13D7C89D1BDC6F4400705BF5 /* DeviceInformationCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C89A1BDC6F4400705BF5 /* DeviceInformationCharacteristic.swift */; };
+		13D7C8A01BDC715900705BF5 /* Characteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C89F1BDC715900705BF5 /* Characteristic.swift */; };
+		287C53CD7D501AF752246EE1CBCB3B86 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260F42C87B39DA34173064FC358EC797 /* Service.swift */; };
 		367B1330BCB745B01F160162C9D08A53 /* Concept2-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9095907CCC512BF619D890C14E8DE105 /* Concept2-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4051A62D1EE9763CC82D5F6EA74C443C /* CSAFECommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A104A5FA0FFC1C5BF300C477485DEDCE /* CSAFECommand.swift */; };
 		5EFB1CFA43A288E1C02A37E0818228DF /* Pods-Example-iOS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDB4B710F563CB168233CFE986C8AFA /* Pods-Example-iOS_Tests-dummy.m */; };
@@ -55,15 +57,17 @@
 		021BCF1808722BC2D19E08A98296BC90 /* Pods-Example-iOS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Example-iOS_Tests.modulemap"; sourceTree = "<group>"; };
 		06BC1E60100957F3116CD297029B2FB8 /* Pods-Example-iOS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-iOS_Example-umbrella.h"; sourceTree = "<group>"; };
 		0ECC9D82196D39C46AF04A233D9C1822 /* Concept2-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Concept2-SDK.modulemap"; sourceTree = "<group>"; };
-		13D7C87F1BD9CC0C00705BF5 /* DeviceInformationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInformationService.swift; sourceTree = "<group>"; };
-		13D7C8811BD9CC2E00705BF5 /* ControlService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlService.swift; sourceTree = "<group>"; };
-		13D7C8831BD9CC4800705BF5 /* RowingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingService.swift; sourceTree = "<group>"; };
-		13D7C8851BD9D07D00705BF5 /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
 		13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingGeneralStatus.swift; sourceTree = "<group>"; };
 		13D7C88D1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacteristicModelProtocol.swift; sourceTree = "<group>"; };
 		13D7C8901BDC20A500705BF5 /* WorkoutType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutType.swift; sourceTree = "<group>"; };
 		13D7C8921BDC238D00705BF5 /* IntervalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalType.swift; sourceTree = "<group>"; };
-		260F42C87B39DA34173064FC358EC797 /* ServiceDefinitions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceDefinitions.swift; sourceTree = "<group>"; };
+		13D7C8941BDC253100705BF5 /* WorkoutState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutState.swift; sourceTree = "<group>"; };
+		13D7C8961BDC261700705BF5 /* RowingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingState.swift; sourceTree = "<group>"; };
+		13D7C8981BDC6F4400705BF5 /* RowingCharacteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingCharacteristic.swift; sourceTree = "<group>"; };
+		13D7C8991BDC6F4400705BF5 /* ControlCharacteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlCharacteristic.swift; sourceTree = "<group>"; };
+		13D7C89A1BDC6F4400705BF5 /* DeviceInformationCharacteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInformationCharacteristic.swift; sourceTree = "<group>"; };
+		13D7C89F1BDC715900705BF5 /* Characteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
+		260F42C87B39DA34173064FC358EC797 /* Service.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2C55E86B89D329F7883DC4D05649B307 /* Pods-Example-iOS_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-iOS_Example-frameworks.sh"; sourceTree = "<group>"; };
 		2CA3A3530B9FCB977EDB12C05947ABFD /* Pods-Example-iOS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Example-iOS_Example.modulemap"; sourceTree = "<group>"; };
 		2E4B08FEBDEC885092DAAC4BDDA15550 /* PerformanceMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceMonitor.swift; sourceTree = "<group>"; };
@@ -133,10 +137,8 @@
 		13D7C87E1BD9CBDF00705BF5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				13D7C8851BD9D07D00705BF5 /* ServiceProtocol.swift */,
-				13D7C87F1BD9CC0C00705BF5 /* DeviceInformationService.swift */,
-				13D7C8811BD9CC2E00705BF5 /* ControlService.swift */,
-				13D7C8831BD9CC4800705BF5 /* RowingService.swift */,
+				260F42C87B39DA34173064FC358EC797 /* Service.swift */,
+				13D7C89E1BDC713600705BF5 /* Characteristics */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -177,10 +179,23 @@
 		13D7C88F1BDC207900705BF5 /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
-				13D7C8901BDC20A500705BF5 /* WorkoutType.swift */,
 				13D7C8921BDC238D00705BF5 /* IntervalType.swift */,
+				13D7C8961BDC261700705BF5 /* RowingState.swift */,
+				13D7C8941BDC253100705BF5 /* WorkoutState.swift */,
+				13D7C8901BDC20A500705BF5 /* WorkoutType.swift */,
 			);
 			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		13D7C89E1BDC713600705BF5 /* Characteristics */ = {
+			isa = PBXGroup;
+			children = (
+				13D7C89F1BDC715900705BF5 /* Characteristic.swift */,
+				13D7C8991BDC6F4400705BF5 /* ControlCharacteristic.swift */,
+				13D7C89A1BDC6F4400705BF5 /* DeviceInformationCharacteristic.swift */,
+				13D7C8981BDC6F4400705BF5 /* RowingCharacteristic.swift */,
+			);
+			name = Characteristics;
 			sourceTree = "<group>";
 		};
 		19796F79BB032C77784875EEA7705979 /* Targets Support Files */ = {
@@ -307,10 +322,9 @@
 				2E4B08FEBDEC885092DAAC4BDDA15550 /* PerformanceMonitor.swift */,
 				F0C65237E0E9D0F4DB3A0D5DE9F9E95D /* PeripheralDelegate.swift */,
 				A104A5FA0FFC1C5BF300C477485DEDCE /* CSAFECommand.swift */,
-				260F42C87B39DA34173064FC358EC797 /* ServiceDefinitions.swift */,
+				13D7C87E1BD9CBDF00705BF5 /* Services */,
 				13D7C88F1BDC207900705BF5 /* Enumerations */,
 				13D7C8871BDC1AEC00705BF5 /* Models */,
-				13D7C87E1BD9CBDF00705BF5 /* Services */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -455,22 +469,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13D7C8841BD9CC4800705BF5 /* RowingService.swift in Sources */,
+				13D7C89C1BDC6F4400705BF5 /* ControlCharacteristic.swift in Sources */,
 				D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothManager.swift in Sources */,
-				13D7C8801BD9CC0C00705BF5 /* DeviceInformationService.swift in Sources */,
-				13D7C8861BD9D07D00705BF5 /* ServiceProtocol.swift in Sources */,
+				13D7C8971BDC261700705BF5 /* RowingState.swift in Sources */,
 				13D7C8931BDC238D00705BF5 /* IntervalType.swift in Sources */,
 				13D7C8911BDC20A500705BF5 /* WorkoutType.swift in Sources */,
 				7E3FE6A6724410B345C4447A239FC45F /* CentralManagerDelegate.swift in Sources */,
-				13D7C8821BD9CC2E00705BF5 /* ControlService.swift in Sources */,
 				69151A31BA34C510F408551FA8F8C0C0 /* Concept2-SDK-dummy.m in Sources */,
 				4051A62D1EE9763CC82D5F6EA74C443C /* CSAFECommand.swift in Sources */,
 				13D7C88E1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift in Sources */,
 				13D7C88C1BDC1CEB00705BF5 /* RowingGeneralStatus.swift in Sources */,
 				E3C768FB0446F6A8D44EC7AEE682C2EE /* PerformanceMonitor.swift in Sources */,
+				13D7C89B1BDC6F4400705BF5 /* RowingCharacteristic.swift in Sources */,
+				13D7C8A01BDC715900705BF5 /* Characteristic.swift in Sources */,
+				13D7C89D1BDC6F4400705BF5 /* DeviceInformationCharacteristic.swift in Sources */,
 				DC3DFECB6B306C04F1216ACB277CEFF1 /* PerformanceMonitorStore.swift in Sources */,
 				ED4E671C56CD360AE40E7B80E6029C8B /* PeripheralDelegate.swift in Sources */,
-				287C53CD7D501AF752246EE1CBCB3B86 /* ServiceDefinitions.swift in Sources */,
+				287C53CD7D501AF752246EE1CBCB3B86 /* Service.swift in Sources */,
+				13D7C8951BDC253100705BF5 /* WorkoutState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
