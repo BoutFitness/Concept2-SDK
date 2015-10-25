@@ -6,8 +6,8 @@
 //
 //
 
-enum RowingState {
-  case Inactive
+enum RowingState:Int {
+  case Inactive = 0
   case Active
   
   var title:String {

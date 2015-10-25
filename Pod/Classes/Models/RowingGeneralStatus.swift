@@ -35,15 +35,32 @@ final class RowingGeneralStatus: CharacteristicModel {
   init(fromData data: NSData) {
     assert(data.length == DataLength, "Unexpected data length!")
     
-    var dataArray = [UInt8](count: DataLength, repeatedValue: 0)
-    data.getBytes(&dataArray, length: DataLength)
+    var arr = [UInt8](count: DataLength, repeatedValue: 0)
+    data.getBytes(&arr, length: DataLength)
     
-    let lo = UInt32(dataArray[0])
-    let mid = UInt32(dataArray[1])
-    let high = UInt32(dataArray[2])
+    let elapsedTime = (UInt32(arr[0]) | (UInt32(arr[1]) << 8) | (UInt32(arr[2]) << 16))
+    let distance = (UInt32(arr[3]) | (UInt32(arr[4]) << 8) | (UInt32(arr[5]) << 16))
+    let workoutType = WorkoutType(rawValue: Int(arr[6]))
+    let intervalType = IntervalType(rawValue: Int(arr[7]))
+    let workoutState = WorkoutState(rawValue: Int(arr[8]))
+    let rowingState = RowingState(rawValue: Int(arr[9]))
+    let strokeState = Int(arr[10])
+    let totalWorkDistance = (UInt32(arr[11]) | (UInt32(arr[12]) << 8) | (UInt32(arr[13]) << 16))
+    let workoutDuration = (UInt32(arr[14]) | (UInt32(arr[15]) << 8) | (UInt32(arr[16]) << 16))
+    let workoutDurationType = Int(arr[17])
+    let dragFactor = arr[18]
     
-    let elapsedTime = ((lo) | (mid << 8) | (high << 16))
-    
-    print("[RowingGeneralStatus]elapse time: \(elapsedTime)")
+    print("[RowingGeneralStatus]")
+    print("\telapsed time: \(Double(elapsedTime) * 0.01)")
+    print("\tdistance: \(Double(distance) * 0.1)")
+    print("\tworkoutType: \(workoutType)")
+    print("\tintervalType: \(intervalType)")
+    print("\tworkoutState: \(workoutState)")
+    print("\trowingState: \(rowingState)")
+    print("\tstrokeState: \(strokeState)")
+    print("\ttotalWorkDistance: \(Double(totalWorkDistance) * 1.0))")
+    print("\tworkoutDuration: \(Double(workoutDuration) * 0.01)")
+    print("\tworkoutDurationType: \(workoutDurationType)")
+    print("\tdragFactor: \(dragFactor)")
   }
 }
