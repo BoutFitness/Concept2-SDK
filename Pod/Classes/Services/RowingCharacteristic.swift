@@ -30,9 +30,9 @@ public enum RowingCharacteristic:String, Characteristic {
       case .GeneralStatus:
         return RowingGeneralStatus(fromData: data)
       case .AdditionalStatus1:
-        return nil
+        return RowingAdditionalStatus1(fromData: data)
       case .AdditionalStatus2:
-        return nil
+        return RowingAdditionalStatus2(fromData: data)
       case .StatusSampleRate:
         return nil
       case .StrokeData:

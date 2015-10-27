@@ -38,11 +38,11 @@ struct RowingGeneralStatus: CharacteristicModel, CustomDebugStringConvertible {
   var intervalType:IntervalType?
   var workoutState:WorkoutState?
   var rowingState:RowingState?
-  var strokeState:Int
+  var strokeState:StrokeState?
   var totalWorkDistance:C2Distance
   var workoutDuration:C2TimeInterval
-  var workoutDurationType:Int
-  var dragFactor:Int
+  var workoutDurationType:WorkoutDurationType?
+  var dragFactor:C2DragFactor
   
   init(fromData data: NSData) {
     var arr = [UInt8](count: DataLength, repeatedValue: 0)
@@ -54,11 +54,11 @@ struct RowingGeneralStatus: CharacteristicModel, CustomDebugStringConvertible {
     intervalType = IntervalType(rawValue: Int(arr[7]))
     workoutState = WorkoutState(rawValue: Int(arr[8]))
     rowingState = RowingState(rawValue: Int(arr[9]))
-    strokeState = Int(arr[10])
+    strokeState = StrokeState(rawValue: Int(arr[10]))
     totalWorkDistance = C2Distance(distanceWithLow: UInt32(arr[11]), mid: UInt32(arr[12]), high: UInt32(arr[13]))
     workoutDuration = C2TimeInterval(timeWithLow: UInt32(arr[14]), mid: UInt32(arr[15]), high: UInt32(arr[16]))
-    workoutDurationType = Int(arr[17])
-    dragFactor = Int(arr[18])
+    workoutDurationType = WorkoutDurationType(rawValue: Int(arr[17]))
+    dragFactor = C2DragFactor(arr[18])
   }
   
   // MARK: -
