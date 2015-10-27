@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		132793081BDF093900D79F07 /* NSTimeInterval+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132793071BDF093900D79F07 /* NSTimeInterval+Parsing.swift */; };
+		1327930A1BDF095B00D79F07 /* CGFloat+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132793091BDF095B00D79F07 /* CGFloat+Parsing.swift */; };
 		13D7C88C1BDC1CEB00705BF5 /* RowingGeneralStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */; };
 		13D7C88E1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C88D1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift */; };
 		13D7C8911BDC20A500705BF5 /* WorkoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8901BDC20A500705BF5 /* WorkoutType.swift */; };
@@ -57,6 +59,8 @@
 		021BCF1808722BC2D19E08A98296BC90 /* Pods-Example-iOS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Example-iOS_Tests.modulemap"; sourceTree = "<group>"; };
 		06BC1E60100957F3116CD297029B2FB8 /* Pods-Example-iOS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-iOS_Example-umbrella.h"; sourceTree = "<group>"; };
 		0ECC9D82196D39C46AF04A233D9C1822 /* Concept2-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Concept2-SDK.modulemap"; sourceTree = "<group>"; };
+		132793071BDF093900D79F07 /* NSTimeInterval+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+Parsing.swift"; sourceTree = "<group>"; };
+		132793091BDF095B00D79F07 /* CGFloat+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Parsing.swift"; sourceTree = "<group>"; };
 		13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingGeneralStatus.swift; sourceTree = "<group>"; };
 		13D7C88D1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacteristicModelProtocol.swift; sourceTree = "<group>"; };
 		13D7C8901BDC20A500705BF5 /* WorkoutType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutType.swift; sourceTree = "<group>"; };
@@ -134,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		132793061BDF08FE00D79F07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				132793071BDF093900D79F07 /* NSTimeInterval+Parsing.swift */,
+				132793091BDF095B00D79F07 /* CGFloat+Parsing.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		13D7C87E1BD9CBDF00705BF5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +338,7 @@
 				13D7C87E1BD9CBDF00705BF5 /* Services */,
 				13D7C88F1BDC207900705BF5 /* Enumerations */,
 				13D7C8871BDC1AEC00705BF5 /* Models */,
+				132793061BDF08FE00D79F07 /* Extensions */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -472,6 +486,7 @@
 				13D7C89C1BDC6F4400705BF5 /* ControlCharacteristic.swift in Sources */,
 				D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothManager.swift in Sources */,
 				13D7C8971BDC261700705BF5 /* RowingState.swift in Sources */,
+				1327930A1BDF095B00D79F07 /* CGFloat+Parsing.swift in Sources */,
 				13D7C8931BDC238D00705BF5 /* IntervalType.swift in Sources */,
 				13D7C8911BDC20A500705BF5 /* WorkoutType.swift in Sources */,
 				7E3FE6A6724410B345C4447A239FC45F /* CentralManagerDelegate.swift in Sources */,
@@ -481,6 +496,7 @@
 				13D7C88C1BDC1CEB00705BF5 /* RowingGeneralStatus.swift in Sources */,
 				E3C768FB0446F6A8D44EC7AEE682C2EE /* PerformanceMonitor.swift in Sources */,
 				13D7C89B1BDC6F4400705BF5 /* RowingCharacteristic.swift in Sources */,
+				132793081BDF093900D79F07 /* NSTimeInterval+Parsing.swift in Sources */,
 				13D7C8A01BDC715900705BF5 /* Characteristic.swift in Sources */,
 				13D7C89D1BDC6F4400705BF5 /* DeviceInformationCharacteristic.swift in Sources */,
 				DC3DFECB6B306C04F1216ACB277CEFF1 /* PerformanceMonitorStore.swift in Sources */,
