@@ -37,6 +37,9 @@
 		7E3FE6A6724410B345C4447A239FC45F /* CentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990680554B3DC5F9E8092368159BF60F /* CentralManagerDelegate.swift */; };
 		96A828BCFCD1C4F61257A4409370A4F7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F8AD25F8BF82C8B570FDF5E1925FAA /* CoreBluetooth.framework */; };
 		978094F825959D0A030ACA025DCBA8F3 /* Pods-Example-iOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71FAB55845ECAD94E14E6BE394721121 /* Pods-Example-iOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0803AA61BDFB502009E7EC1 /* RowingStatusSampleRateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0803AA51BDFB502009E7EC1 /* RowingStatusSampleRateType.swift */; };
+		B0803AA81BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0803AA71BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift */; };
+		B0803AAA1BDFB8B9009E7EC1 /* RowingStrokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0803AA91BDFB8B9009E7EC1 /* RowingStrokeData.swift */; };
 		BB7ED300D7BC3A01D66FD757E431B5F2 /* Pods-Example-iOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 06BC1E60100957F3116CD297029B2FB8 /* Pods-Example-iOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC548ACE033179B3B930101C1BE52300 /* BluetoothManager.swift */; };
 		DB43EECB6379B75DCFFA21F3730695AD /* Pods-Example-iOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34514411D0AF73ACB0446D85C6154B76 /* Pods-Example-iOS_Example-dummy.m */; };
@@ -108,6 +111,9 @@
 		943EB7A33B7D1041F83B01ECA3B260A1 /* Pods-Example-iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example-iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		990680554B3DC5F9E8092368159BF60F /* CentralManagerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CentralManagerDelegate.swift; sourceTree = "<group>"; };
 		A104A5FA0FFC1C5BF300C477485DEDCE /* CSAFECommand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CSAFECommand.swift; sourceTree = "<group>"; };
+		B0803AA51BDFB502009E7EC1 /* RowingStatusSampleRateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingStatusSampleRateType.swift; sourceTree = "<group>"; };
+		B0803AA71BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingStatusSampleRate.swift; sourceTree = "<group>"; };
+		B0803AA91BDFB8B9009E7EC1 /* RowingStrokeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingStrokeData.swift; sourceTree = "<group>"; };
 		B2242BD90F5E1A9298DAE88EC206216C /* Pods-Example-iOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example-iOS_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BBACA2DC3590AF058434FFB442DA02FD /* PerformanceMonitorStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceMonitorStore.swift; sourceTree = "<group>"; };
@@ -209,6 +215,8 @@
 				13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */,
 				1327930B1BDF1B6600D79F07 /* RowingAdditionalStatus1.swift */,
 				132793171BDF268400D79F07 /* RowingAdditionalStatus2.swift */,
+				B0803AA71BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift */,
+				B0803AA91BDFB8B9009E7EC1 /* RowingStrokeData.swift */,
 			);
 			name = Rowing;
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 			children = (
 				13D7C8921BDC238D00705BF5 /* IntervalType.swift */,
 				13D7C8961BDC261700705BF5 /* RowingState.swift */,
+				B0803AA51BDFB502009E7EC1 /* RowingStatusSampleRateType.swift */,
 				132793151BDF24BA00D79F07 /* StrokeState.swift */,
 				132793131BDF238E00D79F07 /* WorkoutDurationType.swift */,
 				13D7C8941BDC253100705BF5 /* WorkoutState.swift */,
@@ -526,13 +535,16 @@
 				13D7C88E1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift in Sources */,
 				132793141BDF238E00D79F07 /* WorkoutDurationType.swift in Sources */,
 				132793161BDF24BA00D79F07 /* StrokeState.swift in Sources */,
+				B0803AA81BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift in Sources */,
 				13D7C88C1BDC1CEB00705BF5 /* RowingGeneralStatus.swift in Sources */,
 				132793181BDF268400D79F07 /* RowingAdditionalStatus2.swift in Sources */,
+				B0803AA61BDFB502009E7EC1 /* RowingStatusSampleRateType.swift in Sources */,
 				E3C768FB0446F6A8D44EC7AEE682C2EE /* PerformanceMonitor.swift in Sources */,
 				13D7C89B1BDC6F4400705BF5 /* RowingCharacteristic.swift in Sources */,
 				132793081BDF093900D79F07 /* C2TimeInterval+Parsing.swift in Sources */,
 				1327930C1BDF1B6600D79F07 /* RowingAdditionalStatus1.swift in Sources */,
 				13D7C8A01BDC715900705BF5 /* Characteristic.swift in Sources */,
+				B0803AAA1BDFB8B9009E7EC1 /* RowingStrokeData.swift in Sources */,
 				13D7C89D1BDC6F4400705BF5 /* DeviceInformationCharacteristic.swift in Sources */,
 				DC3DFECB6B306C04F1216ACB277CEFF1 /* PerformanceMonitorStore.swift in Sources */,
 				132793121BDF203700D79F07 /* C2Pace+Parsing.swift in Sources */,
