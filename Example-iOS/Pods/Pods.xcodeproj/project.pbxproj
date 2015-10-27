@@ -40,6 +40,10 @@
 		B0803AA61BDFB502009E7EC1 /* RowingStatusSampleRateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0803AA51BDFB502009E7EC1 /* RowingStatusSampleRateType.swift */; };
 		B0803AA81BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0803AA71BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift */; };
 		B0803AAA1BDFB8B9009E7EC1 /* RowingStrokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0803AA91BDFB8B9009E7EC1 /* RowingStrokeData.swift */; };
+		B0803AAC1BE023F4009E7EC1 /* C2DriveLength+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0803AAB1BE023F4009E7EC1 /* C2DriveLength+Parsing.swift */; };
+		B0803AAE1BE02580009E7EC1 /* C2DriveForce+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0803AAD1BE02580009E7EC1 /* C2DriveForce+Parsing.swift */; };
+		B0803AB01BE0263B009E7EC1 /* C2StrokeCount+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0803AAF1BE0263B009E7EC1 /* C2StrokeCount+Parsing.swift */; };
+		B0803AB21BE0268D009E7EC1 /* C2Work+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0803AB11BE0268D009E7EC1 /* C2Work+Parsing.swift */; };
 		BB7ED300D7BC3A01D66FD757E431B5F2 /* Pods-Example-iOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 06BC1E60100957F3116CD297029B2FB8 /* Pods-Example-iOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC548ACE033179B3B930101C1BE52300 /* BluetoothManager.swift */; };
 		DB43EECB6379B75DCFFA21F3730695AD /* Pods-Example-iOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34514411D0AF73ACB0446D85C6154B76 /* Pods-Example-iOS_Example-dummy.m */; };
@@ -114,6 +118,10 @@
 		B0803AA51BDFB502009E7EC1 /* RowingStatusSampleRateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingStatusSampleRateType.swift; sourceTree = "<group>"; };
 		B0803AA71BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingStatusSampleRate.swift; sourceTree = "<group>"; };
 		B0803AA91BDFB8B9009E7EC1 /* RowingStrokeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingStrokeData.swift; sourceTree = "<group>"; };
+		B0803AAB1BE023F4009E7EC1 /* C2DriveLength+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2DriveLength+Parsing.swift"; sourceTree = "<group>"; };
+		B0803AAD1BE02580009E7EC1 /* C2DriveForce+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2DriveForce+Parsing.swift"; sourceTree = "<group>"; };
+		B0803AAF1BE0263B009E7EC1 /* C2StrokeCount+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2StrokeCount+Parsing.swift"; sourceTree = "<group>"; };
+		B0803AB11BE0268D009E7EC1 /* C2Work+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2Work+Parsing.swift"; sourceTree = "<group>"; };
 		B2242BD90F5E1A9298DAE88EC206216C /* Pods-Example-iOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example-iOS_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BBACA2DC3590AF058434FFB442DA02FD /* PerformanceMonitorStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceMonitorStore.swift; sourceTree = "<group>"; };
@@ -167,10 +175,14 @@
 			children = (
 				13C9F3F91BDF2C0900209651 /* C2CalorieCount+Parsing.swift */,
 				132793091BDF095B00D79F07 /* C2Distance+Parsing.swift */,
+				B0803AAB1BE023F4009E7EC1 /* C2DriveLength+Parsing.swift */,
+				B0803AAD1BE02580009E7EC1 /* C2DriveForce+Parsing.swift */,
 				132793111BDF203700D79F07 /* C2Pace+Parsing.swift */,
 				13C9F3F71BDF293C00209651 /* C2Power+Parsing.swift */,
 				1327930F1BDF1DDE00D79F07 /* C2Speed+Parsing.swift */,
+				B0803AAF1BE0263B009E7EC1 /* C2StrokeCount+Parsing.swift */,
 				132793071BDF093900D79F07 /* C2TimeInterval+Parsing.swift */,
+				B0803AB11BE0268D009E7EC1 /* C2Work+Parsing.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -522,6 +534,7 @@
 				13D7C89C1BDC6F4400705BF5 /* ControlCharacteristic.swift in Sources */,
 				D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothManager.swift in Sources */,
 				13D7C8971BDC261700705BF5 /* RowingState.swift in Sources */,
+				B0803AB01BE0263B009E7EC1 /* C2StrokeCount+Parsing.swift in Sources */,
 				1327930A1BDF095B00D79F07 /* C2Distance+Parsing.swift in Sources */,
 				13D7C8931BDC238D00705BF5 /* IntervalType.swift in Sources */,
 				13C9F3FA1BDF2C0900209651 /* C2CalorieCount+Parsing.swift in Sources */,
@@ -535,13 +548,16 @@
 				13D7C88E1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift in Sources */,
 				132793141BDF238E00D79F07 /* WorkoutDurationType.swift in Sources */,
 				132793161BDF24BA00D79F07 /* StrokeState.swift in Sources */,
+				B0803AAE1BE02580009E7EC1 /* C2DriveForce+Parsing.swift in Sources */,
 				B0803AA81BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift in Sources */,
 				13D7C88C1BDC1CEB00705BF5 /* RowingGeneralStatus.swift in Sources */,
 				132793181BDF268400D79F07 /* RowingAdditionalStatus2.swift in Sources */,
 				B0803AA61BDFB502009E7EC1 /* RowingStatusSampleRateType.swift in Sources */,
 				E3C768FB0446F6A8D44EC7AEE682C2EE /* PerformanceMonitor.swift in Sources */,
 				13D7C89B1BDC6F4400705BF5 /* RowingCharacteristic.swift in Sources */,
+				B0803AAC1BE023F4009E7EC1 /* C2DriveLength+Parsing.swift in Sources */,
 				132793081BDF093900D79F07 /* C2TimeInterval+Parsing.swift in Sources */,
+				B0803AB21BE0268D009E7EC1 /* C2Work+Parsing.swift in Sources */,
 				1327930C1BDF1B6600D79F07 /* RowingAdditionalStatus1.swift in Sources */,
 				13D7C8A01BDC715900705BF5 /* Characteristic.swift in Sources */,
 				B0803AAA1BDFB8B9009E7EC1 /* RowingStrokeData.swift in Sources */,
