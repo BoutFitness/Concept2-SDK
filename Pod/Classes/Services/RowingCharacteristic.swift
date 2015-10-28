@@ -40,15 +40,15 @@ public enum RowingCharacteristic:String, Characteristic {
       case .AdditionalStrokeData:
         return RowingAdditionalStrokeData(fromData: data)
       case .IntervalData:
-        return nil
+        return RowingIntervalData(fromData: data)
       case .AdditionalIntervalData:
-        return nil
+        return RowingAdditionalIntervalData(fromData: data)
       case .WorkoutSummaryData:
-        return nil
+        return RowingWorkoutSummaryData(fromData: data)
       case .AdditionalWorkoutSummaryData:
-        return nil
+        return RowingAdditionalWorkoutSummaryData(fromData: data)
       case .HeartRateBeltInformation:
-        return nil
+        return RowingHeartRateBeltInformation(fromData: data)
       case .MutliplexedInformation:
         return nil // JLC: this service gives the same data as the others
       }

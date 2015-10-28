@@ -19,6 +19,13 @@
 		13C9F3F81BDF293C00209651 /* C2Power+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3F71BDF293C00209651 /* C2Power+Parsing.swift */; };
 		13C9F3FA1BDF2C0900209651 /* C2CalorieCount+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3F91BDF2C0900209651 /* C2CalorieCount+Parsing.swift */; };
 		13C9F3FC1BE04F5D00209651 /* RowingAdditionalStrokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3FB1BE04F5D00209651 /* RowingAdditionalStrokeData.swift */; };
+		13C9F3FE1BE0530700209651 /* RowingIntervalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3FD1BE0530700209651 /* RowingIntervalData.swift */; };
+		13C9F4001BE0570900209651 /* RowingAdditionalIntervalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3FF1BE0570900209651 /* RowingAdditionalIntervalData.swift */; };
+		13C9F4021BE0664100209651 /* RowingWorkoutSummaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F4011BE0664100209651 /* RowingWorkoutSummaryData.swift */; };
+		13C9F4041BE06A9A00209651 /* RowingAdditionalWorkoutSummaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F4031BE06A9A00209651 /* RowingAdditionalWorkoutSummaryData.swift */; };
+		13C9F4061BE06CEE00209651 /* C2IntervalSize+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F4051BE06CEE00209651 /* C2IntervalSize+Parsing.swift */; };
+		13C9F4081BE06E7000209651 /* RowingHeartRateBeltInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F4071BE06E7000209651 /* RowingHeartRateBeltInformation.swift */; };
+		13C9F40A1BE06FEA00209651 /* C2HeartRateBeltID+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F4091BE06FEA00209651 /* C2HeartRateBeltID+Parsing.swift */; };
 		13D7C88C1BDC1CEB00705BF5 /* RowingGeneralStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */; };
 		13D7C88E1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C88D1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift */; };
 		13D7C8911BDC20A500705BF5 /* WorkoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8901BDC20A500705BF5 /* WorkoutType.swift */; };
@@ -88,6 +95,13 @@
 		13C9F3F71BDF293C00209651 /* C2Power+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2Power+Parsing.swift"; sourceTree = "<group>"; };
 		13C9F3F91BDF2C0900209651 /* C2CalorieCount+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2CalorieCount+Parsing.swift"; sourceTree = "<group>"; };
 		13C9F3FB1BE04F5D00209651 /* RowingAdditionalStrokeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingAdditionalStrokeData.swift; sourceTree = "<group>"; };
+		13C9F3FD1BE0530700209651 /* RowingIntervalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingIntervalData.swift; sourceTree = "<group>"; };
+		13C9F3FF1BE0570900209651 /* RowingAdditionalIntervalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingAdditionalIntervalData.swift; sourceTree = "<group>"; };
+		13C9F4011BE0664100209651 /* RowingWorkoutSummaryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingWorkoutSummaryData.swift; sourceTree = "<group>"; };
+		13C9F4031BE06A9A00209651 /* RowingAdditionalWorkoutSummaryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingAdditionalWorkoutSummaryData.swift; sourceTree = "<group>"; };
+		13C9F4051BE06CEE00209651 /* C2IntervalSize+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2IntervalSize+Parsing.swift"; sourceTree = "<group>"; };
+		13C9F4071BE06E7000209651 /* RowingHeartRateBeltInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingHeartRateBeltInformation.swift; sourceTree = "<group>"; };
+		13C9F4091BE06FEA00209651 /* C2HeartRateBeltID+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2HeartRateBeltID+Parsing.swift"; sourceTree = "<group>"; };
 		13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingGeneralStatus.swift; sourceTree = "<group>"; };
 		13D7C88D1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacteristicModelProtocol.swift; sourceTree = "<group>"; };
 		13D7C8901BDC20A500705BF5 /* WorkoutType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutType.swift; sourceTree = "<group>"; };
@@ -179,6 +193,8 @@
 				132793091BDF095B00D79F07 /* C2Distance+Parsing.swift */,
 				B0803AAB1BE023F4009E7EC1 /* C2DriveLength+Parsing.swift */,
 				B0803AAD1BE02580009E7EC1 /* C2DriveForce+Parsing.swift */,
+				13C9F4091BE06FEA00209651 /* C2HeartRateBeltID+Parsing.swift */,
+				13C9F4051BE06CEE00209651 /* C2IntervalSize+Parsing.swift */,
 				132793111BDF203700D79F07 /* C2Pace+Parsing.swift */,
 				13C9F3F71BDF293C00209651 /* C2Power+Parsing.swift */,
 				1327930F1BDF1DDE00D79F07 /* C2Speed+Parsing.swift */,
@@ -232,6 +248,11 @@
 				B0803AA71BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift */,
 				B0803AA91BDFB8B9009E7EC1 /* RowingStrokeData.swift */,
 				13C9F3FB1BE04F5D00209651 /* RowingAdditionalStrokeData.swift */,
+				13C9F3FD1BE0530700209651 /* RowingIntervalData.swift */,
+				13C9F3FF1BE0570900209651 /* RowingAdditionalIntervalData.swift */,
+				13C9F4011BE0664100209651 /* RowingWorkoutSummaryData.swift */,
+				13C9F4031BE06A9A00209651 /* RowingAdditionalWorkoutSummaryData.swift */,
+				13C9F4071BE06E7000209651 /* RowingHeartRateBeltInformation.swift */,
 			);
 			name = Rowing;
 			sourceTree = "<group>";
@@ -539,10 +560,14 @@
 				D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothManager.swift in Sources */,
 				13D7C8971BDC261700705BF5 /* RowingState.swift in Sources */,
 				B0803AB01BE0263B009E7EC1 /* C2StrokeCount+Parsing.swift in Sources */,
+				13C9F4001BE0570900209651 /* RowingAdditionalIntervalData.swift in Sources */,
+				13C9F40A1BE06FEA00209651 /* C2HeartRateBeltID+Parsing.swift in Sources */,
 				1327930A1BDF095B00D79F07 /* C2Distance+Parsing.swift in Sources */,
 				13D7C8931BDC238D00705BF5 /* IntervalType.swift in Sources */,
+				13C9F4081BE06E7000209651 /* RowingHeartRateBeltInformation.swift in Sources */,
 				13C9F3FA1BDF2C0900209651 /* C2CalorieCount+Parsing.swift in Sources */,
 				13D7C8911BDC20A500705BF5 /* WorkoutType.swift in Sources */,
+				13C9F4021BE0664100209651 /* RowingWorkoutSummaryData.swift in Sources */,
 				7E3FE6A6724410B345C4447A239FC45F /* CentralManagerDelegate.swift in Sources */,
 				69151A31BA34C510F408551FA8F8C0C0 /* Concept2-SDK-dummy.m in Sources */,
 				132793101BDF1DDE00D79F07 /* C2Speed+Parsing.swift in Sources */,
@@ -557,6 +582,7 @@
 				13D7C88C1BDC1CEB00705BF5 /* RowingGeneralStatus.swift in Sources */,
 				132793181BDF268400D79F07 /* RowingAdditionalStatus2.swift in Sources */,
 				B0803AA61BDFB502009E7EC1 /* RowingStatusSampleRateType.swift in Sources */,
+				13C9F4041BE06A9A00209651 /* RowingAdditionalWorkoutSummaryData.swift in Sources */,
 				E3C768FB0446F6A8D44EC7AEE682C2EE /* PerformanceMonitor.swift in Sources */,
 				13D7C89B1BDC6F4400705BF5 /* RowingCharacteristic.swift in Sources */,
 				B0803AAC1BE023F4009E7EC1 /* C2DriveLength+Parsing.swift in Sources */,
@@ -566,6 +592,8 @@
 				13D7C8A01BDC715900705BF5 /* Characteristic.swift in Sources */,
 				B0803AAA1BDFB8B9009E7EC1 /* RowingStrokeData.swift in Sources */,
 				13D7C89D1BDC6F4400705BF5 /* DeviceInformationCharacteristic.swift in Sources */,
+				13C9F4061BE06CEE00209651 /* C2IntervalSize+Parsing.swift in Sources */,
+				13C9F3FE1BE0530700209651 /* RowingIntervalData.swift in Sources */,
 				DC3DFECB6B306C04F1216ACB277CEFF1 /* PerformanceMonitorStore.swift in Sources */,
 				132793121BDF203700D79F07 /* C2Pace+Parsing.swift in Sources */,
 				ED4E671C56CD360AE40E7B80E6029C8B /* PeripheralDelegate.swift in Sources */,
