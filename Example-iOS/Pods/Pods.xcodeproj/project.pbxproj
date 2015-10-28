@@ -205,6 +205,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		13C9F40B1BE18D8F00209651 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				BBACA2DC3590AF058434FFB442DA02FD /* PerformanceMonitorStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		13C9F40C1BE18D9800209651 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				990680554B3DC5F9E8092368159BF60F /* CentralManagerDelegate.swift */,
+				F0C65237E0E9D0F4DB3A0D5DE9F9E95D /* PeripheralDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		13D7C87E1BD9CBDF00705BF5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +245,7 @@
 		13D7C8881BDC1B8400705BF5 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				A104A5FA0FFC1C5BF300C477485DEDCE /* CSAFECommand.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -401,12 +419,10 @@
 			isa = PBXGroup;
 			children = (
 				FC548ACE033179B3B930101C1BE52300 /* BluetoothManager.swift */,
-				990680554B3DC5F9E8092368159BF60F /* CentralManagerDelegate.swift */,
-				BBACA2DC3590AF058434FFB442DA02FD /* PerformanceMonitorStore.swift */,
 				2E4B08FEBDEC885092DAAC4BDDA15550 /* PerformanceMonitor.swift */,
-				F0C65237E0E9D0F4DB3A0D5DE9F9E95D /* PeripheralDelegate.swift */,
-				A104A5FA0FFC1C5BF300C477485DEDCE /* CSAFECommand.swift */,
 				1327930D1BDF1D6100D79F07 /* Types.swift */,
+				13C9F40B1BE18D8F00209651 /* Stores */,
+				13C9F40C1BE18D9800209651 /* Delegates */,
 				13D7C87E1BD9CBDF00705BF5 /* Services */,
 				13D7C88F1BDC207900705BF5 /* Enumerations */,
 				13D7C8871BDC1AEC00705BF5 /* Models */,
