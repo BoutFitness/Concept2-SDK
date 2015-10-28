@@ -54,6 +54,11 @@ struct RowingAdditionalStatus2: CharacteristicModel, CustomDebugStringConvertibl
     lastSplitDistance = C2Distance(distanceWithLow: UInt32(arr[15]), mid: UInt32(arr[16]), high: UInt32(arr[17]))
   }
   
+  // MARK: PerformanceMonitor
+  func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+    
+  }
+  
   // MARK: -
   var debugDescription:String {
     return "[RowingAdditionalStatus2]"

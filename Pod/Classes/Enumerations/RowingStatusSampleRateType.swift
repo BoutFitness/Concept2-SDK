@@ -6,7 +6,7 @@
 //
 //
 
-enum RowingStatusSampleRateType:UInt8 {
+public enum RowingStatusSampleRateType:UInt8 {
   case OneSecond = 0
   case HalfSecond = 1
   case QuarterSecond = 2

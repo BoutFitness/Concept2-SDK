@@ -8,10 +8,12 @@
 
 import CoreBluetooth
 
-public let PerformanceMonitorDidUpdateStateNotification = "PerformanceMonitorDidUpdateStateNotification"
-
 public final class PerformanceMonitor
 {
+  public static let DidUpdateStateNotification = "PerformanceMonitorDidUpdateStateNotification"
+  public static let DidUpdateValueNotification = "PerformanceMonitorDidUpdateValueNotification"
+  
+  //
   var peripheral:CBPeripheral
   lazy var peripheralDelegate = PeripheralDelegate()
   
@@ -21,7 +23,59 @@ public final class PerformanceMonitor
   
   public var isConnected:Bool { get { return (peripheral.state == .Connected) } }
   
-  // MARK: Initialization
+  // MARK: Rowing Information
+  public var averageDriveForce:C2DriveForce = 0
+  public var averagePace:C2Pace = 0
+  public var currentPace:C2Pace = 0
+  public var distance:C2Distance = 0
+  public var dragFactor:C2DragFactor = 0
+  public var driveLength:C2DriveLength = 0
+  public var driveTime:C2DriveTime = 0
+  public var elapsedTime:C2TimeInterval = 0
+  public var heartRate:C2HeartRate = 0
+  public var intervalAverageCalories:C2CalorieCount = 0
+  public var intervalAveragePace:C2Pace = 0
+  public var intervalAveragePower:C2Power = 0
+  public var intervalAverageStrokeRate:C2StrokeRate = 0
+  public var intervalCount:C2IntervalCount = 0
+  public var intervalDistance:C2Distance = 0
+  public var intervalNumber:C2IntervalCount = 0
+  public var intervalPower:C2Power = 0
+  public var intervalRestDistance:C2Distance = 0
+  public var intervalRestHeartrate:C2HeartRate = 0
+  public var intervalRestTime:C2TimeInterval = 0
+  public var intervalSpeed:C2Speed = 0
+  public var intervalTime:C2TimeInterval = 0
+  public var intervalTotalCalories:C2CalorieCount = 0
+  public var intervalType:IntervalType?
+  public var intervalWorkHeartrate:C2HeartRate = 0
+  public var lastSplitDistance:C2Distance = 0
+  public var lastSplitTime:C2TimeInterval = 0
+  public var peakDriveForce:C2DriveForce = 0
+  public var projectedWorkDistance:C2Distance = 0
+  public var projectedWorkTime:C2TimeInterval = 0
+  public var restDistance:C2Distance = 0
+  public var restTime:C2TimeInterval = 0
+  public var rowingState:RowingState?
+  public var sampleRate:RowingStatusSampleRateType?
+  public var speed:C2Speed = 0
+  public var splitAverageDragFactor:C2DragFactor = 0
+  public var strokeCalories:C2CalorieCount = 0
+  public var strokeCount:C2StrokeCount = 0
+  public var strokeDistance:C2Distance = 0
+  public var strokePower:C2Power = 0
+  public var strokeRate:C2StrokeRate = 0
+  public var strokeRecoveryTime:C2TimeInterval = 0
+  public var strokeState:StrokeState?
+  public var totalCalories:C2CalorieCount = 0
+  public var totalWorkDistance:C2Distance = 0
+  public var workoutDuration:C2TimeInterval = 0
+  public var workoutDurationType:WorkoutDurationType?
+  public var workoutState:WorkoutState?
+  public var workoutType:WorkoutType?
+  public var workPerStroke:C2Work = 0
+  
+  // MARK: - Initialization
   init(withPeripheral peripheral:CBPeripheral) {
     self.peripheral = peripheral
     
@@ -46,6 +100,13 @@ public final class PerformanceMonitor
         })
       }
     })
+  }
+  
+  // MARK:
+  func postUpdateValueNotification() {
+    NSNotificationCenter.defaultCenter().postNotificationName(
+      PerformanceMonitor.DidUpdateValueNotification,
+      object: self)
   }
   
   // MARK: Device Information

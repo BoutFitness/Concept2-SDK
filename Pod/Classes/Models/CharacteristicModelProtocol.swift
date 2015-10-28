@@ -8,4 +8,6 @@
 
 protocol CharacteristicModel {
   init(fromData data:NSData)
+  
+  func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor)
 }

@@ -37,7 +37,7 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     }
     
     NSNotificationCenter.defaultCenter().postNotificationName(
-      BluetoothManagerDidUpdateStateNotification,
+      BluetoothManager.DidUpdateStateNotification,
       object: bluetoothManager)
   }
   
@@ -85,7 +85,7 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     if let pm = performanceMonitorStore.performanceMonitorWithPeripheral(peripheral) {
       pm.updatePeripheralObservers()
       NSNotificationCenter.defaultCenter().postNotificationName(
-        PerformanceMonitorDidUpdateStateNotification,
+        PerformanceMonitor.DidUpdateStateNotification,
         object: pm)
     }
   }

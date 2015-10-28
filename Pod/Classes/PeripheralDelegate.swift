@@ -64,7 +64,10 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
       print("[PerformanceMonitor]didUpdateValueForCharacteristic: \(characteristic)")
       if let svc = Service(rawValue: characteristic.service.UUID.UUIDString) {
         if let c = svc.characteristic(string: characteristic.UUID.UUIDString) {
-          c.parse(data: characteristic.value)
+          let cm = c.parse(data: characteristic.value)
+          if let pm = performanceMonitor {
+            cm?.updatePerformanceMonitor(pm)
+          }
         }
       }
   }

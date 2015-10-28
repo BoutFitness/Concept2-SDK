@@ -6,7 +6,7 @@
 //
 //
 
-enum IntervalType:Int {
+public enum IntervalType:Int {
   case Time = 0
   case Distance
   case Rest

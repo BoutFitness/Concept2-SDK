@@ -59,6 +59,11 @@ struct RowingAdditionalWorkoutSummaryData: CharacteristicModel, CustomDebugStrin
     averageCalories = C2CalorieCount(calorieCountWithLow: UInt16(arr[17]), high: UInt16(arr[18]))
   }
   
+  // MARK: PerformanceMonitor
+  func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+      
+  }
+  
   // MARK: -
   var debugDescription:String {
       return "[RowingAdditionalWorkoutSummaryData]"

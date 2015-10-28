@@ -52,6 +52,20 @@ struct RowingAdditionalStatus1: CharacteristicModel, CustomDebugStringConvertibl
     restTime = C2TimeInterval(timeWithLow: UInt32(arr[13]), mid: UInt32(arr[14]), high: UInt32(arr[15]))
   }
   
+  // MARK: PerformanceMonitor
+  func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+    performanceMonitor.elapsedTime = elapsedTime
+    performanceMonitor.speed = speed
+    performanceMonitor.strokeRate = strokeRate
+    performanceMonitor.heartRate = heartRate
+    performanceMonitor.currentPace = currentPace
+    performanceMonitor.averagePace = averagePace
+    performanceMonitor.restDistance = restDistance
+    performanceMonitor.restTime = restTime
+    
+    performanceMonitor.postUpdateValueNotification()
+  }
+  
   // MARK: -
   var debugDescription:String {
       return "[RowingAdditionalStatus1]"

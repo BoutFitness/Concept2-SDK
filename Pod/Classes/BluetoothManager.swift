@@ -8,8 +8,6 @@
 
 import CoreBluetooth
 
-public let BluetoothManagerDidUpdateStateNotification = "BluetoothManagerDidUpdateStateNotification"
-
 public protocol BluetoothManagerDelegate {
   func didLoadPerformanceMonitors(bluetoothManager:BluetoothManager,
     performanceMonitors:Array<PerformanceMonitor>)
@@ -17,6 +15,8 @@ public protocol BluetoothManagerDelegate {
 
 public final class BluetoothManager
 {
+  public static let DidUpdateStateNotification = "BluetoothManagerDidUpdateStateNotification"
+  
   private var centralManager:CBCentralManager
   private var centralManagerDelegate:CentralManagerDelegate {
     didSet {
@@ -65,8 +65,24 @@ public final class BluetoothManager
     centralManager.stopScan()
   }
   
-  public func connectPerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+  public func connectPerformanceMonitor(performanceMonitor:PerformanceMonitor, exclusive:Bool) {
+    // TODO: use the PerformanceMonitor abstraction instead of peripherals
+    if exclusive == true {
+      centralManager.retrieveConnectedPeripheralsWithServices([Service.DeviceDiscovery.UUID])
+        .forEach { (peripheral) -> () in
+        if peripheral.state == .Connected {
+          if peripheral != performanceMonitor.peripheral {
+            centralManager.cancelPeripheralConnection(peripheral)
+          }
+        }
+      }
+    }
+    
     centralManager.connectPeripheral(performanceMonitor.peripheral, options: nil)
+  }
+  
+  public func connectPerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+    self.connectPerformanceMonitor(performanceMonitor, exclusive: true)
   }
   
   public func disconnectPerformanceMonitor(performanceMonitor:PerformanceMonitor) {

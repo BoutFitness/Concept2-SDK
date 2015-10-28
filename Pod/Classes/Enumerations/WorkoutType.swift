@@ -6,7 +6,7 @@
 //
 //
 
-enum WorkoutType:Int {
+public enum WorkoutType:Int {
   case JustRowNoSplits = 0
   case JustRowSplits
   case FixedDistanceNoSplits

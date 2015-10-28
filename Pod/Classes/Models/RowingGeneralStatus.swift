@@ -61,6 +61,23 @@ struct RowingGeneralStatus: CharacteristicModel, CustomDebugStringConvertible {
     dragFactor = C2DragFactor(arr[18])
   }
   
+  // MARK: PerformanceMonitor
+  func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+    performanceMonitor.elapsedTime = elapsedTime
+    performanceMonitor.distance = distance
+    performanceMonitor.workoutType = workoutType
+    performanceMonitor.intervalType = intervalType
+    performanceMonitor.workoutState = workoutState
+    performanceMonitor.rowingState = rowingState
+    performanceMonitor.strokeState = strokeState
+    performanceMonitor.totalWorkDistance = totalWorkDistance
+    performanceMonitor.workoutDuration = workoutDuration
+    performanceMonitor.workoutDurationType = workoutDurationType
+    performanceMonitor.dragFactor = dragFactor
+    
+    performanceMonitor.postUpdateValueNotification()
+  }
+  
   // MARK: -
   var debugDescription:String {
     return "[RowingGeneralStatus]"

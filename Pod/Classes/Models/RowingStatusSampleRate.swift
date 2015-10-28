@@ -22,6 +22,11 @@ struct RowingStatusSampleRate: CharacteristicModel, CustomDebugStringConvertible
     sampleRate = RowingStatusSampleRateType(rawValue: arr[0])
   }
   
+  // MARK: PerformanceMonitor
+  func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+    
+  }
+  
   // MARK: -
   var debugDescription:String {
     return "[RowingStatusSampleRate]\n\tsampleRate: \(sampleRate)"

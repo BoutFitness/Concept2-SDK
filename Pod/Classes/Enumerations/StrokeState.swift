@@ -6,7 +6,7 @@
 //
 //
 
-enum StrokeState:Int {
+public enum StrokeState:Int {
   case WaitingForWheelToReachMinSpeed = 0
   case WaitingForWheelToAccelerate
   case Driving

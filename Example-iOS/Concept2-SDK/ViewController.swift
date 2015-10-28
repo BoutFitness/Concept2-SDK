@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     manager = Concept2_SDK.BluetoothManager(withDelegate: self)
     NSNotificationCenter.defaultCenter().addObserverForName(
-      BluetoothManagerDidUpdateStateNotification,
+      BluetoothManager.DidUpdateStateNotification,
       object: manager,
       queue: nil) { (notification) -> Void in
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     }
     
     NSNotificationCenter.defaultCenter().addObserverForName(
-      PerformanceMonitorDidUpdateStateNotification,
+      PerformanceMonitor.DidUpdateStateNotification,
       object:  nil,
       queue: nil) { (notification) -> Void in
         if let pm = notification.object as? PerformanceMonitor {

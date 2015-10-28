@@ -6,7 +6,7 @@
 //
 //
 
-enum WorkoutDurationType:Int {
+public enum WorkoutDurationType:Int {
   case TimeDuration = 0
   case CaloriesDuration = 0x40
   case DistanceDuration = 0x80

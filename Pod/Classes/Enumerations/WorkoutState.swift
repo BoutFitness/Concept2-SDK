@@ -6,7 +6,7 @@
 //
 //
 
-enum WorkoutState:Int {
+public enum WorkoutState:Int {
   case WaitToBegin = 0
   case WorkoutRow
   case CountdownPause

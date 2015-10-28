@@ -49,6 +49,11 @@ struct RowingAdditionalStrokeData: CharacteristicModel, CustomDebugStringConvert
       projectedDistanceWithLow:  UInt32(arr[12]), mid: UInt32(arr[13]), high: UInt32(arr[14]))
   }
   
+  // MARK: PerformanceMonitor
+  func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+      
+  }
+  
   // MARK: -
   var debugDescription:String {
     return "[RowingAdditionalStrokeData]"

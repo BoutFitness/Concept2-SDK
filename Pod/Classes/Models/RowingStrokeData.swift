@@ -59,6 +59,11 @@ struct RowingStrokeData: CharacteristicModel, CustomDebugStringConvertible {
     strokeCount = C2StrokeCount(strokeCountWithLow: UInt16(arr[18]), high: UInt16(arr[19]))
   }
   
+  // MARK: PerformanceMonitor
+  func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+    
+  }
+  
   // MARK: -
   var debugDescription:String {
     return "[RowingStrokeData]"

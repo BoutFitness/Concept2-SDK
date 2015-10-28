@@ -33,6 +33,11 @@ struct RowingHeartRateBeltInformation: CharacteristicModel, CustomDebugStringCon
       midHigh: UInt32(arr[4]), high: UInt32(arr[5]))
   }
   
+  // MARK: PerformanceMonitor
+  func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+        
+  }
+  
   // MARK: -
   var debugDescription:String {
     return "[RowingHeartRateBeltInformation]"

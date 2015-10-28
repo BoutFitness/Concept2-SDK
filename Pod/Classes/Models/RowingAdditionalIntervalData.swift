@@ -60,6 +60,11 @@ struct RowingAdditionalIntervalData: CharacteristicModel, CustomDebugStringConve
     intervalNumber = C2IntervalCount(arr[17])
   }
   
+  // MARK: PerformanceMonitor
+  func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
+      
+  }
+  
   // MARK: -
   var debugDescription:String {
       return "[RowingAdditionalIntervalData]"
