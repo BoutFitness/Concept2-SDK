@@ -14,4 +14,8 @@ extension C2TimeInterval {
     
     self = C2TimeInterval(low | (mid << 8) | (high << 16)) * timeMultiplier
   }
+  
+  init(projectedTimeWithLow low:UInt32, mid:UInt32, high:UInt32) {
+    self = C2TimeInterval(low | (mid << 8) | (high << 16))
+  }
 }

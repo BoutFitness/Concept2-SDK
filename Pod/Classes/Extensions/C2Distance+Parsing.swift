@@ -14,4 +14,8 @@ extension C2Distance {
     
     self = C2Distance(low | (mid << 8) | (high << 16)) * distanceMultiplier
   }
+  
+  init(projectedDistanceWithLow low:UInt32, mid:UInt32, high:UInt32) {
+    self = C2Distance(low | (mid << 8) | (high << 16))
+  }
 }

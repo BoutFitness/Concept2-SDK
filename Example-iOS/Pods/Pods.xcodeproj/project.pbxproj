@@ -18,6 +18,7 @@
 		132793181BDF268400D79F07 /* RowingAdditionalStatus2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132793171BDF268400D79F07 /* RowingAdditionalStatus2.swift */; };
 		13C9F3F81BDF293C00209651 /* C2Power+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3F71BDF293C00209651 /* C2Power+Parsing.swift */; };
 		13C9F3FA1BDF2C0900209651 /* C2CalorieCount+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3F91BDF2C0900209651 /* C2CalorieCount+Parsing.swift */; };
+		13C9F3FC1BE04F5D00209651 /* RowingAdditionalStrokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3FB1BE04F5D00209651 /* RowingAdditionalStrokeData.swift */; };
 		13D7C88C1BDC1CEB00705BF5 /* RowingGeneralStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */; };
 		13D7C88E1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C88D1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift */; };
 		13D7C8911BDC20A500705BF5 /* WorkoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8901BDC20A500705BF5 /* WorkoutType.swift */; };
@@ -86,6 +87,7 @@
 		132793171BDF268400D79F07 /* RowingAdditionalStatus2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingAdditionalStatus2.swift; sourceTree = "<group>"; };
 		13C9F3F71BDF293C00209651 /* C2Power+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2Power+Parsing.swift"; sourceTree = "<group>"; };
 		13C9F3F91BDF2C0900209651 /* C2CalorieCount+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2CalorieCount+Parsing.swift"; sourceTree = "<group>"; };
+		13C9F3FB1BE04F5D00209651 /* RowingAdditionalStrokeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingAdditionalStrokeData.swift; sourceTree = "<group>"; };
 		13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingGeneralStatus.swift; sourceTree = "<group>"; };
 		13D7C88D1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacteristicModelProtocol.swift; sourceTree = "<group>"; };
 		13D7C8901BDC20A500705BF5 /* WorkoutType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutType.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				132793171BDF268400D79F07 /* RowingAdditionalStatus2.swift */,
 				B0803AA71BDFB5F4009E7EC1 /* RowingStatusSampleRate.swift */,
 				B0803AA91BDFB8B9009E7EC1 /* RowingStrokeData.swift */,
+				13C9F3FB1BE04F5D00209651 /* RowingAdditionalStrokeData.swift */,
 			);
 			name = Rowing;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D7C89C1BDC6F4400705BF5 /* ControlCharacteristic.swift in Sources */,
+				13C9F3FC1BE04F5D00209651 /* RowingAdditionalStrokeData.swift in Sources */,
 				D274D1574E5FD42B68CBA4648E8FAD35 /* BluetoothManager.swift in Sources */,
 				13D7C8971BDC261700705BF5 /* RowingState.swift in Sources */,
 				B0803AB01BE0263B009E7EC1 /* C2StrokeCount+Parsing.swift in Sources */,
