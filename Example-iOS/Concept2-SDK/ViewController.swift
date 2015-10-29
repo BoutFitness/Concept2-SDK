@@ -8,7 +8,6 @@
 
 import UIKit
 import Concept2_SDK
-import CoreBluetooth
 
 class ViewController: UIViewController {
   @IBOutlet var scanButton:UIButton!
@@ -75,6 +74,18 @@ class ViewController: UIViewController {
       performanceMonitor.enableDeviceInformationService()
       performanceMonitor.enableControlService()
       performanceMonitor.enableRowingService()
+      
+      self.performSegueWithIdentifier("PresentPerformanceMonitor", sender: performanceMonitor)
+    }
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "PresentPerformanceMonitor" {
+      if let pm = sender as? PerformanceMonitor {
+        if let vc = segue.destinationViewController as? PerformanceMonitorViewController {
+          vc.performanceMonitor = pm
+        }
+      }
     }
   }
 }

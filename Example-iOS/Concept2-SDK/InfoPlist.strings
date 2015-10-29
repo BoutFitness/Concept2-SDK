@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Example-iOS
+
+  Created by Jesse Curry on 10/28/15.
+  Copyright © 2015 Bout Fitness, LLC. All rights reserved.
+*/
+
+CFBundleName = "Concept2SDK-Example";
+CFBundleDisplayName = "Concept2";
