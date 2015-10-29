@@ -24,19 +24,19 @@ pod "Concept2-SDK"
 
 Import the SDK
 
-```
+```swift
 import Concept2_SDK
 ```
 
 Implement the `BluetoothManagerDelegate` and create a `BluetoothManager`
 
-```
+```swift
 let manager = Concept2_SDK.BluetoothManager(withDelegate: self)
 ```
 
 Register for notifications from the `BluetoothManager` and the `PerformaneMonitor`
 
-```
+```swift
 NSNotificationCenter.defaultCenter().addObserverForName(
   BluetoothManager.DidUpdateStateNotification,
   object: manager,
@@ -60,13 +60,13 @@ NSNotificationCenter.defaultCenter().addObserverForName(
 
 Begin scanning for performance monitors (they'll need to be in-range and have wireless on)
 
-```
+```swift
 manager.scanForPerformanceMonitors()
 ```
 
 When performance monitors are found the `BluetoothManager` will let its delegate know
 
-```
+```swift
 func didLoadPerformanceMonitors(bluetoothManager: BluetoothManager, performanceMonitors: Array<PerformanceMonitor>) {
   // Do something with the monitors, usually display in a list...
 }
@@ -74,7 +74,7 @@ func didLoadPerformanceMonitors(bluetoothManager: BluetoothManager, performanceM
 
 Connect to one of the performance monitors
 
-```
+```swift
 // You'll want to stop scanning to save power
 manager.stopScanningForPerformanceMonitors()
 
@@ -85,7 +85,7 @@ manager.connectPerformanceMonitor(pm)
 
 When the monitor connects it will register for notification of value updates, if you're interested in knowing when that happens register to receive updates from the `PerformanceMonitor`
 
-```
+```swift
 NSNotificationCenter.defaultCenter().addObserverForName(
   PerformanceMonitor.DidUpdateValueNotification,
   object:  performanceMonitor, // This will limit notifications to one monitor, otherwise pass nil
