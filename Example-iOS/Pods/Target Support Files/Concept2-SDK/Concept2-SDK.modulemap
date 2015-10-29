@@ -1,0 +1,6 @@
+framework module Concept2_SDK {
+  umbrella header "Concept2-SDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
