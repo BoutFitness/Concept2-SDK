@@ -64,8 +64,6 @@ struct RowingIntervalData: CharacteristicModel, CustomDebugStringConvertible {
     performanceMonitor.intervalRestDistance.value = intervalRestDistance
     performanceMonitor.intervalType.value = intervalType
     performanceMonitor.intervalNumber.value = intervalNumber
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -

@@ -71,8 +71,6 @@ struct RowingAdditionalWorkoutSummaryData: CharacteristicModel, CustomDebugStrin
 //    performanceMonitor.totalRestDistance.value = totalRestDistance
     performanceMonitor.intervalRestTime.value = intervalRestTime
 //    performanceMonitor.averageCalories.value = averageCalories
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -

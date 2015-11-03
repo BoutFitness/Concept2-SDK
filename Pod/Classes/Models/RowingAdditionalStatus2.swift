@@ -64,8 +64,6 @@ struct RowingAdditionalStatus2: CharacteristicModel, CustomDebugStringConvertibl
     performanceMonitor.intervalAverageCalories.value = intervalAverageCalories
     performanceMonitor.lastSplitTime.value = lastSplitTime
     performanceMonitor.lastSplitDistance.value = lastSplitDistance
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -

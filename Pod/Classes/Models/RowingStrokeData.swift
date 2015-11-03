@@ -71,8 +71,6 @@ struct RowingStrokeData: CharacteristicModel, CustomDebugStringConvertible {
     performanceMonitor.averageDriveForce.value = averageDriveForce
     performanceMonitor.workPerStroke.value = workPerStroke
     performanceMonitor.strokeCount.value = strokeCount
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -

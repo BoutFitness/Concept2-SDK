@@ -62,8 +62,6 @@ struct RowingAdditionalStatus1: CharacteristicModel, CustomDebugStringConvertibl
     performanceMonitor.averagePace.value = averagePace
     performanceMonitor.restDistance.value = restDistance
     performanceMonitor.restTime.value = restTime
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -

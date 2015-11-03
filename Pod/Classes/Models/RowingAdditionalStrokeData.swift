@@ -57,8 +57,6 @@ struct RowingAdditionalStrokeData: CharacteristicModel, CustomDebugStringConvert
     performanceMonitor.strokeCount.value = strokeCount
     performanceMonitor.projectedWorkTime.value = projectedWorkTime
     performanceMonitor.projectedWorkDistance.value = projectedWorkDistance
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -

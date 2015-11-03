@@ -11,7 +11,6 @@ import CoreBluetooth
 public final class PerformanceMonitor
 {
   public static let DidUpdateStateNotification = "PerformanceMonitorDidUpdateStateNotification"
-  public static let DidUpdateValueNotification = "PerformanceMonitorDidUpdateValueNotification"
   
   //
   var peripheral:CBPeripheral
@@ -147,13 +146,6 @@ public final class PerformanceMonitor
         })
       }
     })
-  }
-  
-  // MARK:
-  func postUpdateValueNotification() {
-    NSNotificationCenter.defaultCenter().postNotificationName(
-      PerformanceMonitor.DidUpdateValueNotification,
-      object: self)
   }
 }
 

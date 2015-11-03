@@ -81,8 +81,6 @@ struct RowingWorkoutSummaryData: CharacteristicModel, CustomDebugStringConvertib
 //    performanceMonitor.recoveryHeartRate.value = recoveryHeartRate
     performanceMonitor.workoutType.value = workoutType
     performanceMonitor.averagePace.value = averagePace
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -

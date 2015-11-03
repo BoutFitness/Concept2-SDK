@@ -73,8 +73,6 @@ struct RowingAdditionalIntervalData: CharacteristicModel, CustomDebugStringConve
     performanceMonitor.intervalPower.value = intervalPower
     performanceMonitor.splitAverageDragFactor.value = splitAverageDragFactor
     performanceMonitor.intervalNumber.value = intervalNumber
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -

@@ -25,8 +25,6 @@ struct RowingStatusSampleRate: CharacteristicModel, CustomDebugStringConvertible
   // MARK: PerformanceMonitor
   func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
     performanceMonitor.sampleRate.value = sampleRate
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -

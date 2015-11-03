@@ -74,8 +74,6 @@ struct RowingGeneralStatus: CharacteristicModel, CustomDebugStringConvertible {
     performanceMonitor.workoutDuration.value = workoutDuration
     performanceMonitor.workoutDurationType.value = workoutDurationType
     performanceMonitor.dragFactor.value = dragFactor
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -

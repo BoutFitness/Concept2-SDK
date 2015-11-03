@@ -38,8 +38,6 @@ struct RowingHeartRateBeltInformation: CharacteristicModel, CustomDebugStringCon
 //    performanceMonitor.manufacturerID.value = manufacturerID
 //    performanceMonitor.deviceType.value = deviceType
 //    performanceMonitor.beltID.value = beltID
-    
-    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -
