@@ -77,14 +77,14 @@ public enum Service {
     }
   }
   
-  func characteristic(string string:String) -> Characteristic? {
+  func characteristic(uuid uuid:CBUUID) -> Characteristic? {
     switch self {
     case .DeviceInformation:
-      return DeviceInformationCharacteristic(rawValue: string)
+      return DeviceInformationCharacteristic(uuid: uuid)
     case .Control:
-      return ControlCharacteristic(rawValue: string)
+      return ControlCharacteristic(uuid: uuid)
     case .Rowing:
-      return RowingCharacteristic(rawValue: string)
+      return RowingCharacteristic(uuid: uuid)
     default:
       return nil
     }
