@@ -24,56 +24,56 @@ public final class PerformanceMonitor
   public var isConnected:Bool { get { return (peripheral.state == .Connected) } }
   
   // MARK: Rowing Information
-  public var averageDriveForce:C2DriveForce = 0
-  public var averagePace:C2Pace = 0
-  public var currentPace:C2Pace = 0
-  public var distance:C2Distance = 0
-  public var dragFactor:C2DragFactor = 0
-  public var driveLength:C2DriveLength = 0
-  public var driveTime:C2DriveTime = 0
-  public var elapsedTime:C2TimeInterval = 0
-  public var heartRate:C2HeartRate = 0
-  public var intervalAverageCalories:C2CalorieCount = 0
-  public var intervalAveragePace:C2Pace = 0
-  public var intervalAveragePower:C2Power = 0
-  public var intervalAverageStrokeRate:C2StrokeRate = 0
-  public var intervalCount:C2IntervalCount = 0
-  public var intervalDistance:C2Distance = 0
-  public var intervalNumber:C2IntervalCount = 0
-  public var intervalPower:C2Power = 0
-  public var intervalRestDistance:C2Distance = 0
-  public var intervalRestHeartrate:C2HeartRate = 0
-  public var intervalRestTime:C2TimeInterval = 0
-  public var intervalSpeed:C2Speed = 0
-  public var intervalTime:C2TimeInterval = 0
-  public var intervalTotalCalories:C2CalorieCount = 0
-  public var intervalType:IntervalType?
-  public var intervalWorkHeartrate:C2HeartRate = 0
-  public var lastSplitDistance:C2Distance = 0
-  public var lastSplitTime:C2TimeInterval = 0
-  public var peakDriveForce:C2DriveForce = 0
-  public var projectedWorkDistance:C2Distance = 0
-  public var projectedWorkTime:C2TimeInterval = 0
-  public var restDistance:C2Distance = 0
-  public var restTime:C2TimeInterval = 0
-  public var rowingState:RowingState?
-  public var sampleRate:RowingStatusSampleRateType?
-  public var speed:C2Speed = 0
-  public var splitAverageDragFactor:C2DragFactor = 0
-  public var strokeCalories:C2CalorieCount = 0
-  public var strokeCount:C2StrokeCount = 0
-  public var strokeDistance:C2Distance = 0
-  public var strokePower:C2Power = 0
-  public var strokeRate:C2StrokeRate = 0
-  public var strokeRecoveryTime:C2TimeInterval = 0
-  public var strokeState:StrokeState?
-  public var totalCalories:C2CalorieCount = 0
-  public var totalWorkDistance:C2Distance = 0
-  public var workoutDuration:C2TimeInterval = 0
-  public var workoutDurationType:WorkoutDurationType?
-  public var workoutState:WorkoutState?
-  public var workoutType:WorkoutType?
-  public var workPerStroke:C2Work = 0
+  public var averageDriveForce = Subject<C2DriveForce>(value: 0)
+  public var averagePace = Subject<C2Pace>(value: 0)
+  public var currentPace = Subject<C2Pace>(value: 0)
+  public var distance = Subject<C2Distance>(value: 0)
+  public var dragFactor = Subject<C2DragFactor>(value: 0)
+  public var driveLength = Subject<C2DriveLength>(value: 0)
+  public var driveTime = Subject<C2DriveTime>(value: 0)
+  public var elapsedTime = Subject<C2TimeInterval>(value: 0)
+  public var heartRate = Subject<C2HeartRate>(value: 0)
+  public var intervalAverageCalories = Subject<C2CalorieCount>(value: 0)
+  public var intervalAveragePace = Subject<C2Pace>(value: 0)
+  public var intervalAveragePower = Subject<C2Power>(value: 0)
+  public var intervalAverageStrokeRate = Subject<C2StrokeRate>(value: 0)
+  public var intervalCount = Subject<C2IntervalCount>(value: 0)
+  public var intervalDistance = Subject<C2Distance>(value: 0)
+  public var intervalNumber = Subject<C2IntervalCount>(value: 0)
+  public var intervalPower = Subject<C2Power>(value: 0)
+  public var intervalRestDistance = Subject<C2Distance>(value: 0)
+  public var intervalRestHeartrate = Subject<C2HeartRate>(value: 0)
+  public var intervalRestTime = Subject<C2TimeInterval>(value: 0)
+  public var intervalSpeed = Subject<C2Speed>(value: 0)
+  public var intervalTime = Subject<C2TimeInterval>(value: 0)
+  public var intervalTotalCalories = Subject<C2CalorieCount>(value: 0)
+  public var intervalType = Subject<IntervalType?>(value: nil)
+  public var intervalWorkHeartrate = Subject<C2HeartRate>(value: 0)
+  public var lastSplitDistance = Subject<C2Distance>(value: 0)
+  public var lastSplitTime = Subject<C2TimeInterval>(value: 0)
+  public var peakDriveForce = Subject<C2DriveForce>(value: 0)
+  public var projectedWorkDistance = Subject<C2Distance>(value: 0)
+  public var projectedWorkTime = Subject<C2TimeInterval>(value: 0)
+  public var restDistance = Subject<C2Distance>(value: 0)
+  public var restTime = Subject<C2TimeInterval>(value: 0)
+  public var rowingState = Subject<RowingState?>(value: nil)
+  public var sampleRate = Subject<RowingStatusSampleRateType?>(value: nil)
+  public var speed = Subject<C2Speed>(value: 0)
+  public var splitAverageDragFactor = Subject<C2DragFactor>(value: 0)
+  public var strokeCalories = Subject<C2CalorieCount>(value: 0)
+  public var strokeCount = Subject<C2StrokeCount>(value: 0)
+  public var strokeDistance = Subject<C2Distance>(value: 0)
+  public var strokePower = Subject<C2Power>(value: 0)
+  public var strokeRate = Subject<C2StrokeRate>(value: 0)
+  public var strokeRecoveryTime = Subject<C2TimeInterval>(value: 0)
+  public var strokeState = Subject<StrokeState?>(value: nil)
+  public var totalCalories = Subject<C2CalorieCount>(value: 0)
+  public var totalWorkDistance = Subject<C2Distance>(value: 0)
+  public var workoutDuration = Subject<C2TimeInterval>(value: 0)
+  public var workoutDurationType = Subject<WorkoutDurationType?>(value: nil)
+  public var workoutState = Subject<WorkoutState?>(value: nil)
+  public var workoutType = Subject<WorkoutType?>(value: nil)
+  public var workPerStroke = Subject<C2Work>(value: 0)
   
   // MARK: - Initialization
   init(withPeripheral peripheral:CBPeripheral) {
@@ -81,6 +81,53 @@ public final class PerformanceMonitor
     
     peripheralDelegate.performanceMonitor = self
     peripheral.delegate = peripheralDelegate
+  }
+  
+  // MARK: API
+  public func reset() {
+    averageDriveForce.value = 0
+    averagePace.value = 0
+    currentPace.value = 0
+    distance.value = 0
+    dragFactor.value = 0
+    driveLength.value = 0
+    driveTime.value = 0
+    elapsedTime.value = 0
+    heartRate.value = 0
+    intervalAverageCalories.value = 0
+    intervalAveragePace.value = 0
+    intervalAveragePower.value = 0
+    intervalAverageStrokeRate.value = 0
+    intervalCount.value = 0
+    intervalDistance.value = 0
+    intervalNumber.value = 0
+    intervalPower.value = 0
+    intervalRestDistance.value = 0
+    intervalRestHeartrate.value = 0
+    intervalRestTime.value = 0
+    intervalSpeed.value = 0
+    intervalTime.value = 0
+    intervalTotalCalories.value = 0
+    intervalWorkHeartrate.value = 0
+    lastSplitDistance.value = 0
+    lastSplitTime.value = 0
+    peakDriveForce.value = 0
+    projectedWorkDistance.value = 0
+    projectedWorkTime.value = 0
+    restDistance.value = 0
+    restTime.value = 0
+    speed.value = 0
+    splitAverageDragFactor.value = 0
+    strokeCalories.value = 0
+    strokeCount.value = 0
+    strokeDistance.value = 0
+    strokePower.value = 0
+    strokeRate.value = 0
+    strokeRecoveryTime.value = 0
+    totalCalories.value = 0
+    totalWorkDistance.value = 0
+    workoutDuration.value = 0
+    workPerStroke.value = 0
   }
   
   // MARK: -
@@ -107,36 +154,6 @@ public final class PerformanceMonitor
     NSNotificationCenter.defaultCenter().postNotificationName(
       PerformanceMonitor.DidUpdateValueNotification,
       object: self)
-  }
-  
-  // MARK: Device Information
-  private var deviceInformationServiceEnabled = false
-  public func enableDeviceInformationService() {
-    if !deviceInformationServiceEnabled {
-      print("[PerformanceMonitor]enabling device information service")
-      peripheral.discoverServices([Service.DeviceInformation.UUID])
-      deviceInformationServiceEnabled = true
-    }
-  }
-  
-  // MARK: Control
-  private var controlServiceEnabled = false
-  public func enableControlService() {
-    if !controlServiceEnabled {
-      print("[PerformanceMonitor]enabling control service")
-      peripheral.discoverServices([Service.Control.UUID])
-      controlServiceEnabled = true
-    }
-  }
-  
-  // MARK: Rowing
-  private var rowingServiceEnabled = false
-  public func enableRowingService() {
-    if !rowingServiceEnabled {
-      print("[PerformanceMonitor]enabling rowing service")
-      peripheral.discoverServices([Service.Rowing.UUID])
-      rowingServiceEnabled = true
-    }
   }
 }
 

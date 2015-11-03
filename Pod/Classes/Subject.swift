@@ -20,7 +20,7 @@ public class Subject<T> {
     The value that is to be observered.
     All current observers will be notified when it is assigned to.
    */
-  var value: T? {
+  public var value: T? {
     didSet {
       notify()
     }
@@ -38,7 +38,7 @@ public class Subject<T> {
     To observe changes in the subject, attach a block.
     When you want observation to end, call `dispose` on the returned Disposable
    */
-  func attach(observer: (T?) -> Void) -> Disposable {
+  public func attach(observer: (T?) -> Void) -> Disposable {
     let wrapped = ObserverWrapper(subject: self, function: observer)
     observers.append(wrapped)
     

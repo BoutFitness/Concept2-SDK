@@ -12,19 +12,22 @@ import Concept2_SDK
 class PerformanceMonitorViewController: UIViewController {
   var performanceMonitor:PerformanceMonitor?
   
+  var nameDisposable:Disposable?
   @IBOutlet var nameLabel:UILabel!
+  var strokesPerMinuteDisposable:Disposable?
   @IBOutlet var strokesPerMinuteLabel:UILabel!
+  var distanceDisposable:Disposable?
   @IBOutlet var distanceLabel:UILabel!
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    registerForNotifications()
+    attachObservers()
     updateUI()
   }
   
   override func viewDidDisappear(animated: Bool) {
-    unregisterForNotifications()
     super.viewDidDisappear(animated)
+    detachObservers()
   }
   
   @IBAction func dismissAction(sender:AnyObject?) {
@@ -35,40 +38,36 @@ class PerformanceMonitorViewController: UIViewController {
   // MARK: View Updates
   private func updateUI() {
     nameLabel.text = performanceMonitor?.peripheralName ?? "Unknown"
-    strokesPerMinuteLabel.text = "\(performanceMonitor?.strokeRate ?? 0)"
-    distanceLabel.text = "\(performanceMonitor?.distance ?? 0)"
   }
   
   // MARK: Notifications
-  private let notificationCenter = NSNotificationCenter.defaultCenter()
-  private func registerForNotifications() {
-    notificationCenter.addObserverForName(
-      PerformanceMonitor.DidUpdateStateNotification,
-      object:  performanceMonitor,
-      queue: nil) { (notification) -> Void in
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-          if let pm = self.performanceMonitor {
-            if !pm.isConnected {
-              self.dismissAction(nil)
-            }
-          }
-        })
-    }
+  private func attachObservers() {
+    detachObservers()
     
-    notificationCenter.addObserverForName(
-      PerformanceMonitor.DidUpdateValueNotification,
-      object:  performanceMonitor,
-      queue: nil) { (notification) -> Void in
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.updateUI()
-        })
-    }
+    performanceMonitor?.strokeRate.attach({ [weak self] (strokeRate:C2StrokeRate?) -> Void in
+      if let weakSelf = self {
+        guard strokeRate != nil else {
+          weakSelf.strokesPerMinuteLabel.text = "0"
+          return
+        }
+        weakSelf.strokesPerMinuteLabel.text = "\(strokeRate!.value)"
+      }
+    })
+    
+    performanceMonitor?.distance.attach({ [weak self] (distance:C2Distance?) -> Void in
+      if let weakSelf = self {
+        guard distance != nil else {
+          weakSelf.distanceLabel.text = "0"
+          return
+        }
+        weakSelf.distanceLabel.text = "\(distance!.value)"
+      }
+    })
   }
   
-  private func unregisterForNotifications() {
-    notificationCenter.removeObserver(self,
-      name: PerformanceMonitor.DidUpdateStateNotification, object: nil)
-    notificationCenter.removeObserver(self,
-      name: PerformanceMonitor.DidUpdateValueNotification, object: nil)
+  private func detachObservers() {
+    nameDisposable?.dispose()
+    strokesPerMinuteDisposable?.dispose()
+    distanceDisposable?.dispose()
   }
 }

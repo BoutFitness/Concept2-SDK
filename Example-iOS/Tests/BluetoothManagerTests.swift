@@ -8,13 +8,8 @@
 
 import XCTest
 import Concept2_SDK
-import CoreBluetooth
-
-let scannerDelegate = BluetoothManagerTestDelegate()
 
 class BluetoothManagerTests: XCTestCase {
-  let scanner = BluetoothManager(withDelegate: scannerDelegate)
-  
   override func setUp() {
     super.setUp()
   }
@@ -24,13 +19,6 @@ class BluetoothManagerTests: XCTestCase {
   }
   
   func testScanning() {
-    scanner.scanForPerformanceMonitors()
-  }
-}
-
-class BluetoothManagerTestDelegate: BluetoothManagerDelegate {
-  func didLoadPerformanceMonitors(bluetoothManager: BluetoothManager,
-    performanceMonitors: Array<PerformanceMonitor>) {
-    
+    BluetoothManager.scanForPerformanceMonitors()
   }
 }

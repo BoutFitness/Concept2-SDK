@@ -14,22 +14,18 @@ class ViewController: UIViewController {
   @IBOutlet var tableView:UITableView!
   
   //
-  var manager:BluetoothManager?
   var performanceMonitors = Array<PerformanceMonitor>()
   
   // MARK: UIViewController lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    manager = Concept2_SDK.BluetoothManager(withDelegate: self)
-    NSNotificationCenter.defaultCenter().addObserverForName(
-      BluetoothManager.DidUpdateStateNotification,
-      object: manager,
-      queue: nil) { (notification) -> Void in
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-          self.managerStateDidUpdate()
-        })
+    BluetoothManager.sharedInstance.isReady.attach { [weak self] (isReady:Bool?) -> Void in
+      if let weakSelf = self {
+        weakSelf.updateUI()
+      }
     }
+    
     
     NSNotificationCenter.defaultCenter().addObserverForName(
       PerformanceMonitor.DidUpdateStateNotification,
@@ -47,19 +43,18 @@ class ViewController: UIViewController {
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    managerStateDidUpdate()
   }
   
   @IBAction
   func scanAction(sender:AnyObject?)
   {
-    manager?.scanForPerformanceMonitors()
+    BluetoothManager.scanForPerformanceMonitors()
   }
   
-  //
-  func managerStateDidUpdate() {
-    scanButton.enabled = manager?.isReady ?? false
+  func updateUI() {
+    scanButton.enabled = BluetoothManager.sharedInstance.isReady.value ?? false
   }
+  
   
   func performanceMonitorStateDidUpdate(performanceMonitor:PerformanceMonitor) {
     print("PerformanceMonitorStateDidUpdate: \(performanceMonitor.peripheralName)")
@@ -71,10 +66,6 @@ class ViewController: UIViewController {
     
     if performanceMonitor.isConnected {
       print("\tConnected - Enabling services")
-      performanceMonitor.enableDeviceInformationService()
-      performanceMonitor.enableControlService()
-      performanceMonitor.enableRowingService()
-      
       self.performSegueWithIdentifier("PresentPerformanceMonitor", sender: performanceMonitor)
     }
   }
@@ -125,11 +116,11 @@ extension ViewController: UITableViewDelegate {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
     
     // We've found a PM to connect to, stop scanning to save power
-    manager?.stopScanningForPerformanceMonitors()
+    BluetoothManager.stopScanningForPerformanceMonitors()
     
     // Attempt to connect to the PM
     let pm:PerformanceMonitor = performanceMonitors[indexPath.row]
-    manager?.connectPerformanceMonitor(pm)
+    BluetoothManager.connectPerformanceMonitor(pm)
   }
 }
 

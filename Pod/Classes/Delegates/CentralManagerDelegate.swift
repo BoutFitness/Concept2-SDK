@@ -36,9 +36,7 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
       break
     }
     
-    NSNotificationCenter.defaultCenter().postNotificationName(
-      BluetoothManager.DidUpdateStateNotification,
-      object: bluetoothManager)
+    bluetoothManager?.isReady.value = (central.state == .PoweredOn)
   }
   
   // MARK: Peripheral Discovery
