@@ -58,6 +58,11 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     peripheral: CBPeripheral)
   {
     print("[BluetoothManager]didConnectPeripheral")
+    peripheral.discoverServices([
+      Service.DeviceDiscovery.UUID,
+      Service.DeviceInformation.UUID,
+      Service.Control.UUID,
+      Service.Rowing.UUID])
     postPerformanceMonitorNotificationForPeripheral(peripheral)
   }
   
