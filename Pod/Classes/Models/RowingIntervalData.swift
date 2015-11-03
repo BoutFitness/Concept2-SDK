@@ -56,7 +56,16 @@ struct RowingIntervalData: CharacteristicModel, CustomDebugStringConvertible {
   
   // MARK: PerformanceMonitor
   func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
-      
+    performanceMonitor.elapsedTime.value = elapsedTime
+    performanceMonitor.distance.value = distance
+    performanceMonitor.intervalTime.value = intervalTime
+    performanceMonitor.intervalDistance.value = intervalDistance
+    performanceMonitor.intervalRestTime.value = intervalRestTime
+    performanceMonitor.intervalRestDistance.value = intervalRestDistance
+    performanceMonitor.intervalType.value = intervalType
+    performanceMonitor.intervalNumber.value = intervalNumber
+    
+    performanceMonitor.postUpdateValueNotification()
   }
   
   // MARK: -
