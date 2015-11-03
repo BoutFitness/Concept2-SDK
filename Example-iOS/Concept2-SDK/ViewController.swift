@@ -10,6 +10,7 @@ import UIKit
 import Concept2_SDK
 
 class ViewController: UIViewController {
+  var isReadyDisposable:Disposable?
   @IBOutlet var scanButton:UIButton!
   @IBOutlet var tableView:UITableView!
   
@@ -20,7 +21,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    BluetoothManager.sharedInstance.isReady.attach { [weak self] (isReady:Bool?) -> Void in
+    isReadyDisposable = BluetoothManager.sharedInstance.isReady.attach {
+      [weak self] (isReady:Bool?) -> Void in
       if let weakSelf = self {
         weakSelf.updateUI()
       }
