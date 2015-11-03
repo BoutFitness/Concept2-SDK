@@ -20,13 +20,13 @@ public class Subject<T> {
     The value that is to be observered.
     All current observers will be notified when it is assigned to.
    */
-  public var value: T? {
+  public var value: T {
     didSet {
       notify()
     }
   }
   
-  init(value: T?) {
+  init(value: T) {
     self.value = value
   }
   
@@ -38,7 +38,7 @@ public class Subject<T> {
     To observe changes in the subject, attach a block.
     When you want observation to end, call `dispose` on the returned Disposable
    */
-  public func attach(observer: (T?) -> Void) -> Disposable {
+  public func attach(observer: (T) -> Void) -> Disposable {
     let wrapped = ObserverWrapper(subject: self, function: observer)
     observers.append(wrapped)
     
@@ -48,8 +48,8 @@ public class Subject<T> {
     return wrapped
   }
   
-  func map<U>(transform: (T?) -> U) -> Subject<U> {
-    let result: Subject<U> = Subject<U>(value: nil)
+  func map<U>(transform: (T) -> U) -> Subject<U> {
+    let result: Subject<U> = Subject<U>(value: transform(value))
     result.disposable = self.attach { [weak result] value in
       result?.value = transform(value)
     }
@@ -74,12 +74,12 @@ public class Subject<T> {
 
 // MARK: -
 private class ObserverWrapper<T>: Disposable {
-  init(subject: Subject<T>, function: (T?) -> Void) {
+  init(subject: Subject<T>, function: (T) -> Void) {
     self.subject = subject
     self.function = function
   }
   
-  func update(value: T?) {
+  func update(value: T) {
     function(value)
   }
   
@@ -88,6 +88,5 @@ private class ObserverWrapper<T>: Disposable {
   }
   
   unowned let subject: Subject<T>
-  let function: (T?) -> Void
-  
+  let function: (T) -> Void
 }
