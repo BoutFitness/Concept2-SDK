@@ -12,13 +12,39 @@ import CoreBluetooth
  See: http://www.concept2.com/files/pdf/us/monitors/PM5_BluetoothSmartInterfaceDefinition.pdf
  */
 
-public enum Service:String {
-  case DeviceDiscovery = "CE060000-43E5-11E4-916C-0800200C9A66"
-  case DeviceInformation = "CE060010-43E5-11E4-916C-0800200C9A66"
-  case Control = "CE060020-43E5-11E4-916C-0800200C9A66"
-  case Rowing = "CE060030-43E5-11E4-916C-0800200C9A66"
+public enum Service {
+  case DeviceDiscovery
+  case DeviceInformation
+  case Control
+  case Rowing
   
-  var UUID:CBUUID { return CBUUID(string: self.rawValue) }
+  init?(uuid:CBUUID) {
+    switch uuid {
+    case DeviceDiscovery.UUID:
+      self = .DeviceDiscovery
+    case DeviceInformation.UUID:
+      self = .DeviceInformation
+    case Control.UUID:
+      self = .Control
+    case Rowing.UUID:
+      self = .Rowing
+    default:
+      return nil
+    }
+  }
+  
+  var UUID:CBUUID {
+    switch self {
+    case .DeviceDiscovery:
+      return CBUUID(string: "CE060000-43E5-11E4-916C-0800200C9A66")
+    case .DeviceInformation:
+      return CBUUID(string: "CE060010-43E5-11E4-916C-0800200C9A66")
+    case .Control:
+      return CBUUID(string: "CE060020-43E5-11E4-916C-0800200C9A66")
+    case .Rowing:
+      return CBUUID(string: "CE060030-43E5-11E4-916C-0800200C9A66")
+    }
+  }
   
   var characteristicUUIDs:[CBUUID]? {
     switch self {

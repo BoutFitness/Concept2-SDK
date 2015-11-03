@@ -137,7 +137,7 @@ public final class PerformanceMonitor
     peripheral.services?.forEach({ (service:CBService) -> () in
       print("Requesting notifications for \(service.description)")
       
-      if let svc = Service(rawValue: service.UUID.UUIDString) {
+      if let svc = Service(uuid: service.UUID) {
         peripheral.discoverCharacteristics(svc.characteristicUUIDs,
           forService:  service)
         

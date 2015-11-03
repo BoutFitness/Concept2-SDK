@@ -19,7 +19,7 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
       peripheral.services?.forEach({ (service:CBService) -> () in
         print("\t* \(service.description)")
 
-        if let svc = Service(rawValue: service.UUID.UUIDString) {
+        if let svc = Service(uuid: service.UUID) {
           peripheral.discoverCharacteristics(svc.characteristicUUIDs,
             forService:  service)
         }
@@ -62,7 +62,7 @@ final class PeripheralDelegate: NSObject, CBPeripheralDelegate {
     characteristic: CBCharacteristic,
     error: NSError?) {
       print("[PerformanceMonitor]didUpdateValueForCharacteristic: \(characteristic)")
-      if let svc = Service(rawValue: characteristic.service.UUID.UUIDString) {
+      if let svc = Service(uuid: characteristic.service.UUID) {
         if let c = svc.characteristic(string: characteristic.UUID.UUIDString) {
           let cm = c.parse(data: characteristic.value)
           if let pm = performanceMonitor {
