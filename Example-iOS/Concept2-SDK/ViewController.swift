@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     
     isReadyDisposable = BluetoothManager.sharedInstance.isReady.attach {
-      [weak self] (isReady:Bool?) -> Void in
+      [weak self] (isReady:Bool) -> Void in
       if let weakSelf = self {
         weakSelf.updateUI()
       }
