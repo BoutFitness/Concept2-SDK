@@ -51,7 +51,12 @@ struct RowingAdditionalStrokeData: CharacteristicModel, CustomDebugStringConvert
   
   // MARK: PerformanceMonitor
   func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
-      
+    performanceMonitor.elapsedTime.value = elapsedTime
+    performanceMonitor.strokePower.value = strokePower
+    performanceMonitor.strokeCalories.value = strokeCalories
+    performanceMonitor.strokeCount.value = strokeCount
+    performanceMonitor.projectedWorkTime.value = projectedWorkTime
+    performanceMonitor.projectedWorkDistance.value = projectedWorkDistance
   }
   
   // MARK: -

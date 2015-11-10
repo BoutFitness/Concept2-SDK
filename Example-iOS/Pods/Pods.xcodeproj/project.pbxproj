@@ -26,6 +26,7 @@
 		13C9F4061BE06CEE00209651 /* C2IntervalSize+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F4051BE06CEE00209651 /* C2IntervalSize+Parsing.swift */; };
 		13C9F4081BE06E7000209651 /* RowingHeartRateBeltInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F4071BE06E7000209651 /* RowingHeartRateBeltInformation.swift */; };
 		13C9F40A1BE06FEA00209651 /* C2HeartRateBeltID+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F4091BE06FEA00209651 /* C2HeartRateBeltID+Parsing.swift */; };
+		13C9F4121BE83E4100209651 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F4111BE83E4100209651 /* Subject.swift */; };
 		13D7C88C1BDC1CEB00705BF5 /* RowingGeneralStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */; };
 		13D7C88E1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C88D1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift */; };
 		13D7C8911BDC20A500705BF5 /* WorkoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7C8901BDC20A500705BF5 /* WorkoutType.swift */; };
@@ -102,6 +103,7 @@
 		13C9F4051BE06CEE00209651 /* C2IntervalSize+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2IntervalSize+Parsing.swift"; sourceTree = "<group>"; };
 		13C9F4071BE06E7000209651 /* RowingHeartRateBeltInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingHeartRateBeltInformation.swift; sourceTree = "<group>"; };
 		13C9F4091BE06FEA00209651 /* C2HeartRateBeltID+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "C2HeartRateBeltID+Parsing.swift"; sourceTree = "<group>"; };
+		13C9F4111BE83E4100209651 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		13D7C88B1BDC1CEB00705BF5 /* RowingGeneralStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowingGeneralStatus.swift; sourceTree = "<group>"; };
 		13D7C88D1BDC1D8500705BF5 /* CharacteristicModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacteristicModelProtocol.swift; sourceTree = "<group>"; };
 		13D7C8901BDC20A500705BF5 /* WorkoutType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutType.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 			children = (
 				FC548ACE033179B3B930101C1BE52300 /* BluetoothManager.swift */,
 				2E4B08FEBDEC885092DAAC4BDDA15550 /* PerformanceMonitor.swift */,
+				13C9F4111BE83E4100209651 /* Subject.swift */,
 				1327930D1BDF1D6100D79F07 /* Types.swift */,
 				13C9F40B1BE18D8F00209651 /* Stores */,
 				13C9F40C1BE18D9800209651 /* Delegates */,
@@ -587,6 +590,7 @@
 				7E3FE6A6724410B345C4447A239FC45F /* CentralManagerDelegate.swift in Sources */,
 				69151A31BA34C510F408551FA8F8C0C0 /* Concept2-SDK-dummy.m in Sources */,
 				132793101BDF1DDE00D79F07 /* C2Speed+Parsing.swift in Sources */,
+				13C9F4121BE83E4100209651 /* Subject.swift in Sources */,
 				13C9F3F81BDF293C00209651 /* C2Power+Parsing.swift in Sources */,
 				4051A62D1EE9763CC82D5F6EA74C443C /* CSAFECommand.swift in Sources */,
 				1327930E1BDF1D6100D79F07 /* Types.swift in Sources */,

@@ -61,7 +61,16 @@ struct RowingAdditionalWorkoutSummaryData: CharacteristicModel, CustomDebugStrin
   
   // MARK: PerformanceMonitor
   func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
-      
+//    performanceMonitor.logEntryDate.value = logEntryDate
+//    performanceMonitor.logEntryTime.value = logEntryTime
+    performanceMonitor.intervalType.value = intervalType
+    performanceMonitor.intervalSize.value = intervalSize
+    performanceMonitor.intervalCount.value = intervalCount
+    performanceMonitor.totalCalories.value = totalCalories
+    performanceMonitor.watts.value = watts
+    performanceMonitor.totalRestDistance.value = totalRestDistance
+    performanceMonitor.intervalRestTime.value = intervalRestTime
+    performanceMonitor.averageCalories.value = averageCalories
   }
   
   // MARK: -

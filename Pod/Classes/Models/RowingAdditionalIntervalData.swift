@@ -62,7 +62,17 @@ struct RowingAdditionalIntervalData: CharacteristicModel, CustomDebugStringConve
   
   // MARK: PerformanceMonitor
   func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
-      
+    performanceMonitor.elapsedTime.value = elapsedTime
+    performanceMonitor.intervalAverageStrokeRate.value = intervalAverageStrokeRate
+    performanceMonitor.intervalWorkHeartrate.value = intervalWorkHeartrate
+    performanceMonitor.intervalRestHeartrate.value = intervalRestHeartrate
+    performanceMonitor.intervalAveragePace.value = intervalAveragePace
+    performanceMonitor.intervalTotalCalories.value = intervalTotalCalories
+    performanceMonitor.intervalAverageCalories.value = intervalAverageCalories
+    performanceMonitor.intervalSpeed.value = intervalSpeed
+    performanceMonitor.intervalPower.value = intervalPower
+    performanceMonitor.splitAverageDragFactor.value = splitAverageDragFactor
+    performanceMonitor.intervalNumber.value = intervalNumber
   }
   
   // MARK: -

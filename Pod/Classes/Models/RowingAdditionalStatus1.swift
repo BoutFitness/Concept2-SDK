@@ -54,16 +54,14 @@ struct RowingAdditionalStatus1: CharacteristicModel, CustomDebugStringConvertibl
   
   // MARK: PerformanceMonitor
   func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
-    performanceMonitor.elapsedTime = elapsedTime
-    performanceMonitor.speed = speed
-    performanceMonitor.strokeRate = strokeRate
-    performanceMonitor.heartRate = heartRate
-    performanceMonitor.currentPace = currentPace
-    performanceMonitor.averagePace = averagePace
-    performanceMonitor.restDistance = restDistance
-    performanceMonitor.restTime = restTime
-    
-    performanceMonitor.postUpdateValueNotification()
+    performanceMonitor.elapsedTime.value = elapsedTime
+    performanceMonitor.speed.value = speed
+    performanceMonitor.strokeRate.value = strokeRate
+    performanceMonitor.heartRate.value = heartRate
+    performanceMonitor.currentPace.value = currentPace
+    performanceMonitor.averagePace.value = averagePace
+    performanceMonitor.restDistance.value = restDistance
+    performanceMonitor.restTime.value = restTime
   }
   
   // MARK: -

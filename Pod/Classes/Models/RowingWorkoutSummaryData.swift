@@ -68,7 +68,19 @@ struct RowingWorkoutSummaryData: CharacteristicModel, CustomDebugStringConvertib
   
   // MARK: PerformanceMonitor
   func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
-      
+//    performanceMonitor.logEntryDate.value = logEntryDate
+//    performanceMonitor.logEntryTime.value = logEntryTime
+    performanceMonitor.elapsedTime.value = elapsedTime
+    performanceMonitor.distance.value = distance
+    performanceMonitor.averageStrokeRate.value = averageStrokeRate
+    performanceMonitor.endingHeartRate.value = endingHeartRate
+    performanceMonitor.averageHeartRate.value = averageHeartRate
+    performanceMonitor.minimumHeartRate.value = minimumHeartRate
+    performanceMonitor.maximumHeartRate.value = maximumHeartRate
+    performanceMonitor.dragFactorAverage.value = dragFactorAverage
+    performanceMonitor.recoveryHeartRate.value = recoveryHeartRate
+    performanceMonitor.workoutType.value = workoutType
+    performanceMonitor.averagePace.value = averagePace
   }
   
   // MARK: -
