@@ -11,6 +11,8 @@ import Concept2_SDK
 
 class ViewController: UIViewController {
   var isReadyDisposable:Disposable?
+  var performanceMonitorsDisposable:Disposable?
+  
   @IBOutlet var scanButton:UIButton!
   @IBOutlet var tableView:UITableView!
   
@@ -20,14 +22,6 @@ class ViewController: UIViewController {
   // MARK: UIViewController lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    isReadyDisposable = BluetoothManager.sharedInstance.isReady.attach {
-      [weak self] (isReady:Bool) -> Void in
-      if let weakSelf = self {
-        weakSelf.updateUI()
-      }
-    }
-    
     
     NSNotificationCenter.defaultCenter().addObserverForName(
       PerformanceMonitor.DidUpdateStateNotification,
@@ -39,12 +33,45 @@ class ViewController: UIViewController {
           })
         }
     }
-    
     tableView.reloadData()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    isReadyDisposable = BluetoothManager.isReady.attach {
+      [weak self] (isReady:Bool) -> Void in
+      if let weakSelf = self {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+          weakSelf.updateUI()
+        })
+      }
+    }
+    
+    performanceMonitorsDisposable = BluetoothManager.performanceMonitors.attach {
+      [weak self] (performanceMonitors) -> Void in
+      if let weakSelf = self {
+        weakSelf.performanceMonitors = performanceMonitors
+        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+          weakSelf.tableView.reloadData()
+        })
+      }
+    }
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+  }
+  
+  override func viewDidDisappear(animated: Bool) {
+    isReadyDisposable?.dispose()
+    isReadyDisposable = nil
+    
+    performanceMonitorsDisposable?.dispose()
+    performanceMonitorsDisposable = nil
+    
+    super.viewDidDisappear(animated)
   }
   
   @IBAction
@@ -54,7 +81,7 @@ class ViewController: UIViewController {
   }
   
   func updateUI() {
-    scanButton.enabled = BluetoothManager.sharedInstance.isReady.value ?? false
+    scanButton.enabled = BluetoothManager.isReady.value
   }
   
   
@@ -80,14 +107,6 @@ class ViewController: UIViewController {
         }
       }
     }
-  }
-}
-
-// MARK: BluetoothManagerDelegate
-extension ViewController: BluetoothManagerDelegate {
-  func didLoadPerformanceMonitors(bluetoothManager: BluetoothManager, performanceMonitors: Array<PerformanceMonitor>) {
-    self.performanceMonitors = performanceMonitors
-    tableView.reloadData()
   }
 }
 

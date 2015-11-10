@@ -14,6 +14,9 @@ public protocol Disposable {
   func dispose()
 }
 
+/**
+ Wraps a variable to allow notifications upon value changes.
+ */
 public class Subject<T> {
   
   /**
@@ -25,6 +28,11 @@ public class Subject<T> {
       notify()
     }
   }
+  
+  /**
+   Returns true if there are currently observers.
+   */
+  public var isObserved:Bool { get { return observers.count > 0 } }
   
   init(value: T) {
     self.value = value

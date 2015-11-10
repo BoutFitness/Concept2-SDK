@@ -10,8 +10,6 @@ import Foundation
 import CoreBluetooth
 
 final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
-  weak var bluetoothManager:BluetoothManager?
-  
   // MARK: Central Manager Status
   func centralManagerDidUpdateState(central: CBCentralManager)
   {
@@ -36,7 +34,7 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
       break
     }
     
-    bluetoothManager?.isReady.value = (central.state == .PoweredOn)
+    BluetoothManager.isReady.value = (central.state == .PoweredOn)
   }
   
   // MARK: Peripheral Discovery
@@ -83,6 +81,7 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
   }
   
   // MARK: -
+  
   private func postPerformanceMonitorNotificationForPeripheral(peripheral:CBPeripheral) {
     let performanceMonitorStore = PerformanceMonitorStore.sharedInstance
     if let pm = performanceMonitorStore.performanceMonitorWithPeripheral(peripheral) {

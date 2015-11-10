@@ -35,9 +35,9 @@ struct RowingHeartRateBeltInformation: CharacteristicModel, CustomDebugStringCon
   
   // MARK: PerformanceMonitor
   func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor) {
-//    performanceMonitor.manufacturerID.value = manufacturerID
-//    performanceMonitor.deviceType.value = deviceType
-//    performanceMonitor.beltID.value = beltID
+    performanceMonitor.manufacturerID.value = manufacturerID
+    performanceMonitor.deviceType.value = deviceType
+    performanceMonitor.beltID.value = beltID
   }
   
   // MARK: -

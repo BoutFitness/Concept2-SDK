@@ -64,13 +64,13 @@ struct RowingAdditionalWorkoutSummaryData: CharacteristicModel, CustomDebugStrin
 //    performanceMonitor.logEntryDate.value = logEntryDate
 //    performanceMonitor.logEntryTime.value = logEntryTime
     performanceMonitor.intervalType.value = intervalType
-//    performanceMonitor.intervalSize.value = intervalSize
+    performanceMonitor.intervalSize.value = intervalSize
     performanceMonitor.intervalCount.value = intervalCount
     performanceMonitor.totalCalories.value = totalCalories
-//    performanceMonitor.watts.value = watts
-//    performanceMonitor.totalRestDistance.value = totalRestDistance
+    performanceMonitor.watts.value = watts
+    performanceMonitor.totalRestDistance.value = totalRestDistance
     performanceMonitor.intervalRestTime.value = intervalRestTime
-//    performanceMonitor.averageCalories.value = averageCalories
+    performanceMonitor.averageCalories.value = averageCalories
   }
   
   // MARK: -

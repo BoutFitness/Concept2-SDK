@@ -47,14 +47,18 @@ class PerformanceMonitorViewController: UIViewController {
     strokesPerMinuteDisposable = performanceMonitor?.strokeRate.attach({
       [weak self] (strokeRate:C2StrokeRate) -> Void in
       if let weakSelf = self {
-        weakSelf.strokesPerMinuteLabel.text = "\(strokeRate.value)"
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+          weakSelf.strokesPerMinuteLabel.text = "\(strokeRate)"
+        })
       }
     })
     
     distanceDisposable = performanceMonitor?.distance.attach({
       [weak self] (distance:C2Distance) -> Void in
       if let weakSelf = self {
-        weakSelf.distanceLabel.text = "\(distance.value)"
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+          weakSelf.distanceLabel.text = "\(distance)"
+        })
       }
     })
   }

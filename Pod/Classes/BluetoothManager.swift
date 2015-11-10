@@ -8,11 +8,6 @@
 
 import CoreBluetooth
 
-public protocol BluetoothManagerDelegate {
-  func didLoadPerformanceMonitors(bluetoothManager:BluetoothManager,
-    performanceMonitors:Array<PerformanceMonitor>)
-}
-
 public final class BluetoothManager
 {
   public static let sharedInstance = BluetoothManager()
@@ -38,16 +33,24 @@ public final class BluetoothManager
     sharedInstance.disconnectPerformanceMonitor(performanceMonitor)
   }
   
-  public var isReady = Subject<Bool>(value: false)
-  public var performanceMonitors = Subject<Array<PerformanceMonitor>>(value: Array<PerformanceMonitor>())
+  public static var isReady:Subject<Bool> {
+    get {
+      return sharedInstance.isReady
+    }
+  }
+  
+  public static var performanceMonitors:Subject<Array<PerformanceMonitor>> {
+    get {
+      return sharedInstance.performanceMonitors
+    }
+  }
+  
+  private let isReady = Subject<Bool>(value: false)
+  private let performanceMonitors = Subject<Array<PerformanceMonitor>>(value: Array<PerformanceMonitor>())
   
   // MARK: -
   private var centralManager:CBCentralManager
-  private var centralManagerDelegate:CentralManagerDelegate {
-    didSet {
-      centralManagerDelegate.bluetoothManager = self
-    }
-  }
+  private var centralManagerDelegate:CentralManagerDelegate
   private let centralManagerQueue = dispatch_queue_create(
     "com.boutfitness.concept2.bluetooth.central",
     DISPATCH_QUEUE_CONCURRENT
@@ -58,6 +61,8 @@ public final class BluetoothManager
     centralManagerDelegate = CentralManagerDelegate()
     centralManager = CBCentralManager(delegate: centralManagerDelegate,
       queue: centralManagerQueue)
+    
+    self.isReady.value = (centralManager.state == CBCentralManagerState.PoweredOn)
     
     //
     NSNotificationCenter.defaultCenter().addObserverForName(
