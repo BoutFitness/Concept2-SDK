@@ -22,78 +22,77 @@ pod "Concept2-SDK"
 
 ## Usage
 
+*See the iOS Example for a full implementation*
+
 Import the SDK
 
 ```swift
 import Concept2_SDK
 ```
 
-Implement the `BluetoothManagerDelegate` and create a `BluetoothManager`
+The Concept2_SDK uses `Subject` to provide notification of value changes. Attach to the `isReady` property on the `BluetoothManager` singleton.
 
 ```swift
-let manager = Concept2_SDK.BluetoothManager(withDelegate: self)
-```
+var isReadyDisposable:Disposable?
+var performanceMonitorsDisposable:Disposable?
 
-Register for notifications from the `BluetoothManager` and the `PerformaneMonitor`
+// ...
 
-```swift
-NSNotificationCenter.defaultCenter().addObserverForName(
-  BluetoothManager.DidUpdateStateNotification,
-  object: manager,
-  queue: nil) { (notification) -> Void in
-    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-      // Do something here...
-    })
+isReadyDisposable = BluetoothManager.isReady.attach {
+  [weak self] (isReady:Bool) -> Void in
+  // Do something when the manager is ready, usually enable the UI
 }
 
-NSNotificationCenter.defaultCenter().addObserverForName(
-  PerformanceMonitor.DidUpdateStateNotification,
-  object:  nil,
-  queue: nil) { (notification) -> Void in
-    if let pm = notification.object as? PerformanceMonitor {
-      dispatch_async(dispatch_get_main_queue(), { () -> Void in
-        // Do something here...
-      })
-    }
+performanceMonitorsDisposable = BluetoothManager.performanceMonitors.attach {
+  [weak self] (performanceMonitors) -> Void in
+  // Do something with the performance monitors, usually display to the user or connect
 }
 ```
 
 Begin scanning for performance monitors (they'll need to be in-range and have wireless on)
 
 ```swift
-manager.scanForPerformanceMonitors()
+BluetoothManager.scanForPerformanceMonitors()
 ```
 
-When performance monitors are found the `BluetoothManager` will let its delegate know
-
-```swift
-func didLoadPerformanceMonitors(bluetoothManager: BluetoothManager, performanceMonitors: Array<PerformanceMonitor>) {
-  // Do something with the monitors, usually display in a list...
-}
-```
-
-Connect to one of the performance monitors
+When performance monitors are found observers of `performanceMonitors` on `BluetoothManager` will be notified, at this point you may connect to one of the performance monitors
 
 ```swift
 // You'll want to stop scanning to save power
-manager.stopScanningForPerformanceMonitors()
+BluetoothManager.stopScanningForPerformanceMonitors()
 
 // Then connect to
 let pm:PerformanceMonitor = performanceMonitors[indexOfMonitor]
-manager.connectPerformanceMonitor(pm)
+BluetoothManager.connectPerformanceMonitor(pm)
 ```
 
-When the monitor connects it will register for notification of value updates, if you're interested in knowing when that happens register to receive updates from the `PerformanceMonitor`
+The `PerformanceMonitor` has its own set of observable properties. At this point in time a connected monitor will automatically register itself to receive notifications of all bluetooth characteristic change events. In the future only those properties that you've expressed an interest in will be flagged for characteristic change events.
+
+Attach to the properties you're interested in, your callback will be called once upon attachment, then whenever the value of the observed property changes.
 
 ```swift
-NSNotificationCenter.defaultCenter().addObserverForName(
-  PerformanceMonitor.DidUpdateValueNotification,
-  object:  performanceMonitor, // This will limit notifications to one monitor, otherwise pass nil
-  queue: nil) { (notification) -> Void in
+var strokesPerMinuteDisposable:Disposable?
+var distanceDisposable:Disposable?
+
+// ...
+
+strokesPerMinuteDisposable = performanceMonitor?.strokeRate.attach({
+  [weak self] (strokeRate:C2StrokeRate) -> Void in
+  if let weakSelf = self {
     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-      // Pull any updated values from the PerfomanceMonitor
+      weakSelf.strokesPerMinuteLabel.text = "\(strokeRate)"
     })
-}
+  }
+})
+
+distanceDisposable = performanceMonitor?.distance.attach({
+  [weak self] (distance:C2Distance) -> Void in
+  if let weakSelf = self {
+    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+      weakSelf.distanceLabel.text = "\(distance)"
+    })
+  }
+})
 ```
 
 You should now be able to see values streaming in.
