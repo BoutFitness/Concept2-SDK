@@ -15,9 +15,9 @@ struct RowingStatusSampleRate: CharacteristicModel, CustomDebugStringConvertible
   
   var sampleRate:RowingStatusSampleRateType?
   
-  init(fromData data: NSData) {
-    var arr = [UInt8](count: DataLength, repeatedValue: 0)
-    data.getBytes(&arr, length: DataLength)
+  init(fromData data: Data) {
+      var arr = [UInt8](repeating: 0, count: DataLength)
+    (data as NSData).getBytes(&arr, length: DataLength)
     
     sampleRate = RowingStatusSampleRateType(rawValue: arr[0])
   }
@@ -29,7 +29,7 @@ struct RowingStatusSampleRate: CharacteristicModel, CustomDebugStringConvertible
   
   // MARK: -
   var debugDescription:String {
-    return "[RowingStatusSampleRate]\n\tsampleRate: \(sampleRate)"
+      return "[RowingStatusSampleRate]\n\tsampleRate: \(String(describing: sampleRate))"
   }
 }
 
@@ -40,6 +40,6 @@ extension NSData {
   convenience init(rowingStatusSampleRate:RowingStatusSampleRateType) {
     let arr:[UInt8] = [rowingStatusSampleRate.rawValue];
     
-    self.init(bytes: arr, length: arr.count * sizeof(UInt8))
+    self.init(bytes: arr, length: arr.count * MemoryLayout<UInt8>.size)
   }
 }

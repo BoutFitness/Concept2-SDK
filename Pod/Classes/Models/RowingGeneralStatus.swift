@@ -44,9 +44,9 @@ struct RowingGeneralStatus: CharacteristicModel, CustomDebugStringConvertible {
   var workoutDurationType:WorkoutDurationType?
   var dragFactor:C2DragFactor
   
-  init(fromData data: NSData) {
-    var arr = [UInt8](count: DataLength, repeatedValue: 0)
-    data.getBytes(&arr, length: DataLength)
+  init(fromData data: Data) {
+    var arr = [UInt8](repeating: 0, count: DataLength)
+    (data as NSData).getBytes(&arr, length: DataLength)
 
     elapsedTime = C2TimeInterval(timeWithLow: UInt32(arr[0]), mid: UInt32(arr[1]), high: UInt32(arr[2]))
     distance = C2Distance(distanceWithLow: UInt32(arr[3]), mid: UInt32(arr[4]), high: UInt32(arr[5]))
@@ -81,14 +81,14 @@ struct RowingGeneralStatus: CharacteristicModel, CustomDebugStringConvertible {
     return "[RowingGeneralStatus]"
     + "\telapsed time: \(elapsedTime)"
     + "\tdistance: \(distance)"
-    + "\tworkoutType: \(workoutType)"
-    + "\tintervalType: \(intervalType)"
-    + "\tworkoutState: \(workoutState)"
-    + "\trowingState: \(rowingState)"
-    + "\tstrokeState: \(strokeState)"
+      + "\tworkoutType: \(String(describing: workoutType))"
+    + "\tintervalType: \(String(describing: intervalType))"
+    + "\tworkoutState: \(String(describing: workoutState))"
+    + "\trowingState: \(String(describing: rowingState))"
+    + "\tstrokeState: \(String(describing: strokeState))"
     + "\ttotalWorkDistance: \(totalWorkDistance)"
     + "\tworkoutDuration: \(workoutDuration)"
-    + "\tworkoutDurationType: \(workoutDurationType)"
+    + "\tworkoutDurationType: \(String(describing: workoutDurationType))"
     + "\tdragFactor: \(dragFactor)"
   }
 }

@@ -22,9 +22,9 @@ struct RowingHeartRateBeltInformation: CharacteristicModel, CustomDebugStringCon
   var deviceType:C2HeartRateBeltType
   var beltID:C2HeartRateBeltID
   
-  init(fromData data: NSData) {
-    var arr = [UInt8](count: DataLength, repeatedValue: 0)
-    data.getBytes(&arr, length: DataLength)
+  init(fromData data: Data) {
+    var arr = [UInt8](repeating: 0, count: DataLength)
+    (data as NSData).getBytes(&arr, length: DataLength)
     
     manufacturerID = C2HeartRateBeltManufacturerID(arr[0])
     deviceType = C2HeartRateBeltType(arr[1])
@@ -60,6 +60,6 @@ extension NSData {
       UInt8(0xFF & (rowingHeartRateBeltInformation.manufacturerID >> 24))
     ];
     
-    self.init(bytes: arr, length: arr.count * sizeof(UInt8))
+      self.init(bytes: arr, length: arr.count * MemoryLayout<UInt8>.size)
   }
 }

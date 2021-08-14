@@ -79,7 +79,7 @@ var distanceDisposable:Disposable?
 strokesPerMinuteDisposable = performanceMonitor?.strokeRate.attach({
   [weak self] (strokeRate:C2StrokeRate) -> Void in
   if let weakSelf = self {
-    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+    DispatchQueue.main.async {
       weakSelf.strokesPerMinuteLabel.text = "\(strokeRate)"
     })
   }
@@ -88,7 +88,7 @@ strokesPerMinuteDisposable = performanceMonitor?.strokeRate.attach({
 distanceDisposable = performanceMonitor?.distance.attach({
   [weak self] (distance:C2Distance) -> Void in
   if let weakSelf = self {
-    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+    DispatchQueue.main.async {
       weakSelf.distanceLabel.text = "\(distance)"
     })
   }

@@ -47,9 +47,9 @@ struct RowingWorkoutSummaryData: CharacteristicModel, CustomDebugStringConvertib
   var workoutType:WorkoutType?
   var averagePace:C2Pace
   
-  init(fromData data: NSData) {
-    var arr = [UInt8](count: DataLength, repeatedValue: 0)
-    data.getBytes(&arr, length: DataLength)
+  init(fromData data: Data) {
+    var arr = [UInt8](repeating: 0, count: DataLength)
+    (data as NSData).getBytes(&arr, length: DataLength)
     
     logEntryDate = 0 // TODO: find date/time format
     logEntryTime = 0

@@ -7,7 +7,7 @@
 //
 
 protocol CharacteristicModel {
-  init(fromData data:NSData)
+  init(fromData data:Data)
   
   func updatePerformanceMonitor(performanceMonitor:PerformanceMonitor)
 }

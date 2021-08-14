@@ -43,9 +43,9 @@ struct RowingAdditionalIntervalData: CharacteristicModel, CustomDebugStringConve
   var splitAverageDragFactor:C2DragFactor
   var intervalNumber:C2IntervalCount
   
-  init(fromData data: NSData) {
-    var arr = [UInt8](count: DataLength, repeatedValue: 0)
-    data.getBytes(&arr, length: DataLength)
+  init(fromData data: Data) {
+    var arr = [UInt8](repeating: 0, count: DataLength)
+    (data as NSData).getBytes(&arr, length: DataLength)
     
     elapsedTime = C2TimeInterval(timeWithLow: UInt32(arr[0]), mid: UInt32(arr[1]), high: UInt32(arr[2]))
     intervalAverageStrokeRate = C2StrokeRate(arr[3])

@@ -25,7 +25,7 @@ public typealias C2DriveLength = Double
 public typealias C2DriveForce = Double
 
 /** Time of drive in seconds. */
-public typealias C2DriveTime = NSTimeInterval
+public typealias C2DriveTime = TimeInterval
 
 /** Heart rate in beats per minute. */
 public typealias C2HeartRate = Int
@@ -64,7 +64,7 @@ public typealias C2StrokeRate = Int
 public typealias C2Time = Int
 
 /** Amount of time in seconds. */
-public typealias C2TimeInterval = NSTimeInterval
+public typealias C2TimeInterval = TimeInterval
 
 /** . */
 public typealias C2Work = Double
