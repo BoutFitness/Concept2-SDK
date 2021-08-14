@@ -175,7 +175,6 @@ public final class PerformanceMonitor
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // MARK: Equatable
-@warn_unused_result
 public func ==(lhs:PerformanceMonitor, rhs:PerformanceMonitor) -> Bool {
   return (lhs.peripheral == rhs.peripheral)
 }

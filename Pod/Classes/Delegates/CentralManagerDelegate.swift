@@ -31,11 +31,14 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
     case .poweredOn:
       print("[BluetoothManager]state: powered on")
       break
+    @unknown default:
+        assertionFailure("Unexpected and unhandled CBCentralManager state")
+        print("[[BluetoothManager]state: \(String(describing: central.state))]")
     }
     
     BluetoothManager.isReady.value = (central.state == .poweredOn)
   }
-  
+
   // MARK: Peripheral Discovery
     func centralManager(
         _ central: CBCentralManager,
@@ -50,10 +53,7 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
   }
   
   // MARK: Peripheral Connections
-  func centralManager(central: CBCentralManager,
-    didConnectPeripheral
-    peripheral: CBPeripheral)
-  {
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
     print("[BluetoothManager]didConnectPeripheral")
     peripheral.discoverServices([
       Service.deviceDiscovery.uuid,
@@ -62,19 +62,12 @@ final class CentralManagerDelegate:NSObject, CBCentralManagerDelegate {
       Service.rowing.uuid])
       postPerformanceMonitorNotificationForPeripheral(peripheral: peripheral)
   }
-  
-  func centralManager(central: CBCentralManager,
-    didFailToConnectPeripheral
-    peripheral: CBPeripheral,
-    error: NSError?) {
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
       print("[BluetoothManager]didFailToConnectPeripheral")
       postPerformanceMonitorNotificationForPeripheral(peripheral: peripheral)
   }
-  
-  func centralManager(central: CBCentralManager,
-    didDisconnectPeripheral
-    peripheral: CBPeripheral,
-    error: NSError?) {
+
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
       print("[BluetoothManager]didDisconnectPeripheral")
       postPerformanceMonitorNotificationForPeripheral(peripheral: peripheral)
   }

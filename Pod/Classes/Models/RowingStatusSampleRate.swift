@@ -29,7 +29,7 @@ struct RowingStatusSampleRate: CharacteristicModel, CustomDebugStringConvertible
   
   // MARK: -
   var debugDescription:String {
-    return "[RowingStatusSampleRate]\n\tsampleRate: \(sampleRate)"
+      return "[RowingStatusSampleRate]\n\tsampleRate: \(String(describing: sampleRate))"
   }
 }
 
