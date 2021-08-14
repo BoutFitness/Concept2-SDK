@@ -23,7 +23,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    NSNotificationCenter.defaultCenter().addObserverForName(
+    NotificationCenter.default.addObserverForName(
       PerformanceMonitor.DidUpdateStateNotification,
       object:  nil,
       queue: nil) { (notification) -> Void in

@@ -9,34 +9,34 @@
 import CoreBluetooth
 
 public enum ControlCharacteristic:Characteristic {
-  case Command
-  case Response
+  case command
+  case response
   
   init?(uuid:CBUUID) {
     switch uuid {
-    case Command.UUID:
-      self = .Command
-    case Response.UUID:
-      self = .Response
+    case Self.command.uuid:
+      self = .command
+    case Self.response.uuid:
+      self = .response
     default:
       return nil
     }
   }
   
-  var UUID:CBUUID {
+  var uuid:CBUUID {
     switch self {
-    case .Command:
+    case .command:
       return CBUUID(string: "CE060021-43E5-11E4-916C-0800200C9A66")
-    case .Response:
+    case .response:
       return CBUUID(string: "CE060022-43E5-11E4-916C-0800200C9A66")
     }
   }
   
-  func parse(data data:NSData?) -> CharacteristicModel? {
+  func parse(data:Data?) -> CharacteristicModel? {
     switch self {
-    case .Command:
+    case .command:
       return nil
-    case .Response:
+    case .response:
       return nil
     }
   }

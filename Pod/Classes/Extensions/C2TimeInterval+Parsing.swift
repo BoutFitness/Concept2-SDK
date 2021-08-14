@@ -1,5 +1,5 @@
 //
-//  NSTimeInterval+Parsing.swift
+//  TimeInterval+Parsing.swift
 //  Pods
 //
 //  Created by Jesse Curry on 10/26/15.

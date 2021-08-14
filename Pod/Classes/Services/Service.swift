@@ -13,77 +13,77 @@ import CoreBluetooth
  */
 
 public enum Service {
-  case DeviceDiscovery
-  case DeviceInformation
-  case Control
-  case Rowing
+  case deviceDiscovery
+  case deviceInformation
+  case control
+  case rowing
   
   init?(uuid:CBUUID) {
     switch uuid {
-    case DeviceDiscovery.UUID:
-      self = .DeviceDiscovery
-    case DeviceInformation.UUID:
-      self = .DeviceInformation
-    case Control.UUID:
-      self = .Control
-    case Rowing.UUID:
-      self = .Rowing
+    case Self.deviceDiscovery.uuid:
+      self = .deviceDiscovery
+    case Self.deviceInformation.uuid:
+      self = .deviceInformation
+    case Self.control.uuid:
+      self = .control
+    case Self.rowing.uuid:
+      self = .rowing
     default:
       return nil
     }
   }
   
-  var UUID:CBUUID {
+  var uuid:CBUUID {
     switch self {
-    case .DeviceDiscovery:
+    case .deviceDiscovery:
       return CBUUID(string: "CE060000-43E5-11E4-916C-0800200C9A66")
-    case .DeviceInformation:
+    case .deviceInformation:
       return CBUUID(string: "CE060010-43E5-11E4-916C-0800200C9A66")
-    case .Control:
+    case .control:
       return CBUUID(string: "CE060020-43E5-11E4-916C-0800200C9A66")
-    case .Rowing:
+    case .rowing:
       return CBUUID(string: "CE060030-43E5-11E4-916C-0800200C9A66")
     }
   }
   
   var characteristicUUIDs:[CBUUID]? {
     switch self {
-    case .DeviceInformation:
+    case .deviceInformation:
       return [
-        DeviceInformationCharacteristic.SerialNumber.UUID,
-        DeviceInformationCharacteristic.HardwareRevision.UUID,
-        DeviceInformationCharacteristic.FirmwareRevision.UUID,
-        DeviceInformationCharacteristic.ManufacturerName.UUID]
-    case .Control:
+        DeviceInformationCharacteristic.serialNumber.uuid,
+        DeviceInformationCharacteristic.hardwareRevision.uuid,
+        DeviceInformationCharacteristic.firmwareRevision.uuid,
+        DeviceInformationCharacteristic.manufacturerName.uuid]
+    case .control:
       return [
-        ControlCharacteristic.Response.UUID,
-        ControlCharacteristic.Command.UUID]
-    case .Rowing:
+        ControlCharacteristic.response.uuid,
+        ControlCharacteristic.command.uuid]
+    case .rowing:
       return [
-        RowingCharacteristic.GeneralStatus.UUID,
-        RowingCharacteristic.AdditionalStatus1.UUID,
-        RowingCharacteristic.AdditionalStatus2.UUID,
-        RowingCharacteristic.StatusSampleRate.UUID,
-        RowingCharacteristic.StrokeData.UUID,
-        RowingCharacteristic.AdditionalStrokeData.UUID,
-        RowingCharacteristic.IntervalData.UUID,
-        RowingCharacteristic.AdditionalIntervalData.UUID,
-        RowingCharacteristic.WorkoutSummaryData.UUID,
-        RowingCharacteristic.AdditionalWorkoutSummaryData.UUID,
-        RowingCharacteristic.HeartRateBeltInformation.UUID,
-        RowingCharacteristic.MutliplexedInformation.UUID]
+        RowingCharacteristic.generalStatus.uuid,
+        RowingCharacteristic.additionalStatus1.uuid,
+        RowingCharacteristic.additionalStatus2.uuid,
+        RowingCharacteristic.statusSampleRate.uuid,
+        RowingCharacteristic.strokeData.uuid,
+        RowingCharacteristic.additionalStrokeData.uuid,
+        RowingCharacteristic.intervalData.uuid,
+        RowingCharacteristic.additionalIntervalData.uuid,
+        RowingCharacteristic.workoutSummaryData.uuid,
+        RowingCharacteristic.additionalWorkoutSummaryData.uuid,
+        RowingCharacteristic.heartRateBeltInformation.uuid,
+        RowingCharacteristic.mutliplexedInformation.uuid]
     default:
       return nil
     }
   }
   
-  func characteristic(uuid uuid:CBUUID) -> Characteristic? {
+  func characteristic(uuid:CBUUID) -> Characteristic? {
     switch self {
-    case .DeviceInformation:
+    case .deviceInformation:
       return DeviceInformationCharacteristic(uuid: uuid)
-    case .Control:
+    case .control:
       return ControlCharacteristic(uuid: uuid)
-    case .Rowing:
+    case .rowing:
       return RowingCharacteristic(uuid: uuid)
     default:
       return nil
